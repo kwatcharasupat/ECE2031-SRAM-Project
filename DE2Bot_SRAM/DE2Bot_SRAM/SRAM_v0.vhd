@@ -1,0 +1,128 @@
+LIBRARY IEEE;
+LIBRARY ALTERA_MF;
+LIBRARY LPM;
+
+USE IEEE.STD_LOGIC_1164.ALL;
+USE IEEE.STD_LOGIC_ARITH.ALL;
+USE IEEE.STD_LOGIC_UNSIGNED.ALL;
+USE ALTERA_MF.ALTERA_MF_COMPONENTS.ALL;
+USE LPM.LPM_COMPONENTS.ALL;
+
+ENTITY SRAM IS
+	PORT (
+		IO_WRITE		:	IN STD_LOGIC;
+		SRAM_ADLO_EN	:	IN STD_LOGIC;
+		SRAM_ADHI_EN	:	IN STD_LOGIC;
+		SRAM_DATA_EN	:	IN STD_LOGIC;
+		SRAM_CTRL_EN	:	IN STD_LOGIC;
+		SRAM_CE_N		:	OUT STD_LOGIC;
+		SRAM_WE_N		:	OUT STD_LOGIC;
+		SRAM_OE_N		:	OUT STD_LOGIC;
+		SRAM_UB_N		:	OUT STD_LOGIC;
+		SRAM_LB_N		:	OUT STD_LOGIC;
+		SRAM_ADLO		:	OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
+		SRAM_ADHI		:	OUT STD_LOGIC_VECTOR(17 DOWNTO 16);
+		SRAM_DQ			:	INOUT STD_LOGIC_VECTOR(15 DOWNTO 0);
+		IO_DATA			:	INOUT STD_LOGIC_VECTOR(15 DOWNTO 0);
+		IO_ADDR			:	INOUT STD_LOGIC_VECTOR(3 DOWNTO 0);
+		CLOCK			:	IN STD_LOGIC;
+	);
+END SRAM;
+
+-- Declare SRAM architecture v0
+ARCHITECTURE v0 OF SRAM IS
+	TYPE STATE_TYPE IS (
+		IDLE,
+		FETCH_ADDR,
+		OUTPUT_EN_WAIT,
+		SRAM_READ,
+		READ_COMPLETE,
+		WRITE_EN_WAIT,
+		SRAM_WRITE,
+		WRITE_COMPLETE
+	);
+	
+	-- Declare internal signals
+	SIGNAL STATE 	:	STATE_TYPE;						-- SRAM states
+	SIGNAL ADDR		:	STD_LOGIC_VECTOR(17 DOWNTO 0);	-- Address
+	SIGNAL DATA		:	STD_LOGIC_VECTOR(15 DOWNTO 0);	-- Data
+	SIGNAL WE		:	STD_LOGIC;
+	SIGNAL OE		:	STD_LOGIC;
+	SIGNAL CE		:	STD_LOGIC;
+	SIGNAL UB		:	STD_LOGIC;
+	SIGNAL LB		:	STD_LOGIC;
+	
+
+BEGIN
+	-- Mirror unused internal signals to ports
+	SRAM_CE_N	<=	NOT CE;
+	SRAM_UB_N	<= 	NOT	UB;
+	SRAM_LB_N	<=	NOT LB;
+	
+	SRAM_ADHI	<=	ADDR[17..16];
+	SRAM_ADLO	<=	ADDR[15..0];
+	
+	PROCESS (CLOCK)
+	BEGIN
+		IF (RISING_EDGE(CLOCK)) THEN
+			CASE STATE IS:
+				WHEN IDLE =>
+					IF (IO_WRITE) THEN
+						STATE <= FETCH_ADDR;
+					ELSE
+						STATE <= IDLE;
+					END IF;
+					
+				WHEN FETCH_ADDR =>
+					ADDR	<= 	IO_ADDR[1..0] & IO_DATA;	
+					-- concat IO_ADDR[1..0] and IO_DATA to get 18-bit address
+					WE		<= IO_ADDR[3];
+					OE		<= IO_ADDR[2];
+					IF (WE) THEN	-- if WE is asserted, go to write mode
+						STATE		<= WRITE_EN_WAIT;
+					ELSIF (OE) THEN	-- if WE is not asserted and OE is asserted, go to read mode
+						SRAM_OE_N	<= NOT OE;	-- enable output
+						STATE		<= OUTPUT_EN_WAIT;
+					ELSE			-- else go to idle mode
+						STATE		<= IDLE;
+					END IF;
+					
+				WHEN OUTPUT_EN_WAIT =>
+					STATE <= SRAM_READ;
+				
+				WHEN SRAM_READ =>
+					-- DO SOMETHING
+					
+					-- TODO: 
+					-- IF (IO_WRITE) THEN
+					--		STATE <= FETCH_ADDR;	-- continue reading
+					-- ELSE
+					STATE <= READ_COMPLETE;
+					
+				WHEN READ_COMPLETE =>
+					OE			<= '0';
+					SRAM_OE_N	<= NOT OE;
+					STATE 		<= IDLE;
+					
+				WHEN WRITE_EN_WAIT =>
+					STATE <= SRAM_WRITE;
+					
+				WHEN SRAM_WRITE =>
+					-- DO SOMETHING
+					
+					STATE <= WRITE_COMPLETE;
+					
+				WHEN WRITE_COMPLETE =>
+					WE			<= '0';
+					SRAM_WE_N	<= NOT WE;
+					
+					STATE <= IDLE;
+					
+				
+					
+			END CASE;
+		END IF;
+	END PROCESS;
+
+END v0;
+	
