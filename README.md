@@ -6,8 +6,8 @@ Spring 2020
 
 Format: [x] [task] [in-charge] 
 
-# SCOMP 
+# Week 0
 - [ ] Write IO instructions [George P Burdell]
 
-# SRAM 
+# Week 1
 - [ ] Write VHDL files [George P Burdell]
