@@ -2,12 +2,18 @@
 Spring 2020
 
 # Upcoming Meeting
-- Meeting #2: Wed 11 March @ CULC
+- 
 
 To-do Format: [x] [task] [in-charge] 
 # Week 1
 - [x] Week 1 Exercise 
-- [ ] Consensus form #1 [Felicia]
+- [x] Consensus form #1.1 & #1.2 [Felicia]
+- [x] SRAM skeleton VHDL [Karn]
+- [ ] SRAM read VHDL and UML [Siddhant & Jacques]
+- [ ] IO Decoder VHDL [Felicia & Segev]
+
+## Optional
+- [ ] SRAM write design and UML [Felicia & Segev]
 
 # Spring Break
 - [ ] Sleep 8 hours a day
