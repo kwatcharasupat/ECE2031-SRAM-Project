@@ -115,10 +115,7 @@ BEGIN
 				WHEN WRITE_COMPLETE =>
 					WE			<= '0';
 					SRAM_WE_N	<= NOT WE;
-					
 					STATE <= IDLE;
-					
-				
 					
 			END CASE;
 		END IF;
