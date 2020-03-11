@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="DE2Bot">
+		<CBX_INST_ENTRY INSTANCE_NAME="|DE2bot|SCOMP:inst8|LPM_CLSHIFT:SHIFTER" CBX_FILE_NAME="lpm_clshift_fuc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|DE2bot|SCOMP:inst8|altsyncram:MEMORY" CBX_FILE_NAME="altsyncram_mut3.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|DE2bot|UART_INTERFACE:inst1|uart_dcfifo_in:inst8|dcfifo:dcfifo_component" CBX_FILE_NAME="dcfifo_qtl1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|DE2bot|UART_INTERFACE:inst1|uart_dcfifo_out:inst14|dcfifo:dcfifo_component" CBX_FILE_NAME="dcfifo_31m1.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

@@ -51,12 +51,15 @@ ARCHITECTURE v0 OF SRAM IS
 	
 BEGIN
 	-- Mirror unused internal signals to ports
+	CE			<= '1';
+	UB			<= '1';
+	LB			<= '1';
 	SRAM_CE_N	<=	NOT CE;
 	SRAM_UB_N	<= 	NOT	UB;
 	SRAM_LB_N	<=	NOT LB;
 	
-	--SRAM_ADHI	<=	ADDR[17..16];
-	SRAM_ADLO	<=	ADDR[15..0];
+	SRAM_ADHI	<=	ADDR(17 DOWNTO 16);
+	SRAM_ADLO	<=	ADDR(15 DOWNTO 0);
 	
 	PROCESS (CLOCK)
 	BEGIN
@@ -93,6 +96,9 @@ BEGIN
 					-- DO SOMETHING
 					
 					STATE <= IDLE; -- REMOVE THIS LINE!!!
+					
+				WHEN OTHERS =>
+					STATE <= IDLE;
 					
 			END CASE;
 		END IF;
