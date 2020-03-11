@@ -1,11 +1,10 @@
 # ECE2031 SRAM Project
 Spring 2020
 
+# Upcoming Meeting
+- Meeting #2: Wed 11 March @ CULC
 
-# To-do
-
-Format: [x] [task] [in-charge] 
-
+To-do Format: [x] [task] [in-charge] 
 # Week 1
 - [x] Week 1 Exercise 
 - [ ] Consensus form #1 [Felicia]
