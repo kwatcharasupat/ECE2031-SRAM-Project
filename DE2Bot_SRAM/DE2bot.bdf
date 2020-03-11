@@ -3627,31 +3627,6 @@ applicable agreement for further details.
 	(bus)
 )
 (connector
-	(text "SRAM_ADLOW_EN" (rect 1483 320 1580 332)(font "Arial" ))
-	(pt 1480 336)
-	(pt 1552 336)
-)
-(connector
-	(text "SRAM_CTRL_EN" (rect 1486 352 1572 364)(font "Arial" ))
-	(pt 1480 368)
-	(pt 1552 368)
-)
-(connector
-	(text "SRAM_ADHI_EN" (rect 1480 304 1564 316)(font "Arial" ))
-	(pt 1480 320)
-	(pt 1552 320)
-)
-(connector
-	(text "SRAM_DATA_EN" (rect 1485 336 1571 348)(font "Arial" ))
-	(pt 1480 352)
-	(pt 1552 352)
-)
-(connector
-	(text "IO_WRITE" (rect 1480 288 1533 300)(font "Arial" ))
-	(pt 1480 304)
-	(pt 1552 304)
-)
-(connector
 	(text "CLOCK_100MHZ" (rect 1504 600 1588 612)(font "Arial" ))
 	(pt 1568 616)
 	(pt 1496 616)
