@@ -175,7 +175,8 @@ BEGIN
 					----------- [[ KARN'S COMMENT STARTS]] ----------
 					SRAM_DQ         <=      IO_DATA;  --That's for the SCOMP To get connected to the GPIO that goes to the SRAM.
 	                                -- * Both SRAM_DQ and IO_DATA are tristate bus which are handled by LPM_BUSTRI
-					--	when OE is set to high, the LPM_BUSTRI automatically let SRAM_DQ flows INTO IO_DATA
+					--	when WE is set to high, the LPM_BUSTRI automatically let IO_DATA flows INTO SRAM_DQ
+					-- * Will have to fix this enabling later coz it breaks timing requirement.
 					-- * Point for discussion:
 					--	** should we define a new signal to enable the direction of data flow in the tristate bus
 					--		instead of the current OE (SRAM_DQ -> IO_DATA) and WE (IO_DATA -> SRAM_DQ)?
