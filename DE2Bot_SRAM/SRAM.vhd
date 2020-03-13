@@ -66,8 +66,8 @@ BEGIN
 	)
 	PORT MAP (
 		data     => SRAM_DQ,
-		enabledt => !SRAM_OE_N, -- if HIGH, enable data onto tridata (READ cycle)
-		enabletr =>	!SRAM_WE_N,	-- if HIGH, enable tridata onto data (WRITE cycle)
+		enabledt => OE, -- if HIGH, enable data onto tridata (READ cycle)
+		enabletr =>	WE,	-- if HIGH, enable tridata onto data (WRITE cycle)
 		tridata  => IO_DATA
 	);
 	

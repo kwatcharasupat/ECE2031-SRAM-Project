@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DE2Bot
-Wed Mar 11 19:19:39 2020
+Fri Mar 13 12:04:02 2020
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -65,10 +65,11 @@ Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
  57. Parameter Settings for User Entity Instance: UART_INTERFACE:inst1|lpm_bustri_uart0:inst10|LPM_BUSTRI:lpm_bustri_component
  58. Parameter Settings for User Entity Instance: UART_INTERFACE:inst1|lpm_dff_uart0:inst15|lpm_ff:lpm_ff_component
  59. Parameter Settings for User Entity Instance: altpll1:inst11|altpll:altpll_component
- 60. altpll Parameter Settings by Entity Instance
- 61. altsyncram Parameter Settings by Entity Instance
- 62. dcfifo Parameter Settings by Entity Instance
- 63. Analysis & Synthesis Messages
+ 60. Parameter Settings for User Entity Instance: SRAM:inst2|LPM_BUSTRI:IO_BUS
+ 61. altpll Parameter Settings by Entity Instance
+ 62. altsyncram Parameter Settings by Entity Instance
+ 63. dcfifo Parameter Settings by Entity Instance
+ 64. Analysis & Synthesis Messages
 
 
 
@@ -94,15 +95,15 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                      ;
 +------------------------------------+----------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Mar 11 19:19:39 2020        ;
+; Analysis & Synthesis Status        ; Successful - Fri Mar 13 12:04:02 2020        ;
 ; Quartus II Version                 ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name                      ; DE2Bot                                       ;
 ; Top-level Entity Name              ; DE2bot                                       ;
 ; Family                             ; Cyclone II                                   ;
-; Total logic elements               ; 1,230                                        ;
-;     Total combinational functions  ; 983                                          ;
-;     Dedicated logic registers      ; 630                                          ;
-; Total registers                    ; 630                                          ;
+; Total logic elements               ; 1,225                                        ;
+;     Total combinational functions  ; 994                                          ;
+;     Dedicated logic registers      ; 613                                          ;
+; Total registers                    ; 613                                          ;
 ; Total pins                         ; 220                                          ;
 ; Total virtual pins                 ; 0                                            ;
 ; Total memory bits                  ; 33,536                                       ;
@@ -267,28 +268,28 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+--------------------------------------------+
 ; Resource                                    ; Usage                                      ;
 +---------------------------------------------+--------------------------------------------+
-; Estimated Total logic elements              ; 1,230                                      ;
+; Estimated Total logic elements              ; 1,225                                      ;
 ;                                             ;                                            ;
-; Total combinational functions               ; 983                                        ;
+; Total combinational functions               ; 994                                        ;
 ; Logic element usage by number of LUT inputs ;                                            ;
-;     -- 4 input functions                    ; 523                                        ;
-;     -- 3 input functions                    ; 295                                        ;
-;     -- <=2 input functions                  ; 165                                        ;
+;     -- 4 input functions                    ; 531                                        ;
+;     -- 3 input functions                    ; 301                                        ;
+;     -- <=2 input functions                  ; 162                                        ;
 ;                                             ;                                            ;
 ; Logic elements by mode                      ;                                            ;
-;     -- normal mode                          ; 887                                        ;
+;     -- normal mode                          ; 898                                        ;
 ;     -- arithmetic mode                      ; 96                                         ;
 ;                                             ;                                            ;
-; Total registers                             ; 630                                        ;
-;     -- Dedicated logic registers            ; 630                                        ;
+; Total registers                             ; 613                                        ;
+;     -- Dedicated logic registers            ; 613                                        ;
 ;     -- I/O registers                        ; 0                                          ;
 ;                                             ;                                            ;
 ; I/O pins                                    ; 220                                        ;
 ; Total memory bits                           ; 33536                                      ;
 ; Total PLLs                                  ; 2                                          ;
 ; Maximum fan-out node                        ; altpll0:inst|altpll:altpll_component|_clk0 ;
-; Maximum fan-out                             ; 371                                        ;
-; Total fan-out                               ; 5806                                       ;
+; Maximum fan-out                             ; 356                                        ;
+; Total fan-out                               ; 5782                                       ;
 ; Average fan-out                             ; 3.11                                       ;
 +---------------------------------------------+--------------------------------------------+
 
@@ -298,13 +299,13 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +--------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                       ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                     ; Library Name ;
 +--------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
-; |DE2bot                                          ; 983 (10)          ; 630 (0)      ; 33536       ; 0            ; 0       ; 0         ; 220  ; 0            ; |DE2bot                                                                                                                                                 ; work         ;
+; |DE2bot                                          ; 994 (9)           ; 613 (0)      ; 33536       ; 0            ; 0       ; 0         ; 220  ; 0            ; |DE2bot                                                                                                                                                 ; work         ;
 ;    |ACC_CLK_GEN:inst60|                          ; 46 (46)           ; 36 (36)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|ACC_CLK_GEN:inst60                                                                                                                              ;              ;
-;    |DIG_IN:inst5|                                ; 25 (0)            ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|DIG_IN:inst5                                                                                                                                    ;              ;
-;       |lpm_bustri:IO_BUS|                        ; 25 (25)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|DIG_IN:inst5|lpm_bustri:IO_BUS                                                                                                                  ;              ;
+;    |DIG_IN:inst5|                                ; 32 (0)            ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|DIG_IN:inst5                                                                                                                                    ;              ;
+;       |lpm_bustri:IO_BUS|                        ; 32 (32)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|DIG_IN:inst5|lpm_bustri:IO_BUS                                                                                                                  ;              ;
 ;    |DIG_IN:inst6|                                ; 4 (0)             ; 15 (15)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|DIG_IN:inst6                                                                                                                                    ;              ;
 ;       |lpm_bustri:IO_BUS|                        ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|DIG_IN:inst6|lpm_bustri:IO_BUS                                                                                                                  ;              ;
-;    |IO_DECODER:inst24|                           ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|IO_DECODER:inst24                                                                                                                               ;              ;
+;    |IO_DECODER:inst24|                           ; 6 (6)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|IO_DECODER:inst24                                                                                                                               ;              ;
 ;    |LEDS:inst58|                                 ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|LEDS:inst58                                                                                                                                     ;              ;
 ;    |LEDS:inst59|                                 ; 0 (0)             ; 10 (10)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|LEDS:inst59                                                                                                                                     ;              ;
 ;    |QUAD_HEX:inst56|                             ; 28 (0)            ; 16 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|QUAD_HEX:inst56                                                                                                                                 ;              ;
@@ -317,28 +318,28 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;       |HEX_DISP:inst21|                          ; 7 (7)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|QUAD_HEX:inst57|HEX_DISP:inst21                                                                                                                 ;              ;
 ;       |HEX_DISP:inst22|                          ; 7 (7)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|QUAD_HEX:inst57|HEX_DISP:inst22                                                                                                                 ;              ;
 ;       |HEX_DISP:inst27|                          ; 7 (7)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|QUAD_HEX:inst57|HEX_DISP:inst27                                                                                                                 ;              ;
-;    |SCOMP:inst8|                                 ; 485 (396)         ; 183 (183)    ; 32768       ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|SCOMP:inst8                                                                                                                                     ;              ;
+;    |SCOMP:inst8|                                 ; 482 (398)         ; 183 (183)    ; 32768       ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|SCOMP:inst8                                                                                                                                     ;              ;
 ;       |altsyncram:MEMORY|                        ; 0 (0)             ; 0 (0)        ; 32768       ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|SCOMP:inst8|altsyncram:MEMORY                                                                                                                   ;              ;
 ;          |altsyncram_mut3:auto_generated|        ; 0 (0)             ; 0 (0)        ; 32768       ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|SCOMP:inst8|altsyncram:MEMORY|altsyncram_mut3:auto_generated                                                                                    ;              ;
-;       |lpm_bustri:IO_BUS|                        ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|SCOMP:inst8|lpm_bustri:IO_BUS                                                                                                                   ;              ;
-;       |lpm_clshift:SHIFTER|                      ; 85 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|SCOMP:inst8|lpm_clshift:SHIFTER                                                                                                                 ;              ;
-;          |lpm_clshift_fuc:auto_generated|        ; 85 (85)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|SCOMP:inst8|lpm_clshift:SHIFTER|lpm_clshift_fuc:auto_generated                                                                                  ;              ;
+;       |lpm_clshift:SHIFTER|                      ; 84 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|SCOMP:inst8|lpm_clshift:SHIFTER                                                                                                                 ;              ;
+;          |lpm_clshift_fuc:auto_generated|        ; 84 (84)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|SCOMP:inst8|lpm_clshift:SHIFTER|lpm_clshift_fuc:auto_generated                                                                                  ;              ;
 ;    |SLCD:inst55|                                 ; 85 (85)           ; 49 (49)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|SLCD:inst55                                                                                                                                     ;              ;
-;    |SRAM:inst2|                                  ; 5 (5)             ; 21 (21)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|SRAM:inst2                                                                                                                                      ;              ;
-;    |TIMER:inst20|                                ; 18 (18)           ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|TIMER:inst20                                                                                                                                    ;              ;
-;    |UART_INTERFACE:inst1|                        ; 242 (2)           ; 236 (0)      ; 768         ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|UART_INTERFACE:inst1                                                                                                                            ;              ;
+;    |SRAM:inst2|                                  ; 5 (5)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|SRAM:inst2                                                                                                                                      ;              ;
+;    |TIMER:inst20|                                ; 23 (19)           ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|TIMER:inst20                                                                                                                                    ;              ;
+;       |lpm_bustri:IO_BUS|                        ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|TIMER:inst20|lpm_bustri:IO_BUS                                                                                                                  ;              ;
+;    |UART_INTERFACE:inst1|                        ; 246 (2)           ; 236 (0)      ; 768         ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|UART_INTERFACE:inst1                                                                                                                            ;              ;
 ;       |UART:inst2|                               ; 70 (70)           ; 53 (53)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|UART_INTERFACE:inst1|UART:inst2                                                                                                                 ;              ;
 ;       |lpm_bustri_uart0:inst10|                  ; 8 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|UART_INTERFACE:inst1|lpm_bustri_uart0:inst10                                                                                                    ;              ;
 ;          |lpm_bustri:lpm_bustri_component|       ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|UART_INTERFACE:inst1|lpm_bustri_uart0:inst10|lpm_bustri:lpm_bustri_component                                                                    ;              ;
-;       |lpm_bustri_uart0:inst|                    ; 23 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|UART_INTERFACE:inst1|lpm_bustri_uart0:inst                                                                                                      ;              ;
-;          |lpm_bustri:lpm_bustri_component|       ; 23 (23)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|UART_INTERFACE:inst1|lpm_bustri_uart0:inst|lpm_bustri:lpm_bustri_component                                                                      ;              ;
+;       |lpm_bustri_uart0:inst|                    ; 28 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|UART_INTERFACE:inst1|lpm_bustri_uart0:inst                                                                                                      ;              ;
+;          |lpm_bustri:lpm_bustri_component|       ; 28 (28)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|UART_INTERFACE:inst1|lpm_bustri_uart0:inst|lpm_bustri:lpm_bustri_component                                                                      ;              ;
 ;       |lpm_dff_uart0:inst15|                     ; 6 (0)             ; 8 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|UART_INTERFACE:inst1|lpm_dff_uart0:inst15                                                                                                       ;              ;
 ;          |lpm_ff:lpm_ff_component|               ; 6 (6)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|UART_INTERFACE:inst1|lpm_dff_uart0:inst15|lpm_ff:lpm_ff_component                                                                               ;              ;
 ;       |lpm_dff_uart0:inst4|                      ; 0 (0)             ; 9 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|UART_INTERFACE:inst1|lpm_dff_uart0:inst4                                                                                                        ;              ;
 ;          |lpm_ff:lpm_ff_component|               ; 0 (0)             ; 9 (9)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|UART_INTERFACE:inst1|lpm_dff_uart0:inst4|lpm_ff:lpm_ff_component                                                                                ;              ;
-;       |uart_dcfifo_in:inst8|                     ; 56 (0)            ; 69 (0)       ; 256         ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|UART_INTERFACE:inst1|uart_dcfifo_in:inst8                                                                                                       ;              ;
-;          |dcfifo:dcfifo_component|               ; 56 (0)            ; 69 (0)       ; 256         ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|UART_INTERFACE:inst1|uart_dcfifo_in:inst8|dcfifo:dcfifo_component                                                                               ;              ;
-;             |dcfifo_qtl1:auto_generated|         ; 56 (9)            ; 69 (17)      ; 256         ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|UART_INTERFACE:inst1|uart_dcfifo_in:inst8|dcfifo:dcfifo_component|dcfifo_qtl1:auto_generated                                                    ;              ;
+;       |uart_dcfifo_in:inst8|                     ; 55 (0)            ; 69 (0)       ; 256         ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|UART_INTERFACE:inst1|uart_dcfifo_in:inst8                                                                                                       ;              ;
+;          |dcfifo:dcfifo_component|               ; 55 (0)            ; 69 (0)       ; 256         ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|UART_INTERFACE:inst1|uart_dcfifo_in:inst8|dcfifo:dcfifo_component                                                                               ;              ;
+;             |dcfifo_qtl1:auto_generated|         ; 55 (8)            ; 69 (17)      ; 256         ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|UART_INTERFACE:inst1|uart_dcfifo_in:inst8|dcfifo:dcfifo_component|dcfifo_qtl1:auto_generated                                                    ;              ;
 ;                |a_graycounter_3fc:wrptr_gp|      ; 10 (10)           ; 9 (9)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|UART_INTERFACE:inst1|uart_dcfifo_in:inst8|dcfifo:dcfifo_component|dcfifo_qtl1:auto_generated|a_graycounter_3fc:wrptr_gp                         ;              ;
 ;                |a_graycounter_4fc:wrptr_g1p|     ; 11 (11)           ; 9 (9)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|UART_INTERFACE:inst1|uart_dcfifo_in:inst8|dcfifo:dcfifo_component|dcfifo_qtl1:auto_generated|a_graycounter_4fc:wrptr_g1p                        ;              ;
 ;                |a_graycounter_d86:rdptr_g1p|     ; 10 (10)           ; 9 (9)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|UART_INTERFACE:inst1|uart_dcfifo_in:inst8|dcfifo:dcfifo_component|dcfifo_qtl1:auto_generated|a_graycounter_d86:rdptr_g1p                        ;              ;
@@ -392,17 +393,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 
 
 Encoding Type:  One-Hot
-+-----------------------------------------------------------------------------------------------------+
-; State Machine - |DE2bot|SRAM:inst2|STATE                                                            ;
-+------------------+------------------+-----------------+------------------+-------------+------------+
-; Name             ; STATE.WRITE_INIT ; STATE.READ_DONE ; STATE.READ_READY ; STATE.FETCH ; STATE.IDLE ;
-+------------------+------------------+-----------------+------------------+-------------+------------+
-; STATE.IDLE       ; 0                ; 0               ; 0                ; 0           ; 0          ;
-; STATE.FETCH      ; 0                ; 0               ; 0                ; 1           ; 1          ;
-; STATE.READ_READY ; 0                ; 0               ; 1                ; 0           ; 1          ;
-; STATE.READ_DONE  ; 0                ; 1               ; 0                ; 0           ; 1          ;
-; STATE.WRITE_INIT ; 1                ; 0               ; 0                ; 0           ; 1          ;
-+------------------+------------------+-----------------+------------------+-------------+------------+
++----------------------------------------------------------------------------------------------------+
+; State Machine - |DE2bot|SRAM:inst2|STATE                                                           ;
++------------------+------------------+-----------------+-----------------+-------------+------------+
+; Name             ; STATE.WRITE_INIT ; STATE.READ_DONE ; STATE.READ_PREP ; STATE.FETCH ; STATE.IDLE ;
++------------------+------------------+-----------------+-----------------+-------------+------------+
+; STATE.IDLE       ; 0                ; 0               ; 0               ; 0           ; 0          ;
+; STATE.FETCH      ; 0                ; 0               ; 0               ; 1           ; 1          ;
+; STATE.READ_PREP  ; 0                ; 0               ; 1               ; 0           ; 1          ;
+; STATE.READ_DONE  ; 0                ; 1               ; 0               ; 0           ; 1          ;
+; STATE.WRITE_INIT ; 1                ; 0               ; 0               ; 0           ; 1          ;
++------------------+------------------+-----------------+-----------------+-------------+------------+
 
 
 Encoding Type:  One-Hot
@@ -510,32 +511,40 @@ Encoding Type:  One-Hot
 ; SCOMP:inst8|INT_ACK[0..3]                                                                                                    ; Lost fanout                                 ;
 ; UART_INTERFACE:inst1|uart_dcfifo_out:inst14|dcfifo:dcfifo_component|dcfifo_31m1:auto_generated|dffpipe_adc:rs_bwp|dffe15a[6] ; Lost fanout                                 ;
 ; UART_INTERFACE:inst1|uart_dcfifo_out:inst14|dcfifo:dcfifo_component|dcfifo_31m1:auto_generated|dffpipe_adc:rs_brp|dffe15a[6] ; Lost fanout                                 ;
-; SRAM:inst2|OE                                                                                                                ; Merged with SRAM:inst2|WE                   ;
+; SRAM:inst2|WE                                                                                                                ; Merged with SRAM:inst2|OE                   ;
+; SRAM:inst2|ADDR[16..17]                                                                                                      ; Merged with SRAM:inst2|OE                   ;
 ; SCOMP:inst8|AC_SAVED[0..15]                                                                                                  ; Stuck at GND due to stuck port clock_enable ;
 ; SCOMP:inst8|PC_SAVED[0..10]                                                                                                  ; Stuck at GND due to stuck port clock_enable ;
 ; SCOMP:inst8|GIE                                                                                                              ; Stuck at VCC due to stuck port data_in      ;
 ; SLCD:inst55|LCD_D[4]                                                                                                         ; Merged with SLCD:inst55|LCD_D[5]            ;
-; SRAM:inst2|STATE.READ_READY                                                                                                  ; Lost fanout                                 ;
-; SRAM:inst2|STATE.READ_DONE                                                                                                   ; Lost fanout                                 ;
-; SRAM:inst2|STATE.WRITE_INIT                                                                                                  ; Lost fanout                                 ;
-; Total Number of Removed Registers = 67                                                                                       ;                                             ;
+; SRAM:inst2|STATE.READ_PREP                                                                                                   ; Stuck at GND due to stuck port data_in      ;
+; SRAM:inst2|SRAM_ADHI[0..1]                                                                                                   ; Stuck at GND due to stuck port clock_enable ;
+; SRAM:inst2|SRAM_ADLO[0..15]                                                                                                  ; Stuck at GND due to stuck port clock_enable ;
+; SRAM:inst2|STATE.READ_DONE                                                                                                   ; Stuck at GND due to stuck port data_in      ;
+; Total Number of Removed Registers = 86                                                                                       ;                                             ;
 +------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------+
 
 
-+-------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                               ;
-+------------------------+-------------------------+----------------------------------------+
-; Register name          ; Reason for Removal      ; Registers Removed due to This Register ;
-+------------------------+-------------------------+----------------------------------------+
-; SCOMP:inst8|INT_REQ[0] ; Stuck at GND            ; SCOMP:inst8|INT_REQ_SYNC[0]            ;
-;                        ; due to stuck port clock ;                                        ;
-; SCOMP:inst8|INT_REQ[1] ; Stuck at GND            ; SCOMP:inst8|INT_REQ_SYNC[1]            ;
-;                        ; due to stuck port clock ;                                        ;
-; SCOMP:inst8|INT_REQ[2] ; Stuck at GND            ; SCOMP:inst8|INT_REQ_SYNC[2]            ;
-;                        ; due to stuck port clock ;                                        ;
-; SCOMP:inst8|INT_REQ[3] ; Stuck at GND            ; SCOMP:inst8|INT_REQ_SYNC[3]            ;
-;                        ; due to stuck port clock ;                                        ;
-+------------------------+-------------------------+----------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                            ;
++----------------------------+---------------------------+-------------------------------------------------------------------------------+
+; Register name              ; Reason for Removal        ; Registers Removed due to This Register                                        ;
++----------------------------+---------------------------+-------------------------------------------------------------------------------+
+; SRAM:inst2|STATE.READ_PREP ; Stuck at GND              ; SRAM:inst2|SRAM_ADHI[1], SRAM:inst2|SRAM_ADHI[0], SRAM:inst2|SRAM_ADLO[15],   ;
+;                            ; due to stuck port data_in ; SRAM:inst2|SRAM_ADLO[14], SRAM:inst2|SRAM_ADLO[13], SRAM:inst2|SRAM_ADLO[12], ;
+;                            ;                           ; SRAM:inst2|SRAM_ADLO[11], SRAM:inst2|SRAM_ADLO[10], SRAM:inst2|SRAM_ADLO[9],  ;
+;                            ;                           ; SRAM:inst2|SRAM_ADLO[8], SRAM:inst2|SRAM_ADLO[7], SRAM:inst2|SRAM_ADLO[6],    ;
+;                            ;                           ; SRAM:inst2|SRAM_ADLO[5], SRAM:inst2|SRAM_ADLO[4], SRAM:inst2|SRAM_ADLO[3],    ;
+;                            ;                           ; SRAM:inst2|SRAM_ADLO[2], SRAM:inst2|SRAM_ADLO[1], SRAM:inst2|SRAM_ADLO[0]     ;
+; SCOMP:inst8|INT_REQ[0]     ; Stuck at GND              ; SCOMP:inst8|INT_REQ_SYNC[0]                                                   ;
+;                            ; due to stuck port clock   ;                                                                               ;
+; SCOMP:inst8|INT_REQ[1]     ; Stuck at GND              ; SCOMP:inst8|INT_REQ_SYNC[1]                                                   ;
+;                            ; due to stuck port clock   ;                                                                               ;
+; SCOMP:inst8|INT_REQ[2]     ; Stuck at GND              ; SCOMP:inst8|INT_REQ_SYNC[2]                                                   ;
+;                            ; due to stuck port clock   ;                                                                               ;
+; SCOMP:inst8|INT_REQ[3]     ; Stuck at GND              ; SCOMP:inst8|INT_REQ_SYNC[3]                                                   ;
+;                            ; due to stuck port clock   ;                                                                               ;
++----------------------------+---------------------------+-------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -543,12 +552,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 630   ;
+; Total registers                              ; 613   ;
 ; Number of registers using Synchronous Clear  ; 42    ;
 ; Number of registers using Synchronous Load   ; 7     ;
 ; Number of registers using Asynchronous Clear ; 369   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 250   ;
+; Number of registers using Clock Enable       ; 231   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -593,13 +602,13 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                    ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------+
-; 3:1                ; 99 bits   ; 198 LEs       ; 99 LEs               ; 99 LEs                 ; Yes        ; |DE2bot|SCOMP:inst8|PC_STACK[0][4]                            ;
-; 5:1                ; 7 bits    ; 21 LEs        ; 7 LEs                ; 14 LEs                 ; Yes        ; |DE2bot|UART_INTERFACE:inst1|UART:inst2|uart_tx_data_block[2] ;
+; 3:1                ; 99 bits   ; 198 LEs       ; 99 LEs               ; 99 LEs                 ; Yes        ; |DE2bot|SCOMP:inst8|PC_STACK[0][3]                            ;
+; 5:1                ; 7 bits    ; 21 LEs        ; 7 LEs                ; 14 LEs                 ; Yes        ; |DE2bot|UART_INTERFACE:inst1|UART:inst2|uart_tx_data_block[3] ;
 ; 7:1                ; 3 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |DE2bot|SLCD:inst55|LCD_D[0]                                  ;
-; 6:1                ; 10 bits   ; 40 LEs        ; 10 LEs               ; 30 LEs                 ; Yes        ; |DE2bot|SLCD:inst55|count[2]                                  ;
-; 12:1               ; 11 bits   ; 88 LEs        ; 22 LEs               ; 66 LEs                 ; Yes        ; |DE2bot|SCOMP:inst8|PC[8]                                     ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 0 LEs                ; 4 LEs                  ; Yes        ; |DE2bot|UART_INTERFACE:inst1|UART:inst2|uart_rx_filter[1]     ;
-; 13:1               ; 16 bits   ; 128 LEs       ; 112 LEs              ; 16 LEs                 ; Yes        ; |DE2bot|SCOMP:inst8|AC[15]                                    ;
+; 6:1                ; 10 bits   ; 40 LEs        ; 10 LEs               ; 30 LEs                 ; Yes        ; |DE2bot|SLCD:inst55|count[5]                                  ;
+; 12:1               ; 11 bits   ; 88 LEs        ; 22 LEs               ; 66 LEs                 ; Yes        ; |DE2bot|SCOMP:inst8|PC[5]                                     ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 0 LEs                ; 4 LEs                  ; Yes        ; |DE2bot|UART_INTERFACE:inst1|UART:inst2|uart_rx_filter[0]     ;
+; 13:1               ; 16 bits   ; 128 LEs       ; 112 LEs              ; 16 LEs                 ; Yes        ; |DE2bot|SCOMP:inst8|AC[1]                                     ;
 ; 13:1               ; 16 bits   ; 128 LEs       ; 64 LEs               ; 64 LEs                 ; No         ; |DE2bot|SCOMP:inst8|Add1                                      ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------+
 
@@ -1871,6 +1880,16 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++---------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: SRAM:inst2|LPM_BUSTRI:IO_BUS ;
++----------------+-------+--------------------------------------------------+
+; Parameter Name ; Value ; Type                                             ;
++----------------+-------+--------------------------------------------------+
+; LPM_WIDTH      ; 16    ; Signed Integer                                   ;
++----------------+-------+--------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +------------------------------------------------------------------------+
 ; altpll Parameter Settings by Entity Instance                           ;
 +-------------------------------+----------------------------------------+
@@ -1943,7 +1962,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Wed Mar 11 19:19:31 2020
+    Info: Processing started: Fri Mar 13 12:03:54 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DE2Bot -c DE2Bot
 Warning: Tcl Script File ir_lpm_dff9.qip not found
     Info: set_global_assignment -name QIP_FILE ir_lpm_dff9.qip
@@ -2383,6 +2402,12 @@ Info: Instantiated megafunction "altpll1:inst11|altpll:altpll_component" with th
 Info: Elaborating entity "SRAM" for hierarchy "SRAM:inst2"
 Warning (10541): VHDL Signal Declaration warning at SRAM.vhd(20): used implicit default value for signal "SRAM_WE_N" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
 Warning (10541): VHDL Signal Declaration warning at SRAM.vhd(21): used implicit default value for signal "SRAM_OE_N" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Info: Elaborating entity "LPM_BUSTRI" for hierarchy "SRAM:inst2|LPM_BUSTRI:IO_BUS"
+Info: Elaborated megafunction instantiation "SRAM:inst2|LPM_BUSTRI:IO_BUS"
+Info: Instantiated megafunction "SRAM:inst2|LPM_BUSTRI:IO_BUS" with the following parameter:
+    Info: Parameter "LPM_WIDTH" = "16"
+    Info: Parameter "LPM_TYPE" = "LPM_BUSTRI"
+    Info: Parameter "LPM_HINT" = "UNUSED"
 Info: Elaborating entity "QUAD_HEX" for hierarchy "QUAD_HEX:inst57"
 Info: Elaborating entity "HEX_DISP" for hierarchy "QUAD_HEX:inst57|HEX_DISP:inst27"
 Info: Elaborating entity "LEDS" for hierarchy "LEDS:inst59"
@@ -2473,11 +2498,29 @@ Warning: Output pins are stuck at VCC or GND
     Warning (13410): Pin "SONAR_SEL[2]" is stuck at GND
     Warning (13410): Pin "SONAR_SEL[1]" is stuck at GND
     Warning (13410): Pin "SONAR_SEL[0]" is stuck at GND
+    Warning (13410): Pin "SRAM_ADDR[17]" is stuck at GND
+    Warning (13410): Pin "SRAM_ADDR[16]" is stuck at GND
+    Warning (13410): Pin "SRAM_ADDR[15]" is stuck at GND
+    Warning (13410): Pin "SRAM_ADDR[14]" is stuck at GND
+    Warning (13410): Pin "SRAM_ADDR[13]" is stuck at GND
+    Warning (13410): Pin "SRAM_ADDR[12]" is stuck at GND
+    Warning (13410): Pin "SRAM_ADDR[11]" is stuck at GND
+    Warning (13410): Pin "SRAM_ADDR[10]" is stuck at GND
+    Warning (13410): Pin "SRAM_ADDR[9]" is stuck at GND
+    Warning (13410): Pin "SRAM_ADDR[8]" is stuck at GND
+    Warning (13410): Pin "SRAM_ADDR[7]" is stuck at GND
+    Warning (13410): Pin "SRAM_ADDR[6]" is stuck at GND
+    Warning (13410): Pin "SRAM_ADDR[5]" is stuck at GND
+    Warning (13410): Pin "SRAM_ADDR[4]" is stuck at GND
+    Warning (13410): Pin "SRAM_ADDR[3]" is stuck at GND
+    Warning (13410): Pin "SRAM_ADDR[2]" is stuck at GND
+    Warning (13410): Pin "SRAM_ADDR[1]" is stuck at GND
+    Warning (13410): Pin "SRAM_ADDR[0]" is stuck at GND
 Critical Warning: Ignored Power-Up Level option on the following registers
     Critical Warning (18010): Register UART_INTERFACE:inst1|UART:inst2|uart_rx_bit will power up to High
     Critical Warning (18010): Register UART_INTERFACE:inst1|UART:inst2|uart_rx_filter[1] will power up to High
     Critical Warning (18010): Register UART_INTERFACE:inst1|UART:inst2|uart_rx_filter[0] will power up to High
-Info: 13 registers lost all their fanouts during netlist optimizations. The first 13 are displayed below.
+Info: 10 registers lost all their fanouts during netlist optimizations. The first 10 are displayed below.
     Info: Register "SCOMP:inst8|IIE[3]" lost all its fanouts during netlist optimizations.
     Info: Register "SCOMP:inst8|IIE[2]" lost all its fanouts during netlist optimizations.
     Info: Register "SCOMP:inst8|IIE[1]" lost all its fanouts during netlist optimizations.
@@ -2488,9 +2531,6 @@ Info: 13 registers lost all their fanouts during netlist optimizations. The firs
     Info: Register "SCOMP:inst8|INT_ACK[0]" lost all its fanouts during netlist optimizations.
     Info: Register "UART_INTERFACE:inst1|uart_dcfifo_out:inst14|dcfifo:dcfifo_component|dcfifo_31m1:auto_generated|dffpipe_adc:rs_bwp|dffe15a[6]" lost all its fanouts during netlist optimizations.
     Info: Register "UART_INTERFACE:inst1|uart_dcfifo_out:inst14|dcfifo:dcfifo_component|dcfifo_31m1:auto_generated|dffpipe_adc:rs_brp|dffe15a[6]" lost all its fanouts during netlist optimizations.
-    Info: Register "SRAM:inst2|STATE.READ_READY" lost all its fanouts during netlist optimizations.
-    Info: Register "SRAM:inst2|STATE.READ_DONE" lost all its fanouts during netlist optimizations.
-    Info: Register "SRAM:inst2|STATE.WRITE_INIT" lost all its fanouts during netlist optimizations.
 Warning: Design contains 9 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "SW[17]"
     Warning (15610): No output dependent on input pin "ENC_L_B"
@@ -2501,17 +2541,17 @@ Warning: Design contains 9 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "AUD_BCLK"
     Warning (15610): No output dependent on input pin "ASLEEP"
     Warning (15610): No output dependent on input pin "BATT_GOOD"
-Info: Implemented 1509 device resources after synthesis - the final resource count might be different
+Info: Implemented 1504 device resources after synthesis - the final resource count might be different
     Info: Implemented 44 input pins
     Info: Implemented 156 output pins
     Info: Implemented 20 bidirectional pins
-    Info: Implemented 1255 logic cells
+    Info: Implemented 1250 logic cells
     Info: Implemented 32 RAM segments
     Info: Implemented 2 PLLs
-Info: Quartus II Analysis & Synthesis was successful. 0 errors, 111 warnings
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 129 warnings
     Info: Peak virtual memory: 276 megabytes
-    Info: Processing ended: Wed Mar 11 19:19:39 2020
+    Info: Processing ended: Fri Mar 13 12:04:02 2020
     Info: Elapsed time: 00:00:08
-    Info: Total CPU time (on all processors): 00:00:08
+    Info: Total CPU time (on all processors): 00:00:07
 
 
