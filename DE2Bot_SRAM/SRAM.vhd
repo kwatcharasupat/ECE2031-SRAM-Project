@@ -68,7 +68,7 @@ BEGIN
 	PORT MAP (
 		data     => SRAM_DQ,
 		enabledt => OE, -- if HIGH, enable data onto tridata (READ cycle)
-		enabletr =>WE,	-- if HIGH, enable tridata onto data (WRITE cycle)
+		enabletr => WE,	-- if HIGH, enable tridata onto data (WRITE cycle)
 		tridata  => IO_DATA
 	);
 	
@@ -88,14 +88,28 @@ BEGIN
 					
 				WHEN WARM_UP =>
 					ADDR	<= 	ADHI & IO_DATA;	-- As IO_DATA only contains the address related stuff During WarmUp
+					-- ADLO is contained in IO_DATA
+					-- concat ADHI and IO_DATA to get 18-bit address	
+				
+					----------- [[ KARN'S COMMENT STARTS]] ----------
+					-- * remove these two lines
 					SRAM_ADHI	<=	ADDR(17 DOWNTO 16);
 					SRAM_ADLO	<=	ADDR(15 DOWNTO 0); -- Have the Address Fired
-				        -- ADLO is contained in IO_DATA
-					-- concat ADHI and IO_DATA to get 18-bit address
+		
+					-- * WARM_UP is shared between read and write
+					--	the address should not be fired prematurely esp. for write
+					--	since this will cause data corruption
+					------------ [[ KARN'S COMMENT ENDS]] -----------
+				        
 					
 					IF (CTRL_WE = '1')	THEN
 						STATE <= WRITE_PREP;
 					ELSIF (CTRL_OE = '1' AND CTRL_WE = '0' AND ADHI = "01") THEN
+						----------- [[ KARN'S COMMENT STARTS]] ----------
+						-- * ADHI should NOT be in this logic. R01 is used as an example only
+						--	READ_PREP should be triggered regardless of address
+						--	i.e. for all ADHI = 00, 01, 10, 11
+						------------ [[ KARN'S COMMENT ENDS]] -----------
 						STATE <= READ_PREP;
 					ELSE
 						STATE <= IDLE;
@@ -105,9 +119,32 @@ BEGIN
 					--Current State Handling...
 					SRAM_ADHI	<=	ADDR(17 DOWNTO 16);
 					SRAM_ADLO	<=	ADDR(15 DOWNTO 0); -- Keep the Address Fired
+					----------- [[ KARN'S COMMENT STARTS]] ----------
 					SRAM_OE         <=      '0';
 					SRAM_WE         <=      '1';
-					SRAM_DQ         <=      IO_DATA;  --That's for the SCOMP To get connected to the GPIO that goes to the SRAM.
+
+					-- * (minor) SRAM_OE and SRAM_WE don't exist
+					-- 	the two output signals defined are SRAM_OE_N and SRAM_WE_N
+					--	(see PORT declaration above)
+					------------ [[ KARN'S COMMENT ENDS]] -----------
+
+					----------- [[ KARN'S COMMENT STARTS]] ----------
+					SRAM_DQ         <=      IO_DATA;  
+
+					-- * If we were not using LPM_BUSTRI (see below)
+					--	this should be IO_DATA <= SRAM_DQ since we are reading from SRAM into FPGA
+					-- **BUT**
+					-- * Both SRAM_DQ and IO_DATA are tristate bus which are handled by LPM_BUSTRI
+					--	when OE is set to high, the LPM_BUSTRI automatically let SRAM_DQ flows INTO IO_DATA
+					-- * Point for discussion:
+					--	** should we define a new signal to enable the direction of data flow in the tristate bus
+					--		instead of the current OE (SRAM_DQ -> IO_DATA) and WE (IO_DATA -> SRAM_DQ)?
+					--	** OE and WE are internal signals that we have been a little loose with wrt to timing
+					--		It might be better to define a new signal 
+					--		to control LPM_BUSTRI's enabledtr and enableddt to make things more precise
+					--	** For reference, see http://www.pldworld.com/_altera/html/_sw/q2help/source/mega/mega_file_lpm_bustri.htm
+					------------ [[ KARN'S COMMENT ENDS]] -----------
+
 					--Next State Logic Set Up!
 					IF (CTRL_OE = '0') THEN
 						STATE <= READ_DONE;
@@ -118,21 +155,59 @@ BEGIN
 					--Current State Handling...
 					SRAM_ADHI	<=	ADDR(17 DOWNTO 16);
 					SRAM_ADLO	<=	ADDR(15 DOWNTO 0); -- Keep the Address Fired
+
+					----------- [[ KARN'S COMMENT STARTS]] ----------
+					-- * (minor) SRAM_OE and SRAM_WE don't exist
+					-- 	the two output signals defined are SRAM_OE_N and SRAM_WE_N
+					--	(see PORT declaration above)
+					------------ [[ KARN'S COMMENT ENDS]] -----------
 					SRAM_OE         <=      '1';
 					SRAM_WE         <=      '0';
+					----------- [[ KARN'S COMMENT STARTS]] ----------
+					-- * Write cycle timing is also a little different. 
+					--	SRAM_WE_N should not be written LOW before address stabilizes.
+					--	After SRAM_OE_N is forced HIGH and the address is driven,
+					--	we should wait 10 ns (a clock cycle) before setting SRAM_WE_N to LOW
+					--	in order to avoid data corruption.
+					-- * Anyway, we will have to discuss this in the next meeting so don't worry about this for now
+					------------ [[ KARN'S COMMENT ENDS]] -----------
+					
+					----------- [[ KARN'S COMMENT STARTS]] ----------
 					SRAM_DQ         <=      IO_DATA;  --That's for the SCOMP To get connected to the GPIO that goes to the SRAM.
-	                                --Next State Logic Set Up!
+	                                -- * Both SRAM_DQ and IO_DATA are tristate bus which are handled by LPM_BUSTRI
+					--	when OE is set to high, the LPM_BUSTRI automatically let SRAM_DQ flows INTO IO_DATA
+					-- * Point for discussion:
+					--	** should we define a new signal to enable the direction of data flow in the tristate bus
+					--		instead of the current OE (SRAM_DQ -> IO_DATA) and WE (IO_DATA -> SRAM_DQ)?
+					--	** OE and WE are internal signals that we have been a little loose with wrt to timing
+					--		It might be better to define a new signal 
+					--		to control LPM_BUSTRI's enabledtr and enableddt to make things more precise
+					--	** For reference, see http://www.pldworld.com/_altera/html/_sw/q2help/source/mega/mega_file_lpm_bustri.htm
+					------------ [[ KARN'S COMMENT ENDS]] -----------
+
+
+					--Next State Logic Set Up!
 					IF (CTRL_WE = '0') THEN
 						STATE <= WRITE_DONE;
 					ELSE 
 						STATE <= WRITE_PREP;
 
 				WHEN READ_DONE => 
+					----------- [[ KARN'S COMMENT STARTS]] ----------
 		                        SRAM_OE <= '1';
+					-- * (minor) SRAM_OE and SRAM_WE don't exist
+					-- 	the two output signals defined are SRAM_OE_N and SRAM_WE_N
+					--	(see PORT declaration above)
+					------------ [[ KARN'S COMMENT ENDS]] -----------
 				        STATE <= IDLE;
 
 				WHEN WRITE_DONE =>
+					----------- [[ KARN'S COMMENT STARTS]] ----------
 					SRAM_WE <= '1';
+					-- * (minor) SRAM_OE and SRAM_WE don't exist
+					-- 	the two output signals defined are SRAM_OE_N and SRAM_WE_N
+					--	(see PORT declaration above)
+					------------ [[ KARN'S COMMENT ENDS]] -----------
 					STATE <= IDLE;
 					
 				WHEN OTHERS =>
