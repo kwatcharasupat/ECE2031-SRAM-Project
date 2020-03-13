@@ -104,12 +104,7 @@ BEGIN
 					
 					IF (CTRL_WE = '1')	THEN
 						STATE <= WRITE_PREP;
-					ELSIF (CTRL_OE = '1' AND CTRL_WE = '0' AND ADHI = "01") THEN
-						----------- [[ KARN'S COMMENT STARTS]] ----------
-						-- * ADHI should NOT be in this logic. R01 is used as an example only
-						--	READ_PREP should be triggered regardless of address
-						--	i.e. for all ADHI = 00, 01, 10, 11
-						------------ [[ KARN'S COMMENT ENDS]] -----------
+					ELSIF (CTRL_OE = '1' AND CTRL_WE = '0') THEN
 						STATE <= READ_PREP;
 					ELSE
 						STATE <= IDLE;
@@ -118,18 +113,14 @@ BEGIN
 				WHEN READ_PREP =>
 					--Current State Handling...
 					SRAM_ADHI	<=	ADDR(17 DOWNTO 16);
-					SRAM_ADLO	<=	ADDR(15 DOWNTO 0); -- Keep the Address Fired
-					----------- [[ KARN'S COMMENT STARTS]] ----------
-					SRAM_OE         <=      '0';
-					SRAM_WE         <=      '1';
+					SRAM_ADLO	<=	ADDR(15 DOWNTO 0); -- Keep the Address Fired!
+					SRAM_OE_N         <=      '0';
+					SRAM_WE_N         <=      '1';
 
-					-- * (minor) SRAM_OE and SRAM_WE don't exist
-					-- 	the two output signals defined are SRAM_OE_N and SRAM_WE_N
-					--	(see PORT declaration above)
-					------------ [[ KARN'S COMMENT ENDS]] -----------
+			
 
 					----------- [[ KARN'S COMMENT STARTS]] ----------
-					SRAM_DQ         <=      IO_DATA;  
+					IO_DATA         <=      SRAM_DQ;  
 
 					-- * If we were not using LPM_BUSTRI (see below)
 					--	this should be IO_DATA <= SRAM_DQ since we are reading from SRAM into FPGA
@@ -161,8 +152,8 @@ BEGIN
 					-- 	the two output signals defined are SRAM_OE_N and SRAM_WE_N
 					--	(see PORT declaration above)
 					------------ [[ KARN'S COMMENT ENDS]] -----------
-					SRAM_OE         <=      '1';
-					SRAM_WE         <=      '0';
+					SRAM_OE_N         <=      '1';
+					SRAM_WE_N         <=      '0';
 					----------- [[ KARN'S COMMENT STARTS]] ----------
 					-- * Write cycle timing is also a little different. 
 					--	SRAM_WE_N should not be written LOW before address stabilizes.
@@ -194,21 +185,11 @@ BEGIN
 						STATE <= WRITE_PREP;
 
 				WHEN READ_DONE => 
-					----------- [[ KARN'S COMMENT STARTS]] ----------
-		                        SRAM_OE <= '1';
-					-- * (minor) SRAM_OE and SRAM_WE don't exist
-					-- 	the two output signals defined are SRAM_OE_N and SRAM_WE_N
-					--	(see PORT declaration above)
-					------------ [[ KARN'S COMMENT ENDS]] -----------
+		                        SRAM_OE_N <= '1';
 				        STATE <= IDLE;
 
 				WHEN WRITE_DONE =>
-					----------- [[ KARN'S COMMENT STARTS]] ----------
-					SRAM_WE <= '1';
-					-- * (minor) SRAM_OE and SRAM_WE don't exist
-					-- 	the two output signals defined are SRAM_OE_N and SRAM_WE_N
-					--	(see PORT declaration above)
-					------------ [[ KARN'S COMMENT ENDS]] -----------
+					SRAM_WE_N <= '1';
 					STATE <= IDLE;
 					
 				WHEN OTHERS =>
