@@ -34,7 +34,7 @@ ARCHITECTURE v0 OF SRAM IS
 	TYPE STATE_TYPE IS (
 		IDLE,
 		FETCH,
-		READ_READY,	
+		READ_PREP,	
 		READ_DONE,
 		WRITE_INIT 	-- placeholder for write states
 	);
@@ -48,6 +48,7 @@ ARCHITECTURE v0 OF SRAM IS
 	SIGNAL CE		:	STD_LOGIC;
 	SIGNAL UB		:	STD_LOGIC;
 	SIGNAL LB		:	STD_LOGIC;
+    SIGNAL READ_SIG :   STD_LOGIC_VECTOR(2 DOWNTO 0);  -- READ SIGNAL FOR SRAM
 	
 BEGIN
 	-- Mirror unused internal signals to ports
@@ -61,6 +62,10 @@ BEGIN
 	SRAM_ADHI	<=	ADDR(17 DOWNTO 16);
 	SRAM_ADLO	<=	ADDR(15 DOWNTO 0);
 	
+
+    --Concatenated Signals for Read Operation of SRAM
+    READ_SIG        <=      CTRL_OE & ADHI; 
+        
 	PROCESS (CLOCK)
 	BEGIN
 		IF (RISING_EDGE(CLOCK)) THEN
@@ -82,20 +87,30 @@ BEGIN
 					IF (WE = '1')	THEN
 						STATE <= WRITE_INIT;
 					ELSIF (OE = '1') THEN
-						STATE <= READ_READY;
+						STATE <= READ_PREP;
 					ELSE
 						STATE <= IDLE;
 					END IF;
 				
-				WHEN READ_READY =>
-					-- DO SOMETHING
+				WHEN READ_PREP => -- Hold State until READ_SIG goes down to 0 else move to read_done on Rising edge of CLOCK
 					
-					STATE <= IDLE; -- REMOVE THIS LINE!!!
+					IF(READ_SIG = "000") THEN
+						STATE <= READ_DONE;
+					ELSE 
+				        STATE <= READ_PREP;
+					END IF;
 					
 				WHEN WRITE_INIT =>
 					-- DO SOMETHING
 					
 					STATE <= IDLE; -- REMOVE THIS LINE!!!
+				
+				
+				WHEN READ_DONE => 
+				        STATE <= IDLE;
+					
+				WHEN OTHERS =>
+					STATE <= IDLE;
 					
 			END CASE;
 		END IF;
