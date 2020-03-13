@@ -48,7 +48,7 @@ ARCHITECTURE v0 OF SRAM IS
 	SIGNAL CE		:	STD_LOGIC;
 	SIGNAL UB		:	STD_LOGIC;
 	SIGNAL LB		:	STD_LOGIC;
-        SIGNAL READ_SIG         :       STD_LOGIC_VECTOR(2 DOWNTO 0);  -- READ SIGNAL FOR SRAM
+    SIGNAL READ_SIG :   STD_LOGIC_VECTOR(2 DOWNTO 0);  -- READ SIGNAL FOR SRAM
 	
 BEGIN
 	-- Mirror unused internal signals to ports
@@ -63,8 +63,8 @@ BEGIN
 	SRAM_ADLO	<=	ADDR(15 DOWNTO 0);
 	
 
-        --Concatenated Signals for Read Operation of SRAM
-        READ_SIG        <=      CTRL_OE & ADHI; 
+    --Concatenated Signals for Read Operation of SRAM
+    READ_SIG	<=	CTRL_OE & ADHI; 
         
 	PROCESS (CLOCK)
 	BEGIN
@@ -95,10 +95,10 @@ BEGIN
 				WHEN READ_PREP => -- Hold State until READ_SIG goes down to 0 else move to read_done on Rising edge of CLOCK
 					
 					IF(READ_SIG = "000") THEN
-					   STATE <= READ_DONE;
-				        ELSE 
-					    STATE <= READ_PREP;
-				        END IF;
+						STATE <= READ_DONE;
+					ELSE 
+				        STATE <= READ_PREP;
+					END IF;
 					
 				WHEN WRITE_INIT =>
 					-- DO SOMETHING
