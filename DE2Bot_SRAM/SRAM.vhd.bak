@@ -59,12 +59,20 @@ BEGIN
 	SRAM_UB_N	<= 	NOT	UB;
 	SRAM_LB_N	<=	NOT LB;
 	
-	SRAM_ADHI	<=	ADDR(17 DOWNTO 16);
-	SRAM_ADLO	<=	ADDR(15 DOWNTO 0);
+	-- Use LPM function to drive I/O bus
+	IO_BUS: LPM_BUSTRI
+	GENERIC MAP (
+		lpm_width => 16
+	)
+	PORT MAP (
+		data     => SRAM_DQ,
+		enabledt => !SRAM_OE_N,				-- if HIGH, enable data onto tridata (READ cycle)
+		enabletr =>	!SRAM_WE_N,				-- if HIGH, enable tridata onto data (WRITE cycle)
+		tridata  => IO_DATA
+	);
 	
-
     --Concatenated Signals for Read Operation of SRAM
-    READ_SIG        <=      CTRL_OE & ADHI; 
+    READ_SIG	<=	CTRL_OE & ADHI; 
         
 	PROCESS (CLOCK)
 	BEGIN
@@ -93,6 +101,9 @@ BEGIN
 					END IF;
 				
 				WHEN READ_PREP => -- Hold State until READ_SIG goes down to 0 else move to read_done on Rising edge of CLOCK
+					
+					SRAM_ADHI	<=	ADDR(17 DOWNTO 16);
+					SRAM_ADLO	<=	ADDR(15 DOWNTO 0);
 					
 					IF(READ_SIG = "000") THEN
 						STATE <= READ_DONE;
