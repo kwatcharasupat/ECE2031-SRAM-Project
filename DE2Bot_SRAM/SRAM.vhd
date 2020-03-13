@@ -89,17 +89,7 @@ BEGIN
 				WHEN WARM_UP =>
 					ADDR	<= 	ADHI & IO_DATA;	-- As IO_DATA only contains the address related stuff During WarmUp
 					-- ADLO is contained in IO_DATA
-					-- concat ADHI and IO_DATA to get 18-bit address	
-				
-					----------- [[ KARN'S COMMENT STARTS]] ----------
-					-- * remove these two lines
-					SRAM_ADHI	<=	ADDR(17 DOWNTO 16);
-					SRAM_ADLO	<=	ADDR(15 DOWNTO 0); -- Have the Address Fired
-		
-					-- * WARM_UP is shared between read and write
-					--	the address should not be fired prematurely esp. for write
-					--	since this will cause data corruption
-					------------ [[ KARN'S COMMENT ENDS]] -----------
+					-- concat ADHI and IO_DATA to get 18-bit address.
 				        
 					
 					IF (CTRL_WE = '1')	THEN
