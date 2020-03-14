@@ -42,10 +42,11 @@ ENTITY IO_DECODER IS
     LIN_EN        : OUT STD_LOGIC;
     IRHI_EN		  : OUT STD_LOGIC;
     IRLO_EN       : OUT STD_LOGIC;
-    SRAM_ADHI_EN  : OUT STD_LOGIC;
-    SRAM_ADLOW_EN : OUT STD_LOGIC;
-    SRAM_DATA_EN  : OUT STD_LOGIC;
-    SRAM_CTRL_EN  : OUT STD_LOGIC
+    SRAM_IO_WRITE : OUT STD_LOGIC;
+    SRAM_CRTL_WE  : OUT STD_LOGIC;
+    SRAM_CTRL_OE  : OUT STD_LOGIC;
+    SRAM_ADHI     : OUT STD_LOGIC_VECTOR(1 downto 0);
+    SRAM_CLOCK	  : OUT STD_LOGIC
   );
 
 END ENTITY;
@@ -54,7 +55,7 @@ ARCHITECTURE a OF IO_DECODER IS
 
   SIGNAL  IO_INT  : INTEGER RANGE 0 TO 511;
   
-begin
+BEGIN
 
   IO_INT <= TO_INTEGER(UNSIGNED(IO_CYCLE & IO_ADDR));
   -- note that this results in a three-digit hex number whose 
@@ -92,9 +93,17 @@ begin
   LIN_EN <= '1'       WHEN IO_INT = 16#1C9# ELSE '0';
   IRHI_EN <= '1'      WHEN IO_INT = 16#1D0# ELSE '0';
   IRLO_EN <= '1'      WHEN IO_INT = 16#1D1# ELSE '0';
-  SRAM_CTRL_EN <= '1' WHEN IO_INT = 16#110# ELSE '0';
-  SRAM_DATA_EN <= '1' WHEN IO_INT = 16#111# ELSE '0';
-  SRAM_ADLOW_EN <= '1' WHEN IO_INT = 16#112# ELSE '0';
-  SRAM_ADHI_EN <= '1' WHEN IO_INT = 16#113# ELSE '0';
+  SRAM_IO_WRITE <= '1'WHEN IO_INT = --16#110# <= FETCH ELSE '0' <=IDLE -- ;
+  SRAM_CRTL_WE <= '1' WHEN IO_INT = 16#111# ELSE '0';
+  SRAM_CTRL_OE <= '1' WHEN IO_INT = 16#112# ELSE '0';
+  SRAM_ADHI <= '1' 	  WHEN IO_INT = 16#113# ELSE '0';
+  SRAM_CLOCK <= '1'	  WHEN IO_INT = 16#114# ELSE '0'; --Clock state needs to be checked
       
+  WHEN (IO_INT=1XX) => --IO_CYCLE=1, XX = Address being presented
+	SRAM_CTRL_WE <= '1';
+	SRAM_CTRL_OE = '1'; 
+	SRAM_ADHI <= "01";
+	
+	
+	
 END a;
