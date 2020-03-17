@@ -63,7 +63,7 @@ BEGIN
   --  lower two digits are the I/O address being presented
   -- The lines below decode each valid I/O address ...
         
-  SWITCH_EN <= '1'    WHEN IO_INT = 16#100# ELSE '0';
+  SWITCH_EN <= '1'    WHEN IO_INT = 16#100# ELSE '0'; -- (IO_CYCLE = '1' && IO_ADDR = "00")
   LED_EN <= '1'       WHEN IO_INT = 16#101# ELSE '0';
   TIMER_EN <= '1'     WHEN IO_INT = 16#102# ELSE '0';
   DIG_IN_EN <= '1'    WHEN IO_INT = 16#103# ELSE '0';
@@ -93,16 +93,37 @@ BEGIN
   LIN_EN <= '1'       WHEN IO_INT = 16#1C9# ELSE '0';
   IRHI_EN <= '1'      WHEN IO_INT = 16#1D0# ELSE '0';
   IRLO_EN <= '1'      WHEN IO_INT = 16#1D1# ELSE '0';
-  SRAM_IO_WRITE <= '1'WHEN IO_INT = --16#110# <= FETCH ELSE '0' <=IDLE -- ;
-  SRAM_CRTL_WE <= '1' WHEN IO_INT = 16#111# ELSE '0';
-  SRAM_CTRL_OE <= '1' WHEN IO_INT = 16#112# ELSE '0';
-  SRAM_ADHI <= '1' 	  WHEN IO_INT = 16#113# ELSE '0';
-  SRAM_CLOCK <= '1'	  WHEN IO_INT = 16#114# ELSE '0'; --Clock state needs to be checked
+			 
+  -- IO_ADDR from 0x10 thru 0x1F are for SRAM
+  -- R00 thru R11 have ADDR 0x10 thru 0x13
+			     
+IF (IO_INT > 16#109#) THEN
+      -- SRAM 
+ 	IF (IO_INT < 16#114#) THEN
+	    SRAM_CTRL_WE <= '0';
+	    SRAM_CTRL_OE <= '1';
+	    SRAM_ADHI <= IO_ADDR;
+	ELSIF (????) THEN
+	    -- write stuff
+	ELSE
+	    -- illegal
+	END IF;
+ELSE
+	       -- non-SRAM addresses
+	       SRAM_CTRL_WE <= '0';
+	       SRAM_CTRL_OE <= '0';
+	       SRAM_ADHI <= "00"; -- this doesn't really matter. SRAM_CONTROLLER should never read inputs during such states
+END IF;
+			   
+ -- SRAM_CRTL_WE <= '1' WHEN IO_INT = 16#111# ELSE '0';
+  --SRAM_CTRL_OE <= '1' WHEN IO_INT = 16#112# ELSE '0';
+  --SRAM_ADHI <= '1'	WHEN IO_INT = 16#113# ELSE '0';
+  --SRAM_CLOCK <= '1'  WHEN IO_INT = 16#114# ELSE '0'; --Clock state needs to be checked
       
-  WHEN (IO_INT=1XX) => --IO_CYCLE=1, XX = Address being presented
-	SRAM_CTRL_WE <= '1';
-	SRAM_CTRL_OE = '1'; 
-	SRAM_ADHI <= "01";
+  --WHEN (IO_INT=1XX) => --IO_CYCLE=1, XX = Address being presented
+	--SRAM_CTRL_WE <= '1';
+	--SRAM_CTRL_OE = '1'; 
+	--SRAM_ADHI <= "01";
 	
 	
 	
