@@ -10,11 +10,11 @@ USE LPM.LPM_COMPONENTS.ALL;
 
 ENTITY SRAM_CONTROLLER IS
 	PORT (
-		IO_WRITE		:	IN STD_LOGIC;
-		CTRL_WE			:	IN STD_LOGIC;
-		CTRL_OE			:	IN STD_LOGIC;
-		ADHI			:	IN STD_LOGIC_VECTOR(1 DOWNTO 0);
-		CLOCK			:	IN STD_LOGIC;
+		IO_WRITE		:	IN STD_LOGIC;				-- from SCOMP
+		CTRL_WE			:	IN STD_LOGIC;				-- from IO_DECODER
+		CTRL_OE			:	IN STD_LOGIC;				-- from IO_DECODER
+		ADHI			:	IN STD_LOGIC_VECTOR(1 DOWNTO 0);	-- from IO_DECODER
+		CLOCK			:	IN STD_LOGIC;				-- from external (could be SCOMP)
 		
 		SRAM_CE_N		:	OUT STD_LOGIC;
 		SRAM_WE_N		:	OUT STD_LOGIC; --WE USE THIS
@@ -24,8 +24,8 @@ ENTITY SRAM_CONTROLLER IS
 		SRAM_ADLO		:	OUT STD_LOGIC_VECTOR(15 DOWNTO 0); -- WE USE THIS
 		SRAM_ADHI		:	OUT STD_LOGIC_VECTOR(1 DOWNTO 0); -- WE USE THIS
 		
-		SRAM_DQ			:	INOUT STD_LOGIC_VECTOR(15 DOWNTO 0);
-		IO_DATA			:	INOUT STD_LOGIC_VECTOR(15 DOWNTO 0)
+		SRAM_DQ			:	INOUT STD_LOGIC_VECTOR(15 DOWNTO 0);	-- to/from SRAM hardware
+		IO_DATA			:	INOUT STD_LOGIC_VECTOR(15 DOWNTO 0)	-- to/from SCOMP
 	);
 END SRAM_CONTROLLER;
 
@@ -49,7 +49,9 @@ ARCHITECTURE v0 OF SRAM_CONTROLLER IS
 	SIGNAL CE		:	STD_LOGIC;
 	SIGNAL UB		:	STD_LOGIC;
 	SIGNAL LB		:	STD_LOGIC;
-    SIGNAL READ_SIG :   STD_LOGIC_VECTOR(2 DOWNTO 0);  -- READ SIGNAL FOR SRAM 
+    	SIGNAL READ_SIG :   STD_LOGIC_VECTOR(2 DOWNTO 0);  -- READ SIGNAL FOR SRAM 
+	SIGNAL DT_ENABLE	:	STD_LOGIC;
+	SIGNAL TR_ENABLE	:	STD_LOGIC;
 	
 BEGIN
 	-- Mirror unused internal signals to ports
@@ -67,9 +69,10 @@ BEGIN
 	)
 	PORT MAP (
 		data     => SRAM_DQ,
-		enabledt => OE, -- if HIGH, enable data onto tridata (READ cycle)
-		enabletr => WE,	-- if HIGH, enable tridata onto data (WRITE cycle)
-		tridata  => IO_DATA
+		enabledt => DT_ENABLE, -- if HIGH, enable data onto tridata (READ cycle)
+		enabletr => TR_ENABLE,	-- if HIGH, enable tridata onto result (WRITE cycle)
+		tridata  => IO_DATA,
+		result => DATA
 	);
 	
     --Concatenated Signals for Read Operation of SRAM
@@ -80,6 +83,10 @@ BEGIN
 		IF (RISING_EDGE(CLOCK)) THEN
 			CASE STATE IS
 				WHEN IDLE =>
+				
+					DT_ENABLE <= '0';
+					TR_ENABLE <= '0';
+				
 					IF (IO_WRITE = '1') THEN
 						STATE <= FETCH;
 					ELSE
@@ -91,7 +98,9 @@ BEGIN
 					-- ADLO is contained in IO_DATA
 					-- concat ADHI and IO_DATA to get 18-bit address.
 				        
-					
+					DT_ENABLE <= '0';
+					TR_ENABLE <= '0';			
+		
 					IF (CTRL_WE = '1')	THEN
 						STATE <= WRITE_PREP;
 					ELSIF (CTRL_OE = '1' AND CTRL_WE = '0') THEN
@@ -107,11 +116,12 @@ BEGIN
 					SRAM_OE_N         <=      '0';
 					SRAM_WE_N         <=      '1';
 
-			
-
+					
+					DT_ENABLE <= '1';
+					-- IO_DATA         <=      SRAM_DQ;  
+					
+					----------- [[ RESOLVED! ]] ----------
 					----------- [[ KARN'S COMMENT STARTS]] ----------
-					IO_DATA         <=      SRAM_DQ;  
-
 					-- * If we were not using LPM_BUSTRI (see below)
 					--	this should be IO_DATA <= SRAM_DQ since we are reading from SRAM into FPGA
 					-- **BUT**
