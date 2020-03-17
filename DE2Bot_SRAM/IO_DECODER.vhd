@@ -118,16 +118,5 @@ ELSE
 	       SRAM_ADHI <= "00"; -- this doesn't really matter. SRAM_CONTROLLER should never read inputs during such states
 END IF;
 			   
- -- SRAM_CRTL_WE <= '1' WHEN IO_INT = 16#111# ELSE '0';
-  --SRAM_CTRL_OE <= '1' WHEN IO_INT = 16#112# ELSE '0';
-  --SRAM_ADHI <= '1'	WHEN IO_INT = 16#113# ELSE '0';
-  --SRAM_CLOCK <= '1'  WHEN IO_INT = 16#114# ELSE '0'; --Clock state needs to be checked
-      
-  --WHEN (IO_INT=1XX) => --IO_CYCLE=1, XX = Address being presented
-	--SRAM_CTRL_WE <= '1';
-	--SRAM_CTRL_OE = '1'; 
-	--SRAM_ADHI <= "01";
-	
-	
 	
 END a;
