@@ -97,12 +97,15 @@ BEGIN
   -- IO_ADDR from 0x10 thru 0x1F are for SRAM
   -- R00 thru R11 have ADDR 0x10 thru 0x13
 			     
+-- SRAM: 0b0001 0000 thru 0b0001 1111
+-- SRAM read: 0b0001 0000 thru 0b 0001 0011
+			     
 IF (IO_INT > 16#109#) THEN
       -- SRAM 
  	IF (IO_INT < 16#114#) THEN
 	    SRAM_CTRL_WE <= '0';
 	    SRAM_CTRL_OE <= '1';
-	    SRAM_ADHI <= IO_ADDR;
+	    SRAM_ADHI <= IO_ADDR(1 DOWNTO 0);
 	ELSIF (????) THEN
 	    -- write stuff
 	ELSE
