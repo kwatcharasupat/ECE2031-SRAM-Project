@@ -111,38 +111,36 @@ BEGIN
     -- 0x1A     0b 0001 1010    WD10
     -- 0x1B     0b 0001 1011    WD11
     
-    PROCESS (IO_INT)
-	BEGIN
-		IF (IO_INT > 16#109#) THEN
-			-- Address in SRAM range 0x10 thru 0x1F
-			IF (IO_INT < 16#114#) THEN
-				-- Address in READ range 0x10 thru 0x13
-				SRAM_CTRL_WE 	<= '0';
-				SRAM_CTRL_OE 	<= '1';
-				SRAM_ADHI 		<= IO_ADDR(1 DOWNTO 0);
-			ELSIF (IO_INT < 16#118#) THEN
-				-- Address in WRITE ADDRESS range 0x14 thru 0x17
-				SRAM_CTRL_WE 	<= '1';
-				SRAM_CTRL_OE 	<= '0'; -- use this a write 'lock' signal
-				SRAM_ADHI 		<= IO_ADDR(1 DOWNTO 0);
-			ELSIF (IO_INT < 16#11C#) THEN
-				-- Address in WRITE DATA range 0x14 thru 0x17
-				SRAM_CTRL_WE 	<= '1';
-				SRAM_CTRL_OE 	<= '1'; -- use this a write 'lock' signal
-				SRAM_ADHI 		<= IO_ADDR(1 DOWNTO 0);
-			ELSE
-				-- undefined address
-				-- disable everything and set ADHI = "00"
-				SRAM_CTRL_WE 	<= '0';
-				SRAM_CTRL_OE 	<= '0';
-				SRAM_ADHI 		<= "00";
-			END IF;
+                 
+	IF (IO_INT > 16#109#) THEN
+		-- Address in SRAM range 0x10 thru 0x1F
+		IF (IO_INT < 16#114#) THEN
+			-- Address in READ range 0x10 thru 0x13
+			SRAM_CTRL_WE 	<= '0';
+			SRAM_CTRL_OE 	<= '1';
+			SRAM_ADHI 		<= IO_ADDR(1 DOWNTO 0);
+		ELSIF (IO_INT < 16#118#) THEN
+			-- Address in WRITE ADDRESS range 0x14 thru 0x17
+			SRAM_CTRL_WE 	<= '1';
+			SRAM_CTRL_OE 	<= '0'; -- use this a write 'lock' signal
+			SRAM_ADHI 		<= IO_ADDR(1 DOWNTO 0);
+		ELSIF (IO_INT < 16#11C#) THEN
+			-- Address in WRITE DATA range 0x14 thru 0x17
+			SRAM_CTRL_WE 	<= '1';
+			SRAM_CTRL_OE 	<= '1'; -- use this a write 'lock' signal
+			SRAM_ADHI 		<= IO_ADDR(1 DOWNTO 0);
 		ELSE
-			   -- non-SRAM addresses
-			   SRAM_CTRL_WE 	<= '0';
-			   SRAM_CTRL_OE 	<= '0';
-			   SRAM_ADHI 		<= "00"; -- this doesn't really matter. SRAM_CONTROLLER should never read inputs during such states
+			-- undefined address
+			-- disable everything and set ADHI = "00"
+			SRAM_CTRL_WE 	<= '0';
+			SRAM_CTRL_OE 	<= '0';
+			SRAM_ADHI 		<= "00";
 		END IF;
-	END PROCESS;
+	ELSE
+           -- non-SRAM addresses
+           SRAM_CTRL_WE 	<= '0';
+           SRAM_CTRL_OE 	<= '0';
+           SRAM_ADHI 		<= "00"; -- this doesn't really matter. SRAM_CONTROLLER should never read inputs during such states
+	END IF;
     
 END a;

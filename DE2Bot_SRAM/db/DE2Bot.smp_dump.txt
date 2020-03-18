@@ -1,11 +1,12 @@
 
-State Machine - |DE2bot|SRAM:inst2|STATE
-Name STATE.WRITE_INIT STATE.READ_DONE STATE.READ_PREP STATE.FETCH STATE.IDLE 
-STATE.IDLE 0 0 0 0 0 
-STATE.FETCH 0 0 0 1 1 
-STATE.READ_PREP 0 0 1 0 1 
-STATE.READ_DONE 0 1 0 0 1 
-STATE.WRITE_INIT 1 0 0 0 1 
+State Machine - |DE2bot|SRAM_CONTROLLER:inst3|STATE
+Name STATE.WRITE_DONE STATE.WRITE_PREP STATE.READ_DONE STATE.READ_PREP STATE.WARM_UP STATE.IDLE 
+STATE.IDLE 0 0 0 0 0 0 
+STATE.WARM_UP 0 0 0 0 1 1 
+STATE.READ_PREP 0 0 0 1 0 1 
+STATE.READ_DONE 0 0 1 0 0 1 
+STATE.WRITE_PREP 0 1 0 0 0 1 
+STATE.WRITE_DONE 1 0 0 0 0 1 
 
 State Machine - |DE2bot|UART_INTERFACE:inst1|UART:inst2|uart_rx_state
 Name uart_rx_state.rx_get_stop_bit uart_rx_state.rx_get_data uart_rx_state.rx_get_start_bit uart_rx_state.rx_wait_start_synchronise 

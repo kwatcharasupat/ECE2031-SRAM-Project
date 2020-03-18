@@ -5,19 +5,19 @@ Timing Analyzer Summary
 Type           : Worst-case tsu
 Slack          : N/A
 Required Time  : None
-Actual Time    : 11.599 ns
-From           : SRAM_DQ[5]
-To             : SCOMP:inst8|AC[5]
+Actual Time    : 10.706 ns
+From           : KEY[0]
+To             : UART_INTERFACE:inst1|UART:inst2|uart_rx_count[0]
 From Clock     : --
-To Clock       : CLOCK_50
+To Clock       : CLOCK_27
 Failed Paths   : 0
 
 Type           : Worst-case tco
 Slack          : N/A
 Required Time  : None
-Actual Time    : 14.498 ns
-From           : LEDS:inst59|BLED[3]
-To             : LEDG[3]
+Actual Time    : 12.937 ns
+From           : QUAD_HEX:inst57|HEX_DISP:inst22|latched_hex[2]
+To             : HEX1[2]
 From Clock     : CLOCK_50
 To Clock       : --
 Failed Paths   : 0
@@ -25,62 +25,62 @@ Failed Paths   : 0
 Type           : Worst-case th
 Slack          : N/A
 Required Time  : None
-Actual Time    : 4.038 ns
-From           : SW[12]
-To             : DIG_IN:inst5|B_DI[12]
+Actual Time    : 4.050 ns
+From           : SW[10]
+To             : DIG_IN:inst5|B_DI[10]
 From Clock     : --
 To Clock       : CLOCK_50
 Failed Paths   : 0
 
-Type           : Clock Setup: 'altpll0:inst|altpll:altpll_component|_clk0'
-Slack          : 3.933 ns
-Required Time  : 12.50 MHz ( period = 80.000 ns )
-Actual Time    : N/A
-From           : SRAM:inst2|OE
-To             : SCOMP:inst8|AC[15]
-From Clock     : altpll0:inst|altpll:altpll_component|_clk2
-To Clock       : altpll0:inst|altpll:altpll_component|_clk0
-Failed Paths   : 0
-
 Type           : Clock Setup: 'altpll0:inst|altpll:altpll_component|_clk2'
-Slack          : 6.701 ns
+Slack          : 0.552 ns
 Required Time  : 100.00 MHz ( period = 10.000 ns )
 Actual Time    : N/A
-From           : SCOMP:inst8|IO_WRITE_INT
-To             : SRAM:inst2|STATE.IDLE
+From           : DIG_IN:inst6|B_DI[2]
+To             : SRAM_CONTROLLER:inst3|SRAM_DQ[2]~reg0
 From Clock     : altpll0:inst|altpll:altpll_component|_clk0
 To Clock       : altpll0:inst|altpll:altpll_component|_clk2
 Failed Paths   : 0
 
+Type           : Clock Setup: 'altpll0:inst|altpll:altpll_component|_clk0'
+Slack          : 3.785 ns
+Required Time  : 12.50 MHz ( period = 80.000 ns )
+Actual Time    : N/A
+From           : SRAM_CONTROLLER:inst3|DT_ENABLE
+To             : SCOMP:inst8|AC[14]
+From Clock     : altpll0:inst|altpll:altpll_component|_clk2
+To Clock       : altpll0:inst|altpll:altpll_component|_clk0
+Failed Paths   : 0
+
 Type           : Clock Setup: 'altpll0:inst|altpll:altpll_component|_clk1'
-Slack          : 32.206 ns
+Slack          : 33.138 ns
 Required Time  : 25.00 MHz ( period = 40.000 ns )
 Actual Time    : N/A
-From           : SLCD:inst55|data_in[1]
-To             : SLCD:inst55|LCD_D[6]
+From           : SLCD:inst55|data_in[10]
+To             : SLCD:inst55|LCD_D[3]
 From Clock     : altpll0:inst|altpll:altpll_component|_clk0
 To Clock       : altpll0:inst|altpll:altpll_component|_clk1
 Failed Paths   : 0
 
 Type           : Clock Setup: 'altpll1:inst11|altpll:altpll_component|_clk0'
-Slack          : 63.086 ns
+Slack          : 63.700 ns
 Required Time  : 14.73 MHz ( period = 67.901 ns )
-Actual Time    : 207.68 MHz ( period = 4.815 ns )
-From           : UART_INTERFACE:inst1|UART:inst2|baud_counter[2]
-To             : UART_INTERFACE:inst1|UART:inst2|uart_rx_count[0]
+Actual Time    : Restricted to 235.07 MHz ( period = 4.254 ns )
+From           : UART_INTERFACE:inst1|uart_dcfifo_in:inst8|dcfifo:dcfifo_component|dcfifo_qtl1:auto_generated|altsyncram_9hu:fifo_ram|ram_block14a0~portb_address_reg4
+To             : UART_INTERFACE:inst1|UART:inst2|uart_tx_data_block[2]
 From Clock     : altpll1:inst11|altpll:altpll_component|_clk0
 To Clock       : altpll1:inst11|altpll:altpll_component|_clk0
 Failed Paths   : 0
 
 Type           : Clock Hold: 'altpll0:inst|altpll:altpll_component|_clk0'
-Slack          : -4.899 ns
+Slack          : -4.435 ns
 Required Time  : 12.50 MHz ( period = 80.000 ns )
 Actual Time    : N/A
-From           : UART_INTERFACE:inst1|uart_dcfifo_out:inst14|dcfifo:dcfifo_component|dcfifo_31m1:auto_generated|dffpipe_adc:rs_bwp|dffe15a[5]
-To             : UART_INTERFACE:inst1|lpm_dff_uart0:inst15|lpm_ff:lpm_ff_component|dffs[5]
+From           : UART_INTERFACE:inst1|uart_dcfifo_out:inst14|dcfifo:dcfifo_component|dcfifo_31m1:auto_generated|dffpipe_adc:rs_bwp|dffe15a[1]
+To             : UART_INTERFACE:inst1|lpm_dff_uart0:inst15|lpm_ff:lpm_ff_component|dffs[1]
 From Clock     : altpll0:inst|altpll:altpll_component|_clk0
 To Clock       : altpll0:inst|altpll:altpll_component|_clk0
-Failed Paths   : 165
+Failed Paths   : 232
 
 Type           : Clock Hold: 'altpll0:inst|altpll:altpll_component|_clk1'
 Slack          : 0.391 ns
@@ -96,8 +96,8 @@ Type           : Clock Hold: 'altpll0:inst|altpll:altpll_component|_clk2'
 Slack          : 0.391 ns
 Required Time  : 100.00 MHz ( period = 10.000 ns )
 Actual Time    : N/A
-From           : SRAM:inst2|OE
-To             : SRAM:inst2|OE
+From           : SRAM_CONTROLLER:inst3|SRAM_DQ[13]~reg0
+To             : SRAM_CONTROLLER:inst3|SRAM_DQ[13]~reg0
 From Clock     : altpll0:inst|altpll:altpll_component|_clk2
 To Clock       : altpll0:inst|altpll:altpll_component|_clk2
 Failed Paths   : 0
@@ -120,7 +120,7 @@ From           :
 To             : 
 From Clock     : 
 To Clock       : 
-Failed Paths   : 165
+Failed Paths   : 232
 
 --------------------------------------------------------------------------------------
 

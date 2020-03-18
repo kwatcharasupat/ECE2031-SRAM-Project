@@ -1616,39 +1616,6 @@ altpll0:inst|altpll:altpll_component
 
 # end
 # entity
-IO_DECODER
-# storage
-db|DE2Bot.(5).cnf
-db|DE2Bot.(5).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-io_decoder.vhd
-48f89c9d93df2f34ed363cb73ca5
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# hierarchies {
-IO_DECODER:inst24
-}
-# lmf
-c:|altera|91sp2|quartus|lmf|maxplus2.lmf
-a36c8ec425c8a2589af98b2d4daabc3
-# macro_sequence
-
-# end
-# entity
 SCOMP
 # storage
 db|DE2Bot.(6).cnf
@@ -6841,59 +6808,6 @@ a36c8ec425c8a2589af98b2d4daabc3
 
 # end
 # entity
-DE2bot
-# storage
-db|DE2Bot.(0).cnf
-db|DE2Bot.(0).cnf
-# case_insensitive
-# source_file
-de2bot.bdf
-85d4673412f92e7421e5c6927f5456a6
-26
-# internal_option {
-BLOCK_DESIGN_NAMING
-AUTO
-}
-# hierarchies {
-|
-}
-# macro_sequence
-
-# end
-# entity
-SRAM
-# storage
-db|DE2Bot.(59).cnf
-db|DE2Bot.(59).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-sram.vhd
-4cdc2ea8df461fca63064f6af8b7481
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# hierarchies {
-SRAM:inst2
-}
-# lmf
-c:|altera|91sp2|quartus|lmf|maxplus2.lmf
-a36c8ec425c8a2589af98b2d4daabc3
-# macro_sequence
-
-# end
-# entity
 LPM_BUSTRI
 # storage
 db|DE2Bot.(60).cnf
@@ -7014,7 +6928,93 @@ DATA0
 3
 }
 # hierarchies {
-SRAM:inst2|lpm_bustri:IO_BUS
+SRAM_CONTROLLER:inst3|lpm_bustri:IO_BUS
+}
+# macro_sequence
+
+# end
+# entity
+IO_DECODER
+# storage
+db|DE2Bot.(5).cnf
+db|DE2Bot.(5).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+io_decoder.vhd
+3d556a826e33fa3ace3b7f737d90ad
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# hierarchies {
+IO_DECODER:inst24
+}
+# lmf
+c:|altera|91sp2|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+SRAM_CONTROLLER
+# storage
+db|DE2Bot.(59).cnf
+db|DE2Bot.(59).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+sram_controller.vhd
+9f10a92ec4cbc7a98fd8d2c5cef7c9a
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# hierarchies {
+SRAM_CONTROLLER:inst3
+}
+# lmf
+c:|altera|91sp2|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+DE2bot
+# storage
+db|DE2Bot.(0).cnf
+db|DE2Bot.(0).cnf
+# case_insensitive
+# source_file
+de2bot.bdf
+9d8b15fe2791419ed8cc54e9fc7735b
+26
+# internal_option {
+BLOCK_DESIGN_NAMING
+AUTO
+}
+# hierarchies {
+|
 }
 # macro_sequence
 
