@@ -42,10 +42,11 @@ ENTITY IO_DECODER IS
     LIN_EN        : OUT STD_LOGIC;
     IRHI_EN		  : OUT STD_LOGIC;
     IRLO_EN       : OUT STD_LOGIC;
-    SRAM_ADHI_EN  : OUT STD_LOGIC;
-    SRAM_ADLOW_EN : OUT STD_LOGIC;
-    SRAM_DATA_EN  : OUT STD_LOGIC;
-    SRAM_CTRL_EN  : OUT STD_LOGIC
+    SRAM_IO_WRITE : OUT STD_LOGIC;
+    SRAM_CRTL_WE  : OUT STD_LOGIC;
+    SRAM_CTRL_OE  : OUT STD_LOGIC;
+    SRAM_ADHI     : OUT STD_LOGIC_VECTOR(1 downto 0);
+    SRAM_CLOCK	  : OUT STD_LOGIC
   );
 
 END ENTITY;
@@ -54,7 +55,7 @@ ARCHITECTURE a OF IO_DECODER IS
 
   SIGNAL  IO_INT  : INTEGER RANGE 0 TO 511;
   
-begin
+BEGIN
 
   IO_INT <= TO_INTEGER(UNSIGNED(IO_CYCLE & IO_ADDR));
   -- note that this results in a three-digit hex number whose 
@@ -62,7 +63,7 @@ begin
   --  lower two digits are the I/O address being presented
   -- The lines below decode each valid I/O address ...
         
-  SWITCH_EN <= '1'    WHEN IO_INT = 16#100# ELSE '0';
+  SWITCH_EN <= '1'    WHEN IO_INT = 16#100# ELSE '0'; -- (IO_CYCLE = '1' && IO_ADDR = "00")
   LED_EN <= '1'       WHEN IO_INT = 16#101# ELSE '0';
   TIMER_EN <= '1'     WHEN IO_INT = 16#102# ELSE '0';
   DIG_IN_EN <= '1'    WHEN IO_INT = 16#103# ELSE '0';
@@ -92,9 +93,30 @@ begin
   LIN_EN <= '1'       WHEN IO_INT = 16#1C9# ELSE '0';
   IRHI_EN <= '1'      WHEN IO_INT = 16#1D0# ELSE '0';
   IRLO_EN <= '1'      WHEN IO_INT = 16#1D1# ELSE '0';
-  SRAM_CTRL_EN <= '1' WHEN IO_INT = 16#110# ELSE '0';
-  SRAM_DATA_EN <= '1' WHEN IO_INT = 16#111# ELSE '0';
-  SRAM_ADLOW_EN <= '1' WHEN IO_INT = 16#112# ELSE '0';
-  SRAM_ADHI_EN <= '1' WHEN IO_INT = 16#113# ELSE '0';
-      
+			 
+  -- IO_ADDR from 0x10 thru 0x1F are for SRAM
+  -- R00 thru R11 have ADDR 0x10 thru 0x13
+			     
+-- SRAM: 0b0001 0000 thru 0b0001 1111
+-- SRAM read: 0b0001 0000 thru 0b 0001 0011
+			     
+IF (IO_INT > 16#109#) THEN
+      -- SRAM 
+ 	IF (IO_INT < 16#114#) THEN
+	    SRAM_CTRL_WE <= '0';
+	    SRAM_CTRL_OE <= '1';
+	    SRAM_ADHI <= IO_ADDR(1 DOWNTO 0);
+	ELSIF (????) THEN
+	    -- write stuff
+	ELSE
+	    -- illegal
+	END IF;
+ELSE
+	       -- non-SRAM addresses
+	       SRAM_CTRL_WE <= '0';
+	       SRAM_CTRL_OE <= '0';
+	       SRAM_ADHI <= "00"; -- this doesn't really matter. SRAM_CONTROLLER should never read inputs during such states
+END IF;
+			   
+	
 END a;
