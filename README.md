@@ -19,7 +19,7 @@ To-do Format: [x] [task] [in-charge]
 - [ ] Sleep 8 hours a day
 - [ ] Write cycle UML [Felicia & Jacques]
 - [ ] SRAM write VHDL [Siddhanta & Segev]
-- [ ] IO_DECODER write VHDL [Karn]
+- [x] IO_DECODER write VHDL [Karn]
 
 # Spring 'Break' Week 2 (23 Mar 29 Mar)
 
