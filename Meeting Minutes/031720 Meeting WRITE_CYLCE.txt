@@ -1,0 +1,110 @@
+LOAD 	sram_addr_low
+OUT	SRAM_WA01 ; this should trigger write cycle and SRAM stay in ready-to-read state until data comes in
+LOAD	my_data	  ; MEM(data) goes into AC
+OUT	SRAM_WD01 ; this actuall passes data into the SRAM
+ADDI    1
+
+-------------------------
+50 MHz 			50 MHz <=> 20 ns
+SCOMP			SRAM				IO_DECODER
+
+fetch(LOAD addr)	idle
+decode(LOAD addr)	idle
+execute(LOAD addr )	idle
+		
+fetch(OUT WA)		idle
+decode(OUT WA)		idle {
+			  state <= warm_up
+			}
+ex_out(OUT WA)		warm_up {
+			  state <= write_addr_prep
+			  (internally)
+	  		  ADDR <= latched 
+			  WE <= latched as '1'
+			  OE <= ???
+			}
+ex_out2(OUT WA)		write_addr_prep {		CTRL_OE <= '0'
+			  SRAM_ADHI <= ADDR[hi]
+			  SRAM_ADLO <= ADDR[lo]
+			}
+
+fetch(LOAD data)	write_we_assert {
+			  SRAM_WE_N <= NOT(WE)
+			  
+			  state <= write_wait
+			}
+
+decode(LOAD data)	write_wait {
+
+			  -- DATA <= IO_DATA
+			  TR_ENABLE <= '1'
+		          SRAM_DQ <= DATA
+
+			  if (CTRL_OE) -- this comes from IO_DECODER
+				state <= write_lock
+			  else
+				state <= write_wait
+			}
+
+execute(LOAD data)	write_wait
+
+fetch(OUT WD)		write_wait
+
+decode(OUT WD){
+  IO_WRITE <= '1'
+}			write_wait // IO_DATA flows into SRAM_DQ
+
+----- make sure no more random data flows in after this -----
+
+ex_out(OUT WD) {					
+  IO_CYCLE <= '1'
+}			write_wait			
+							if (IO_ADDR is in WD_list and IO_CYCLE == '1') {
+							  CTRL_OE <= '1'
+							}
+
+ex_out2(OUT WD)	 {
+  IO_CYCLE <= '0'
+}			write_lock {
+			  WE <= '0'
+			  SRAM_WE_N <= NOT(WE)
+			}
+
+fetch (ADDI)	
+
+--------------------------------------
+
+0x10 = 0b0001 0000 R00
+0x11 = 0b0001 0001 R01
+0x12 = 0b0001 0010 R10
+0x13 = 0b0001 0011 R11
+
+0x14 = 0b0001 0100 WA00
+0x15 = 0b0001 0101 WA01
+0x16 = 0b0001 0110 WA10
+0x17 = 0b0001 0111 WA11
+
+0x18 = 0b0010 0100 WD00
+0x19 = 0b0010 0101 WD01
+0x1A = 0b0010 0110 WD10
+0x1B = 0b0010 0111 WD11
+
+0x1C
+0x1D
+0x1E
+0x1F
+
+
+
+
+
+
+
+
+
+
+-------------------------
+
+LOAD 	sram_addr_low
+OUT 	SRAM_R01;	this trigger IO_WRITE
+IN	SRAM_R01;	this doesn't trigger IO_WRITE
