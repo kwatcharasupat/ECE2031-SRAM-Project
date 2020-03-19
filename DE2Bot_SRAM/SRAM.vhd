@@ -36,8 +36,10 @@ ARCHITECTURE v0 OF SRAM_CONTROLLER IS
 		WARM_UP,
 		READ_PREP,	
 		READ_DONE,
-		WRITE_PREP, 	-- placeholder for write states
-		WRITE_DONE
+		WRITE_ADDR_PREP, 	-- placeholder for write states
+		WRITE_WE_ASSERT,
+		WRITE_WAIT,	        -- Wait for signal  
+		WRITE_DONE          -- Clean Up!
 	);
 	
 	-- Declare internal signals
@@ -102,7 +104,8 @@ BEGIN
 					TR_ENABLE <= '0';			
 		
 					IF (CTRL_WE = '1')	THEN
-						STATE <= WRITE_PREP;
+						WE <= '1';
+						STATE <= WRITE_ADDR_PREP;
 					ELSIF (CTRL_OE = '1' AND CTRL_WE = '0') THEN
 						STATE <= READ_PREP;
 					ELSE
@@ -143,7 +146,7 @@ BEGIN
 						STATE <= READ_PREP;
 					END IF;
 					
-				WHEN WRITE_PREP =>
+				WHEN WRITE_ADDR_PREP =>
 					--Current State Handling...
 					SRAM_ADHI	<=	ADDR(17 DOWNTO 16);
 					SRAM_ADLO	<=	ADDR(15 DOWNTO 0); -- Keep the Address Fired
@@ -165,7 +168,7 @@ BEGIN
 					------------ [[ KARN'S COMMENT ENDS]] -----------
 					
 					----------- [[ KARN'S COMMENT STARTS]] ----------
-					SRAM_DQ         <=      IO_DATA;  --That's for the SCOMP To get connected to the GPIO that goes to the SRAM.
+					--SRAM_DQ         <=      IO_DATA;  --That's for the SCOMP To get connected to the GPIO that goes to the SRAM.
 	                                -- * Both SRAM_DQ and IO_DATA are tristate bus which are handled by LPM_BUSTRI
 					--	when WE is set to high, the LPM_BUSTRI automatically let IO_DATA flows INTO SRAM_DQ
 					-- * Will have to fix this enabling later coz it breaks timing requirement.
@@ -178,20 +181,32 @@ BEGIN
 					--	** For reference, see http://www.pldworld.com/_altera/html/_sw/q2help/source/mega/mega_file_lpm_bustri.htm
 					------------ [[ KARN'S COMMENT ENDS]] -----------
 
-
+                    STATE <= WRITE_WE_ASSERT;
 					--Next State Logic Set Up!
-					IF (CTRL_WE = '0') THEN
-						STATE <= WRITE_DONE;
-					ELSE 
-						STATE <= WRITE_PREP;
-					END IF;
-
+					--IF (CTRL_WE = '0') THEN
+					--	STATE <= WRITE_DONE;
+					--ELSE 
+					--	STATE <= WRITE_PREP;
+					--END IF;
+				WHEN WRITE_WE_ASSERT =>
+				    SRAM_WE_N <= NOT(WE);
+				    STATE <= WRITE_WAIT;
+				WHEN WRITE_WAIT =>
+					--DATA <= IO_DATA
+					TR_ENABLE <= '1';
+					SRAM_DQ <= DATA;
+					IF (CTRL_OE = '1') THEN
+						STATE <= WRITE_LOCK;
+				    ELSE
+						STATE <= WRITE_WAIT;
+						
 				WHEN READ_DONE =>
 					SRAM_OE_N <= '1';
 				    STATE <= IDLE;
 
-				WHEN WRITE_DONE =>
-					SRAM_WE_N <= '1';
+				WHEN WRITE_LOCK =>
+					WE <= '0';
+					SRAM_WE_N <= NOT(WE);
 					STATE <= IDLE;
 					
 				WHEN OTHERS =>
@@ -202,4 +217,3 @@ BEGIN
 	END PROCESS;
 
 END v0;
-	
