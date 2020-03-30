@@ -5,72 +5,80 @@ OUT	SRAM_WD01 ; this actuall passes data into the SRAM
 ADDI    1
 
 -------------------------
-50 MHz 			50 MHz <=> 20 ns
+50 MHz 			50 MHz <=> 20 ns		-- frequecy <=> period
 SCOMP			SRAM				IO_DECODER
 
-fetch(LOAD addr)	idle
-decode(LOAD addr)	idle
-execute(LOAD addr )	idle
+fetch(LOAD addr)	idle				-- inputs for IO_WRITE 
+decode(LOAD addr)	idle				--
+execute(LOAD addr )	idle				--
 		
-fetch(OUT WA)		idle
-decode(OUT WA)		idle {
-			  state <= warm_up
-			}
-ex_out(OUT WA)		warm_up {
-			  state <= write_addr_prep
+  
+	{
+  		state <= warm_up			-- when the is warm_up.
+	}
+ex_out(OUT WA)		warm_up 			-- execute warm_up.
+			{
+			  state <= write_addr_prep	-- when the state is write_addr_prep
 			  (internally)
-	  		  ADDR <= latched 
-			  WE <= latched as '1'
-			  OE <= ???
+	  		  ADDR <= latched 		-- lanch on the header
+			  WE <= latched as '1'		-- write when latch is '1'
+			  OE <= ???			-- the decoder is ???
 			}
-ex_out2(OUT WA)		write_addr_prep {		CTRL_OE <= '0'
-			  SRAM_ADHI <= ADDR[hi]
-			  SRAM_ADLO <= ADDR[lo]
+ex_out2(OUT WA)		write_addr_prep 		-- when is ex_out2 in out wa the state is write_addr_prep.
+			{	CTRL_OE <= '0'		-- when CTRL_OE is '0'.
+			  SRAM_ADHI <= ADDR[hi]		-- the high address go to SRAM_ADHI.
+			  SRAM_ADLO <= ADDR[lo]		-- the low address got to SRAM_ADLO.
 			}
 
-fetch(LOAD data)	write_we_assert {
-			  SRAM_WE_N <= NOT(WE)
+fetch(LOAD data)	write_we_assert 		-- when fetch load data to write_we_assert 
+			{
+			  SRAM_WE_N <= NOT(WE)		-- SRAM_WE_N is no writting.
 			  
-			  state <= write_wait
+			  state <= write_wait		-- the is change to write_wait.
 			}
 
-decode(LOAD data)	write_wait {
+decode(LOAD data)	write_wait 			-- when the decode load data from write_wait.
+			{
+			  -- DATA <= IO_DATA		-- data get change to IO_DATA.	
+			  TR_ENABLE <= '1'		-- the TR_ENABLE become '1'.
+		          SRAM_DQ <= DATA		-- SRAM_DQ get DATA.
 
-			  -- DATA <= IO_DATA
-			  TR_ENABLE <= '1'
-		          SRAM_DQ <= DATA
-
-			  if (CTRL_OE) -- this comes from IO_DECODER
-				state <= write_lock
-			  else
-				state <= write_wait
+			  if (CTRL_OE) -- this comes from IO_DECODER		
+				state <= write_lock	-- the state is write_lock.
+			  else				-- If not
+				state <= write_wait	-- the state is write_wait.
 			}
 
-execute(LOAD data)	write_wait
+execute(LOAD data)	write_wait			-- when data is load the state is write_wait.
 
-fetch(OUT WD)		write_wait
+fetch(OUT WD)		write_wait			-- when OUT WD.
 
-decode(OUT WD){
-  IO_WRITE <= '1'
-}			write_wait // IO_DATA flows into SRAM_DQ
+decode(OUT WD)						
+	{
+  		IO_WRITE <= '1'				-- when the state is OUT WD the IO_write gets '1'.
+	}			write_wait // IO_DATA flows into SRAM_DQ
 
 ----- make sure no more random data flows in after this -----
 
-ex_out(OUT WD) {					
-  IO_CYCLE <= '1'
-}			write_wait			
-							if (IO_ADDR is in WD_list and IO_CYCLE == '1') {
-							  CTRL_OE <= '1'
-							}
+ex_out(OUT WD) 
+{					
+  IO_CYCLE <= '1'					-- when the state is OUT WD the IO_CYCLE gets '1'.  
+}		write_wait				-- when is write_wait  
+	if (IO_ADDR is in WD_list and IO_CYCLE == '1')  -- 
+		{
+			  CTRL_OE <= '1'		-- CTRL_OE gets '1'.	
+		}
 
-ex_out2(OUT WD)	 {
-  IO_CYCLE <= '0'
-}			write_lock {
-			  WE <= '0'
-			  SRAM_WE_N <= NOT(WE)
+ex_out2(OUT WD)	 					-- when the command ex_out2 gets OUT WD.
+{
+  IO_CYCLE <= '0'					-- IO_CYCLE gets '0'.
+}			write_lock 
+			{
+			  WE <= '0'			-- WE gets '0'.
+			  SRAM_WE_N <= NOT(WE)		-- SRAM_WE_N gets not WE.
 			}
 
-fetch (ADDI)	
+fetch (ADDI)					
 
 --------------------------------------
 
