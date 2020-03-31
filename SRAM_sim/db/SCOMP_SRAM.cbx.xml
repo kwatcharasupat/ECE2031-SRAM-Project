@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="SCOMP_SRAM">
+		<CBX_INST_ENTRY INSTANCE_NAME="|SCOMP_SRAM|SCOMP:inst|LPM_CLSHIFT:SHIFTER" CBX_FILE_NAME="lpm_clshift_fuc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|SCOMP_SRAM|SCOMP:inst|altsyncram:MEMORY" CBX_FILE_NAME="altsyncram_mut3.tdf"/>
+	</PROJECT>
+</LOG_ROOT>
