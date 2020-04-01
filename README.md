@@ -5,7 +5,7 @@ Spring 2020
 - [x] Meeting 1: 10 Mar 2020, 1815 to 1945 EST [Consensus: Felicia]
 - [x] Meeting 2: 11 Mar 2020, 1630 to 1800 EST [Consensus: Felicia]
 - [x] Meeting 3: 17 Mar 2020, 1800 to 2030 EST [Consensus: Karn]
-- [ ] Meeting 4: 31 Mar 2020, 1800 EST
+- [ ] Meeting 4: 1 Apr 2020, 2200 EDT
 
 To-do Format: [x] [task] [in-charge] 
 # Week 1 (09 Mar to 15 Mar)
