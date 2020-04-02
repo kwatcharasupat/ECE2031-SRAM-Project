@@ -8,8 +8,8 @@ Spring 2020
   - [x] Consensus Form [Felicia]
 - [x] Meeting 3: 17 Mar 2020, 1800 to 2030 EDT
   - [x] Consensus Form [Karn]
-- [ ] Meeting 4: 1 Apr 2020, 2200 EDT
-  - [ ] Consensus Form
+- [x] Meeting 4: 1 Apr 2020, 2200 to 2330 EDT
+  - [ ] Consensus Form [Segev]
 - [ ] Meeting 5: 
   - [ ] Consensus Form
 - [ ] Meeting 6: 
@@ -36,6 +36,20 @@ To-do Format: [x] [task] [in-charge]
 # Spring 'Break' Week 2 (23 Mar 29 Mar)
 
 # Week 2 (30 Mar to 05 Apr)
+- [ ] Proposal slides [Everyone]
+    - Introduction (2 min/2 min)
+        - Problem statement [Felicia]
+        - Requirements [Felicia]
+    - Technical Approach
+        - Assembly and User Interaction [Felicia & Karn] (2 min/4 min)
+        - Read Cycle [Siddhanta & Jacques] (2 min/6 min)
+        - Write Cycle [Siddhanta & Segev] (2 min/8 min)
+    - Project Timeline (2 min/10 min)
+        - Current progress
+        - Future work (Gaant Chart?)
+        - Contingency plan 
+- [ ] Minor fix to UML [Felicia]
+- [ ] Assembly code for verification of read cycle [?]
 
 # Week 3 (06 Apr to 12 Apr)
 
