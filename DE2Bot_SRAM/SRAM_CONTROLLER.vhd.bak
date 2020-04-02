@@ -110,9 +110,8 @@ BEGIN
 					DT_ENABLE <= '0';
 					TR_ENABLE <= '0';		
 					-- ##
-					
+		
 					IF (CTRL_WE = '1')	THEN
-						-- write cycle
 						WE <= '1';
 						-- ## Karn's edit ##
 						OE <= '0';
@@ -121,10 +120,8 @@ BEGIN
 						-- ##
 						STATE <= WRITE_ADDR_PREP;
 					ELSIF (CTRL_OE = '1' AND CTRL_WE = '0') THEN
-						-- read cycle
 						STATE <= READ_PREP;
 					ELSE
-						-- catch error
 						STATE <= IDLE;
 					END IF;
 				
