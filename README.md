@@ -2,10 +2,22 @@
 Spring 2020
 
 # Upcoming Meeting
-- [x] Meeting 1: 10 Mar 2020, 1815 to 1945 EST [Consensus: Felicia]
-- [x] Meeting 2: 11 Mar 2020, 1630 to 1800 EST [Consensus: Felicia]
-- [x] Meeting 3: 17 Mar 2020, 1800 to 2030 EST [Consensus: Karn]
-- [ ] Meeting 4: 31 Mar 2020, 1800 EST
+- [x] Meeting 1: 10 Mar 2020, 1815 to 1945 EDT 
+  - [x] Consensus Form [Felicia]
+- [x] Meeting 2: 11 Mar 2020, 1630 to 1800 EDT 
+  - [x] Consensus Form [Felicia]
+- [x] Meeting 3: 17 Mar 2020, 1800 to 2030 EDT
+  - [x] Consensus Form [Karn]
+- [x] Meeting 4: 1 Apr 2020, 2200 to 2330 EDT
+  - [ ] Consensus Form [Segev]
+- [ ] Meeting 5: 
+  - [ ] Consensus Form
+- [ ] Meeting 6: 
+  - [ ] Consensus Form
+- [ ] Meeting 7:
+  - [ ] Consensus Form
+- [ ] Meeting 8: 
+  - [ ] Consensus Form
 
 To-do Format: [x] [task] [in-charge] 
 # Week 1 (09 Mar to 15 Mar)
@@ -17,13 +29,27 @@ To-do Format: [x] [task] [in-charge]
 
 # Spring Break Week 1 (16 Mar to 22 Mar)
 - [ ] Sleep 8 hours a day
-- [ ] Write cycle UML [Felicia & Jacques]
-- [ ] SRAM write VHDL [Siddhanta & Segev]
+- [x] Write cycle UML [Felicia & Jacques]
+- [x] SRAM write VHDL [Siddhanta & Segev]
 - [x] IO_DECODER write VHDL [Karn]
 
 # Spring 'Break' Week 2 (23 Mar 29 Mar)
 
 # Week 2 (30 Mar to 05 Apr)
+- [ ] Proposal slides [Everyone]
+    - Introduction (2 min/2 min)
+        - Problem statement [Felicia]
+        - Requirements [Felicia]
+    - Technical Approach
+        - Assembly and User Interaction [Felicia & Karn] (2 min/4 min)
+        - Read Cycle [Siddhanta & Jacques] (2 min/6 min)
+        - Write Cycle [Siddhanta & Segev] (2 min/8 min)
+    - Project Timeline (2 min/10 min)
+        - Current progress
+        - Future work (Gaant Chart?)
+        - Contingency plan 
+- [ ] Minor fix to UML [Felicia]
+- [ ] Assembly code for verification of read cycle [?]
 
 # Week 3 (06 Apr to 12 Apr)
 
