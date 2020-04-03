@@ -23,10 +23,10 @@ applicable agreement for further details.
 VECTOR("D:/Dropbox/NTU Modules/ECE2031 Digital Design Laboratory/Project/ECE2031-SRAM-Project/SRAM_sim/SCOMP_SRAM_sim.vwf")
 {
 	ZOOM{
-		ZBEGIN = 5963753;
-		ZEND = 9471849;
-		NUMERATOR = 995;
-		DENOMINATOR = 3508096;
+		ZBEGIN = 0;
+		ZEND = 1077988;
+		NUMERATOR = 1223;
+		DENOMINATOR = 1077988;
 		TOP_INDEX = 0;
 	}
 	CLOCK{
