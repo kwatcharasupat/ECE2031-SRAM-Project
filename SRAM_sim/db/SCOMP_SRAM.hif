@@ -3393,26 +3393,6 @@ SCOMP:inst|altsyncram:MEMORY
 
 # end
 # entity
-SCOMP_SRAM
-# storage
-db|SCOMP_SRAM.(0).cnf
-db|SCOMP_SRAM.(0).cnf
-# case_insensitive
-# source_file
-scomp_sram.bdf
-412fe2d0a1b2abab7f16163cb145c65c
-26
-# internal_option {
-BLOCK_DESIGN_NAMING
-AUTO
-}
-# hierarchies {
-|
-}
-# macro_sequence
-
-# end
-# entity
 SRAM_CONTROLLER
 # storage
 db|SCOMP_SRAM.(18).cnf
@@ -3442,6 +3422,26 @@ SRAM_CONTROLLER:inst7
 # lmf
 c:|altera|91sp2|quartus|lmf|maxplus2.lmf
 a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+SCOMP_SRAM
+# storage
+db|SCOMP_SRAM.(0).cnf
+db|SCOMP_SRAM.(0).cnf
+# case_insensitive
+# source_file
+scomp_sram.bdf
+c9127eee4c4eb1eb407ebbd172bf76d7
+26
+# internal_option {
+BLOCK_DESIGN_NAMING
+AUTO
+}
+# hierarchies {
+|
+}
 # macro_sequence
 
 # end
@@ -3594,7 +3594,7 @@ address_a0
 }
 # memory_file {
 sramdemo_v0.mif
-f8251799b613663c4fba3025f2fb2c8
+dd90e747473e2e8c8467d8405149bd
 }
 # hierarchies {
 SCOMP:inst|altsyncram:MEMORY|altsyncram_hit3:auto_generated

@@ -1,5 +1,5 @@
 Fitter report for SCOMP_SRAM
-Fri Apr 03 14:59:44 2020
+Sat Apr 04 19:16:40 2020
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -20,25 +20,24 @@ Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
  12. I/O Bank Usage
  13. All Package Pins
  14. PLL Summary
- 15. PLL Usage
- 16. Output Pin Default Load For Reported TCO
- 17. Fitter Resource Utilization by Entity
- 18. Delay Chain Summary
- 19. Pad To Core Delay Chain Fanout
- 20. Control Signals
- 21. Global & Other Fast Signals
- 22. Non-Global High Fan-Out Signals
- 23. Fitter RAM Summary
- 24. Interconnect Usage Summary
- 25. LAB Logic Elements
- 26. LAB-wide Signals
- 27. LAB Signals Sourced
- 28. LAB Signals Sourced Out
- 29. LAB Distinct Inputs
- 30. Fitter Device Options
- 31. Operating Settings and Conditions
- 32. Estimated Delay Added for Hold Timing
- 33. Fitter Messages
+ 15. Output Pin Default Load For Reported TCO
+ 16. Fitter Resource Utilization by Entity
+ 17. Delay Chain Summary
+ 18. Pad To Core Delay Chain Fanout
+ 19. Control Signals
+ 20. Global & Other Fast Signals
+ 21. Non-Global High Fan-Out Signals
+ 22. Fitter RAM Summary
+ 23. Interconnect Usage Summary
+ 24. LAB Logic Elements
+ 25. LAB-wide Signals
+ 26. LAB Signals Sourced
+ 27. LAB Signals Sourced Out
+ 28. LAB Distinct Inputs
+ 29. Fitter Device Options
+ 30. Operating Settings and Conditions
+ 31. Estimated Delay Added for Hold Timing
+ 32. Fitter Messages
 
 
 
@@ -64,15 +63,15 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                    ;
 +------------------------------------+----------------------------------------------+
-; Fitter Status                      ; Successful - Fri Apr 03 14:59:44 2020        ;
+; Fitter Status                      ; Successful - Sat Apr 04 19:16:40 2020        ;
 ; Quartus II Version                 ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name                      ; SCOMP_SRAM                                   ;
 ; Top-level Entity Name              ; SCOMP_SRAM                                   ;
 ; Family                             ; Cyclone II                                   ;
 ; Device                             ; EP2C35F672C6                                 ;
 ; Timing Models                      ; Final                                        ;
-; Total logic elements               ; 1,553 / 33,216 ( 5 % )                       ;
-;     Total combinational functions  ; 1,524 / 33,216 ( 5 % )                       ;
+; Total logic elements               ; 1,528 / 33,216 ( 5 % )                       ;
+;     Total combinational functions  ; 1,508 / 33,216 ( 5 % )                       ;
 ;     Dedicated logic registers      ; 247 / 33,216 ( < 1 % )                       ;
 ; Total registers                    ; 247                                          ;
 ; Total pins                         ; 43 / 475 ( 9 % )                             ;
@@ -153,8 +152,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; Type                    ; Value               ;
 +-------------------------+---------------------+
 ; Placement               ;                     ;
-;     -- Requested        ; 0 / 1850 ( 0.00 % ) ;
-;     -- Achieved         ; 0 / 1850 ( 0.00 % ) ;
+;     -- Requested        ; 0 / 1834 ( 0.00 % ) ;
+;     -- Achieved         ; 0 / 1834 ( 0.00 % ) ;
 ;                         ;                     ;
 ; Routing (by Connection) ;                     ;
 ;     -- Requested        ; 0 / 0 ( 0.00 % )    ;
@@ -176,7 +175,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------+---------+-------------------+-------------------------+-------------------+
 ; Partition Name ; # Nodes ; # Preserved Nodes ; Preservation Level Used ; Netlist Type Used ;
 +----------------+---------+-------------------+-------------------------+-------------------+
-; Top            ; 1850    ; 0                 ; N/A                     ; Source File       ;
+; Top            ; 1834    ; 0                 ; N/A                     ; Source File       ;
 +----------------+---------+-------------------+-------------------------+-------------------+
 
 
@@ -186,54 +185,54 @@ Parallel compilation was disabled, but you have multiple processors available. E
 The pin-out file can be found in D:/Dropbox/NTU Modules/ECE2031 Digital Design Laboratory/Project/ECE2031-SRAM-Project/SRAM_sim/SCOMP_SRAM.pin.
 
 
-+---------------------------------------------------------------------------------------------------+
-; Fitter Resource Usage Summary                                                                     ;
-+---------------------------------------------+-----------------------------------------------------+
-; Resource                                    ; Usage                                               ;
-+---------------------------------------------+-----------------------------------------------------+
-; Total logic elements                        ; 1,553 / 33,216 ( 5 % )                              ;
-;     -- Combinational with no register       ; 1306                                                ;
-;     -- Register only                        ; 29                                                  ;
-;     -- Combinational with a register        ; 218                                                 ;
-;                                             ;                                                     ;
-; Logic element usage by number of LUT inputs ;                                                     ;
-;     -- 4 input functions                    ; 714                                                 ;
-;     -- 3 input functions                    ; 757                                                 ;
-;     -- <=2 input functions                  ; 53                                                  ;
-;     -- Register only                        ; 29                                                  ;
-;                                             ;                                                     ;
-; Logic elements by mode                      ;                                                     ;
-;     -- normal mode                          ; 1498                                                ;
-;     -- arithmetic mode                      ; 26                                                  ;
-;                                             ;                                                     ;
-; Total registers*                            ; 247 / 34,593 ( < 1 % )                              ;
-;     -- Dedicated logic registers            ; 247 / 33,216 ( < 1 % )                              ;
-;     -- I/O registers                        ; 0 / 1,377 ( 0 % )                                   ;
-;                                             ;                                                     ;
-; Total LABs:  partially or completely used   ; 112 / 2,076 ( 5 % )                                 ;
-; User inserted logic elements                ; 0                                                   ;
-; Virtual pins                                ; 0                                                   ;
-; I/O pins                                    ; 43 / 475 ( 9 % )                                    ;
-;     -- Clock pins                           ; 1 / 8 ( 13 % )                                      ;
-; Global signals                              ; 16                                                  ;
-; M4Ks                                        ; 8 / 105 ( 8 % )                                     ;
-; Total block memory bits                     ; 32,768 / 483,840 ( 7 % )                            ;
-; Total block memory implementation bits      ; 36,864 / 483,840 ( 8 % )                            ;
-; Embedded Multiplier 9-bit elements          ; 0 / 70 ( 0 % )                                      ;
-; PLLs                                        ; 1 / 4 ( 25 % )                                      ;
-; Global clocks                               ; 16 / 16 ( 100 % )                                   ;
-; JTAGs                                       ; 0 / 1 ( 0 % )                                       ;
-; ASMI blocks                                 ; 0 / 1 ( 0 % )                                       ;
-; CRC blocks                                  ; 0 / 1 ( 0 % )                                       ;
-; Average interconnect usage (total/H/V)      ; 1% / 1% / 1%                                        ;
-; Peak interconnect usage (total/H/V)         ; 11% / 11% / 11%                                     ;
-; Maximum fan-out node                        ; altpll0:inst1|altpll:altpll_component|_clk0~clkctrl ;
-; Maximum fan-out                             ; 191                                                 ;
-; Highest non-global fan-out signal           ; SRAM_CONTROLLER:inst7|SRAM_ADDR[3]                  ;
-; Highest non-global fan-out                  ; 138                                                 ;
-; Total fan-out                               ; 6172                                                ;
-; Average fan-out                             ; 3.31                                                ;
-+---------------------------------------------+-----------------------------------------------------+
++----------------------------------------------------------------------------------+
+; Fitter Resource Usage Summary                                                    ;
++---------------------------------------------+------------------------------------+
+; Resource                                    ; Usage                              ;
++---------------------------------------------+------------------------------------+
+; Total logic elements                        ; 1,528 / 33,216 ( 5 % )             ;
+;     -- Combinational with no register       ; 1281                               ;
+;     -- Register only                        ; 20                                 ;
+;     -- Combinational with a register        ; 227                                ;
+;                                             ;                                    ;
+; Logic element usage by number of LUT inputs ;                                    ;
+;     -- 4 input functions                    ; 701                                ;
+;     -- 3 input functions                    ; 759                                ;
+;     -- <=2 input functions                  ; 48                                 ;
+;     -- Register only                        ; 20                                 ;
+;                                             ;                                    ;
+; Logic elements by mode                      ;                                    ;
+;     -- normal mode                          ; 1482                               ;
+;     -- arithmetic mode                      ; 26                                 ;
+;                                             ;                                    ;
+; Total registers*                            ; 247 / 34,593 ( < 1 % )             ;
+;     -- Dedicated logic registers            ; 247 / 33,216 ( < 1 % )             ;
+;     -- I/O registers                        ; 0 / 1,377 ( 0 % )                  ;
+;                                             ;                                    ;
+; Total LABs:  partially or completely used   ; 128 / 2,076 ( 6 % )                ;
+; User inserted logic elements                ; 0                                  ;
+; Virtual pins                                ; 0                                  ;
+; I/O pins                                    ; 43 / 475 ( 9 % )                   ;
+;     -- Clock pins                           ; 1 / 8 ( 13 % )                     ;
+; Global signals                              ; 16                                 ;
+; M4Ks                                        ; 8 / 105 ( 8 % )                    ;
+; Total block memory bits                     ; 32,768 / 483,840 ( 7 % )           ;
+; Total block memory implementation bits      ; 36,864 / 483,840 ( 8 % )           ;
+; Embedded Multiplier 9-bit elements          ; 0 / 70 ( 0 % )                     ;
+; PLLs                                        ; 1 / 4 ( 25 % )                     ;
+; Global clocks                               ; 16 / 16 ( 100 % )                  ;
+; JTAGs                                       ; 0 / 1 ( 0 % )                      ;
+; ASMI blocks                                 ; 0 / 1 ( 0 % )                      ;
+; CRC blocks                                  ; 0 / 1 ( 0 % )                      ;
+; Average interconnect usage (total/H/V)      ; 1% / 1% / 2%                       ;
+; Peak interconnect usage (total/H/V)         ; 19% / 18% / 22%                    ;
+; Maximum fan-out node                        ; clk_50~clkctrl                     ;
+; Maximum fan-out                             ; 249                                ;
+; Highest non-global fan-out signal           ; SRAM_CONTROLLER:inst7|SRAM_ADDR[3] ;
+; Highest non-global fan-out                  ; 138                                ;
+; Total fan-out                               ; 6105                               ;
+; Average fan-out                             ; 3.33                               ;
++---------------------------------------------+------------------------------------+
 *  Register count does not include registers inside RAM blocks or DSP blocks.
 
 
@@ -244,7 +243,7 @@ The pin-out file can be found in D:/Dropbox/NTU Modules/ECE2031 Digital Design L
 ; Name    ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Cell number ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; Power Up High ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Termination ; Location assigned by ;
 +---------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+-------------+----------------------+
 ; clk_50  ; N2    ; 2        ; 0            ; 18           ; 0           ; 8                     ; 0                  ; yes    ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; reset_n ; AE4   ; 8        ; 1            ; 0            ; 3           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; reset_n ; AC5   ; 8        ; 1            ; 0            ; 1           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
 +---------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+-------------+----------------------+
 
 
@@ -253,47 +252,47 @@ The pin-out file can be found in D:/Dropbox/NTU Modules/ECE2031 Digital Design L
 +---------------+-------+----------+--------------+--------------+-------------+-----------------+------------------------+---------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-------------+----------------------+------+----------------------+---------------------+
 ; Name          ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Cell number ; Output Register ; Output Enable Register ; Power Up High ; PCI I/O Enabled ; Open Drain ; TRI Primitive ; Bus Hold ; Weak Pull Up ; I/O Standard ; Current Strength ; Termination ; Location assigned by ; Load ; Output Enable Source ; Output Enable Group ;
 +---------------+-------+----------+--------------+--------------+-------------+-----------------+------------------------+---------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-------------+----------------------+------+----------------------+---------------------+
-; SRAM_DQ[0]    ; R7    ; 1        ; 0            ; 14           ; 1           ; no              ; no                     ; no            ; no              ; no         ; yes           ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; SRAM_DQ[10]   ; AA12  ; 8        ; 29           ; 0            ; 1           ; no              ; no                     ; no            ; no              ; no         ; yes           ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; SRAM_DQ[11]   ; Y12   ; 8        ; 29           ; 0            ; 0           ; no              ; no                     ; no            ; no              ; no         ; yes           ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; SRAM_DQ[12]   ; AB12  ; 8        ; 24           ; 0            ; 1           ; no              ; no                     ; no            ; no              ; no         ; yes           ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; SRAM_DQ[13]   ; AE11  ; 8        ; 27           ; 0            ; 2           ; no              ; no                     ; no            ; no              ; no         ; yes           ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; SRAM_DQ[14]   ; AE10  ; 8        ; 24           ; 0            ; 3           ; no              ; no                     ; no            ; no              ; no         ; yes           ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; SRAM_DQ[15]   ; AF13  ; 8        ; 31           ; 0            ; 0           ; no              ; no                     ; no            ; no              ; no         ; yes           ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; SRAM_DQ[1]    ; AD12  ; 8        ; 31           ; 0            ; 3           ; no              ; no                     ; no            ; no              ; no         ; yes           ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; SRAM_DQ[2]    ; Y13   ; 7        ; 37           ; 0            ; 3           ; no              ; no                     ; no            ; no              ; no         ; yes           ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; SRAM_DQ[3]    ; AE12  ; 8        ; 31           ; 0            ; 2           ; no              ; no                     ; no            ; no              ; no         ; yes           ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; SRAM_DQ[4]    ; AA14  ; 7        ; 37           ; 0            ; 2           ; no              ; no                     ; no            ; no              ; no         ; yes           ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; SRAM_DQ[5]    ; AC12  ; 8        ; 24           ; 0            ; 0           ; no              ; no                     ; no            ; no              ; no         ; yes           ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; SRAM_DQ[6]    ; R4    ; 1        ; 0            ; 16           ; 0           ; no              ; no                     ; no            ; no              ; no         ; yes           ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; SRAM_DQ[7]    ; R5    ; 1        ; 0            ; 16           ; 1           ; no              ; no                     ; no            ; no              ; no         ; yes           ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; SRAM_DQ[8]    ; AF10  ; 8        ; 24           ; 0            ; 2           ; no              ; no                     ; no            ; no              ; no         ; yes           ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; SRAM_DQ[9]    ; AE13  ; 8        ; 31           ; 0            ; 1           ; no              ; no                     ; no            ; no              ; no         ; yes           ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; io_cycle      ; P24   ; 6        ; 65           ; 18           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; io_write      ; Y14   ; 7        ; 37           ; 0            ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; sram_addr[0]  ; V13   ; 8        ; 27           ; 0            ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; sram_addr[10] ; A14   ; 4        ; 33           ; 36           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; sram_addr[11] ; AD15  ; 7        ; 35           ; 0            ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; sram_addr[12] ; G14   ; 4        ; 35           ; 36           ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; sram_addr[13] ; AC14  ; 7        ; 35           ; 0            ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; sram_addr[14] ; Y15   ; 7        ; 37           ; 0            ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; sram_addr[15] ; AE15  ; 7        ; 35           ; 0            ; 3           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; sram_addr[16] ; F14   ; 4        ; 35           ; 36           ; 3           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; sram_addr[17] ; G13   ; 4        ; 35           ; 36           ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; sram_addr[1]  ; V11   ; 8        ; 29           ; 0            ; 3           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; sram_addr[2]  ; AD11  ; 8        ; 27           ; 0            ; 3           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; sram_addr[3]  ; B12   ; 3        ; 29           ; 36           ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; sram_addr[4]  ; V14   ; 8        ; 27           ; 0            ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; sram_addr[5]  ; B14   ; 4        ; 33           ; 36           ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; sram_addr[6]  ; P23   ; 6        ; 65           ; 18           ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; sram_addr[7]  ; F13   ; 4        ; 35           ; 36           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; sram_addr[8]  ; D14   ; 4        ; 33           ; 36           ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; sram_addr[9]  ; AA13  ; 7        ; 35           ; 0            ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; sram_ce_n     ; J24   ; 5        ; 65           ; 26           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; sram_lb_n     ; AB8   ; 8        ; 9            ; 0            ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; sram_oe_n     ; C12   ; 3        ; 29           ; 36           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; sram_ub_n     ; C19   ; 4        ; 53           ; 36           ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; sram_we_n     ; U12   ; 8        ; 29           ; 0            ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; SRAM_DQ[0]    ; C12   ; 3        ; 29           ; 36           ; 1           ; no              ; no                     ; no            ; no              ; no         ; yes           ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; SRAM_DQ[10]   ; A9    ; 3        ; 20           ; 36           ; 2           ; no              ; no                     ; no            ; no              ; no         ; yes           ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; SRAM_DQ[11]   ; H11   ; 3        ; 18           ; 36           ; 3           ; no              ; no                     ; no            ; no              ; no         ; yes           ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; SRAM_DQ[12]   ; L6    ; 2        ; 0            ; 24           ; 1           ; no              ; no                     ; no            ; no              ; no         ; yes           ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; SRAM_DQ[13]   ; B12   ; 3        ; 29           ; 36           ; 0           ; no              ; no                     ; no            ; no              ; no         ; yes           ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; SRAM_DQ[14]   ; F12   ; 3        ; 27           ; 36           ; 3           ; no              ; no                     ; no            ; no              ; no         ; yes           ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; SRAM_DQ[15]   ; J14   ; 3        ; 24           ; 36           ; 0           ; no              ; no                     ; no            ; no              ; no         ; yes           ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; SRAM_DQ[1]    ; C10   ; 3        ; 20           ; 36           ; 1           ; no              ; no                     ; no            ; no              ; no         ; yes           ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; SRAM_DQ[2]    ; J10   ; 3        ; 27           ; 36           ; 1           ; no              ; no                     ; no            ; no              ; no         ; yes           ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; SRAM_DQ[3]    ; P4    ; 1        ; 0            ; 17           ; 1           ; no              ; no                     ; no            ; no              ; no         ; yes           ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; SRAM_DQ[4]    ; G11   ; 3        ; 22           ; 36           ; 1           ; no              ; no                     ; no            ; no              ; no         ; yes           ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; SRAM_DQ[5]    ; D14   ; 4        ; 33           ; 36           ; 0           ; no              ; no                     ; no            ; no              ; no         ; yes           ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; SRAM_DQ[6]    ; R3    ; 1        ; 0            ; 17           ; 3           ; no              ; no                     ; no            ; no              ; no         ; yes           ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; SRAM_DQ[7]    ; A14   ; 4        ; 33           ; 36           ; 1           ; no              ; no                     ; no            ; no              ; no         ; yes           ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; SRAM_DQ[8]    ; B9    ; 3        ; 20           ; 36           ; 3           ; no              ; no                     ; no            ; no              ; no         ; yes           ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; SRAM_DQ[9]    ; D10   ; 3        ; 20           ; 36           ; 0           ; no              ; no                     ; no            ; no              ; no         ; yes           ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; io_cycle      ; AB12  ; 8        ; 24           ; 0            ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; io_write      ; B10   ; 3        ; 22           ; 36           ; 3           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; sram_addr[0]  ; AE9   ; 8        ; 20           ; 0            ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; sram_addr[10] ; J13   ; 3        ; 24           ; 36           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; sram_addr[11] ; AF10  ; 8        ; 24           ; 0            ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; sram_addr[12] ; A10   ; 3        ; 22           ; 36           ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; sram_addr[13] ; J11   ; 3        ; 27           ; 36           ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; sram_addr[14] ; U12   ; 8        ; 29           ; 0            ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; sram_addr[15] ; P3    ; 1        ; 0            ; 17           ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; sram_addr[16] ; R2    ; 1        ; 0            ; 17           ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; sram_addr[17] ; M2    ; 2        ; 0            ; 23           ; 4           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; sram_addr[1]  ; M4    ; 2        ; 0            ; 23           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; sram_addr[2]  ; B14   ; 4        ; 33           ; 36           ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; sram_addr[3]  ; G12   ; 3        ; 27           ; 36           ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; sram_addr[4]  ; E12   ; 3        ; 24           ; 36           ; 3           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; sram_addr[5]  ; L3    ; 2        ; 0            ; 24           ; 4           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; sram_addr[6]  ; AC12  ; 8        ; 24           ; 0            ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; sram_addr[7]  ; AD10  ; 8        ; 22           ; 0            ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; sram_addr[8]  ; D12   ; 3        ; 24           ; 36           ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; sram_addr[9]  ; D11   ; 3        ; 22           ; 36           ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; sram_ce_n     ; G2    ; 2        ; 0            ; 28           ; 3           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; sram_lb_n     ; AC8   ; 8        ; 9            ; 0            ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; sram_oe_n     ; M20   ; 5        ; 65           ; 21           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; sram_ub_n     ; AF23  ; 7        ; 63           ; 0            ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; sram_we_n     ; C11   ; 3        ; 29           ; 36           ; 3           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
 +---------------+-------+----------+--------------+--------------+-------------+-----------------+------------------------+---------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-------------+----------------------+------+----------------------+---------------------+
 
 
@@ -302,14 +301,14 @@ The pin-out file can be found in D:/Dropbox/NTU Modules/ECE2031 Digital Design L
 +----------+------------------+---------------+--------------+
 ; I/O Bank ; Usage            ; VCCIO Voltage ; VREF Voltage ;
 +----------+------------------+---------------+--------------+
-; 1        ; 3 / 64 ( 5 % )   ; 3.3V          ; --           ;
-; 2        ; 3 / 59 ( 5 % )   ; 3.3V          ; --           ;
-; 3        ; 2 / 56 ( 4 % )   ; 3.3V          ; --           ;
-; 4        ; 8 / 58 ( 14 % )  ; 3.3V          ; --           ;
+; 1        ; 4 / 64 ( 6 % )   ; 3.3V          ; --           ;
+; 2        ; 8 / 59 ( 14 % )  ; 3.3V          ; --           ;
+; 3        ; 20 / 56 ( 36 % ) ; 3.3V          ; --           ;
+; 4        ; 3 / 58 ( 5 % )   ; 3.3V          ; --           ;
 ; 5        ; 1 / 65 ( 2 % )   ; 3.3V          ; --           ;
-; 6        ; 3 / 59 ( 5 % )   ; 3.3V          ; --           ;
-; 7        ; 8 / 58 ( 14 % )  ; 3.3V          ; --           ;
-; 8        ; 18 / 56 ( 32 % ) ; 3.3V          ; --           ;
+; 6        ; 1 / 59 ( 2 % )   ; 3.3V          ; --           ;
+; 7        ; 1 / 58 ( 2 % )   ; 3.3V          ; --           ;
+; 8        ; 8 / 56 ( 14 % )  ; 3.3V          ; --           ;
 +----------+------------------+---------------+--------------+
 
 
@@ -325,12 +324,12 @@ The pin-out file can be found in D:/Dropbox/NTU Modules/ECE2031 Digital Design L
 ; A6       ; 479        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; A7       ; 465        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; A8       ; 457        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; A9       ; 451        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; A10      ; 447        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; A9       ; 451        ; 3        ; SRAM_DQ[10]                              ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; A10      ; 447        ; 3        ; sram_addr[12]                            ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; A11      ;            ; 3        ; VCCIO3                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; A12      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; A13      ; 430        ; 4        ; GND+                                     ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
-; A14      ; 427        ; 4        ; sram_addr[10]                            ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; A14      ; 427        ; 4        ; SRAM_DQ[7]                               ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; A15      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; A16      ;            ; 4        ; VCCIO4                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; A17      ; 412        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
@@ -353,9 +352,9 @@ The pin-out file can be found in D:/Dropbox/NTU Modules/ECE2031 Digital Design L
 ; AA9      ; 152        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AA10     ; 153        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AA11     ; 155        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; AA12     ; 179        ; 8        ; SRAM_DQ[10]                              ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; AA13     ; 192        ; 7        ; sram_addr[9]                             ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; AA14     ; 194        ; 7        ; SRAM_DQ[4]                               ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; AA12     ; 179        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; AA13     ; 192        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; AA14     ; 194        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AA15     ; 197        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AA16     ; 209        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AA17     ; 219        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
@@ -375,11 +374,11 @@ The pin-out file can be found in D:/Dropbox/NTU Modules/ECE2031 Digital Design L
 ; AB5      ;            ; 1        ; VCCIO1                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; AB6      ;            ; 8        ; VCCIO8                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; AB7      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
-; AB8      ; 147        ; 8        ; sram_lb_n                                ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; AB8      ; 147        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AB9      ;            ; 8        ; VCCIO8                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; AB10     ; 154        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AB11     ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
-; AB12     ; 171        ; 8        ; SRAM_DQ[12]                              ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; AB12     ; 171        ; 8        ; io_cycle                                 ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; AB13     ;            ; 8        ; VCCIO8                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; AB14     ;            ; 7        ; VCCIO7                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; AB15     ; 198        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
@@ -398,16 +397,16 @@ The pin-out file can be found in D:/Dropbox/NTU Modules/ECE2031 Digital Design L
 ; AC2      ; 118        ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; AC3      ; 128        ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; AC4      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
-; AC5      ; 133        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; AC5      ; 133        ; 8        ; reset_n                                  ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; AC6      ; 134        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AC7      ; 143        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; AC8      ; 148        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; AC8      ; 148        ; 8        ; sram_lb_n                                ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; AC9      ; 163        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AC10     ; 164        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AC11     ; 168        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; AC12     ; 172        ; 8        ; SRAM_DQ[5]                               ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; AC12     ; 172        ; 8        ; sram_addr[6]                             ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; AC13     ; 185        ; 8        ; GND+                                     ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
-; AC14     ; 191        ; 7        ; sram_addr[13]                            ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; AC14     ; 191        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AC15     ; 199        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AC16     ; 202        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AC17     ; 207        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
@@ -429,12 +428,12 @@ The pin-out file can be found in D:/Dropbox/NTU Modules/ECE2031 Digital Design L
 ; AD7      ; 140        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AD8      ; 149        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AD9      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
-; AD10     ; 167        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; AD11     ; 173        ; 8        ; sram_addr[2]                             ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; AD12     ; 181        ; 8        ; SRAM_DQ[1]                               ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; AD10     ; 167        ; 8        ; sram_addr[7]                             ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; AD11     ; 173        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; AD12     ; 181        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AD13     ; 186        ; 8        ; GND+                                     ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
 ; AD14     ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
-; AD15     ; 190        ; 7        ; sram_addr[11]                            ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; AD15     ; 190        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AD16     ; 201        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AD17     ; 208        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AD18     ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
@@ -449,18 +448,18 @@ The pin-out file can be found in D:/Dropbox/NTU Modules/ECE2031 Digital Design L
 ; AE1      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; AE2      ; 124        ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; AE3      ; 125        ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; AE4      ; 131        ; 8        ; reset_n                                  ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; AE4      ; 131        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AE5      ; 137        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AE6      ; 150        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AE7      ; 157        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AE8      ; 159        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; AE9      ; 165        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; AE10     ; 169        ; 8        ; SRAM_DQ[14]                              ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; AE11     ; 174        ; 8        ; SRAM_DQ[13]                              ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; AE12     ; 182        ; 8        ; SRAM_DQ[3]                               ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; AE13     ; 183        ; 8        ; SRAM_DQ[9]                               ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; AE9      ; 165        ; 8        ; sram_addr[0]                             ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; AE10     ; 169        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; AE11     ; 174        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; AE12     ; 182        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; AE13     ; 183        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AE14     ; 188        ; 7        ; GND+                                     ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
-; AE15     ; 189        ; 7        ; sram_addr[15]                            ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; AE15     ; 189        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AE16     ; 200        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AE17     ; 206        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AE18     ; 212        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
@@ -480,10 +479,10 @@ The pin-out file can be found in D:/Dropbox/NTU Modules/ECE2031 Digital Design L
 ; AF7      ; 158        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AF8      ; 160        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AF9      ; 166        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; AF10     ; 170        ; 8        ; SRAM_DQ[8]                               ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; AF10     ; 170        ; 8        ; sram_addr[11]                            ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; AF11     ;            ; 8        ; VCCIO8                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; AF12     ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
-; AF13     ; 184        ; 8        ; SRAM_DQ[15]                              ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; AF13     ; 184        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AF14     ; 187        ; 7        ; GND+                                     ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
 ; AF15     ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; AF16     ;            ; 7        ; VCCIO7                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
@@ -493,7 +492,7 @@ The pin-out file can be found in D:/Dropbox/NTU Modules/ECE2031 Digital Design L
 ; AF20     ; 223        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AF21     ; 227        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AF22     ; 235        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; AF23     ; 243        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; AF23     ; 243        ; 7        ; sram_ub_n                                ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; AF24     ;            ; 7        ; VCCIO7                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; AF25     ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; B1       ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
@@ -504,12 +503,12 @@ The pin-out file can be found in D:/Dropbox/NTU Modules/ECE2031 Digital Design L
 ; B6       ; 480        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; B7       ; 466        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; B8       ; 458        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; B9       ; 452        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; B10      ; 448        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; B9       ; 452        ; 3        ; SRAM_DQ[8]                               ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; B10      ; 448        ; 3        ; io_write                                 ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; B11      ; 435        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; B12      ; 433        ; 3        ; sram_addr[3]                             ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; B12      ; 433        ; 3        ; SRAM_DQ[13]                              ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; B13      ; 429        ; 4        ; GND+                                     ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
-; B14      ; 428        ; 4        ; sram_addr[5]                             ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; B14      ; 428        ; 4        ; sram_addr[2]                             ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; B15      ; 420        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; B16      ; 419        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; B17      ; 411        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
@@ -531,16 +530,16 @@ The pin-out file can be found in D:/Dropbox/NTU Modules/ECE2031 Digital Design L
 ; C7       ; 468        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; C8       ; 463        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; C9       ; 459        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; C10      ; 450        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; C11      ; 436        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; C12      ; 434        ; 3        ; sram_oe_n                                ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; C10      ; 450        ; 3        ; SRAM_DQ[1]                               ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; C11      ; 436        ; 3        ; sram_we_n                                ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; C12      ; 434        ; 3        ; SRAM_DQ[0]                               ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; C13      ; 431        ; 3        ; GND+                                     ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
 ; C14      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; C15      ; 421        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; C16      ; 418        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; C17      ; 404        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; C18      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
-; C19      ; 391        ; 4        ; sram_ub_n                                ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; C19      ; 391        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; C20      ;            ; 4        ; VCCIO4                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; C21      ; 375        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; C22      ; 374        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
@@ -557,11 +556,11 @@ The pin-out file can be found in D:/Dropbox/NTU Modules/ECE2031 Digital Design L
 ; D7       ; 469        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; D8       ; 464        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; D9       ; 460        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; D10      ; 449        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; D11      ; 445        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; D12      ; 443        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; D10      ; 449        ; 3        ; SRAM_DQ[9]                               ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; D11      ; 445        ; 3        ; sram_addr[9]                             ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; D12      ; 443        ; 3        ; sram_addr[8]                             ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; D13      ; 432        ; 3        ; GND+                                     ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
-; D14      ; 426        ; 4        ; sram_addr[8]                             ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; D14      ; 426        ; 4        ; SRAM_DQ[5]                               ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; D15      ; 417        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; D16      ; 415        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; D17      ; 403        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
@@ -585,7 +584,7 @@ The pin-out file can be found in D:/Dropbox/NTU Modules/ECE2031 Digital Design L
 ; E9       ;            ; 3        ; VCCIO3                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; E10      ; 453        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; E11      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
-; E12      ; 444        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; E12      ; 444        ; 3        ; sram_addr[4]                             ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; E13      ;            ; 3        ; VCCIO3                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; E14      ;            ; 4        ; VCCIO4                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; E15      ; 416        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
@@ -611,9 +610,9 @@ The pin-out file can be found in D:/Dropbox/NTU Modules/ECE2031 Digital Design L
 ; F9       ; 470        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; F10      ; 462        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; F11      ; 454        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; F12      ; 440        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; F13      ; 423        ; 4        ; sram_addr[7]                             ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; F14      ; 425        ; 4        ; sram_addr[16]                            ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; F12      ; 440        ; 3        ; SRAM_DQ[14]                              ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; F13      ; 423        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; F14      ; 425        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; F15      ; 409        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; F16      ; 408        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; F17      ; 401        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
@@ -627,7 +626,7 @@ The pin-out file can be found in D:/Dropbox/NTU Modules/ECE2031 Digital Design L
 ; F25      ; 350        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; F26      ; 349        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; G1       ; 30         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; G2       ; 31         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; G2       ; 31         ; 2        ; sram_ce_n                                ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; G3       ; 24         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; G4       ; 23         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; G5       ; 8          ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
@@ -636,10 +635,10 @@ The pin-out file can be found in D:/Dropbox/NTU Modules/ECE2031 Digital Design L
 ; G8       ;            ;          ; VCCA_PLL3                                ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
 ; G9       ; 471        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; G10      ; 461        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; G11      ; 446        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; G12      ; 439        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; G13      ; 422        ; 4        ; sram_addr[17]                            ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; G14      ; 424        ; 4        ; sram_addr[12]                            ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; G11      ; 446        ; 3        ; SRAM_DQ[4]                               ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; G12      ; 439        ; 3        ; sram_addr[3]                             ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; G13      ; 422        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; G14      ; 424        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; G15      ; 410        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; G16      ; 407        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; G17      ; 402        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
@@ -662,7 +661,7 @@ The pin-out file can be found in D:/Dropbox/NTU Modules/ECE2031 Digital Design L
 ; H8       ; 473        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; H9       ;            ; 3        ; VCCIO3                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; H10      ; 472        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; H11      ; 456        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; H11      ; 456        ; 3        ; SRAM_DQ[11]                              ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; H12      ; 455        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; H13      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; H14      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
@@ -687,11 +686,11 @@ The pin-out file can be found in D:/Dropbox/NTU Modules/ECE2031 Digital Design L
 ; J7       ; 17         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; J8       ; 16         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; J9       ; 475        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; J10      ; 438        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; J11      ; 437        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; J10      ; 438        ; 3        ; SRAM_DQ[2]                               ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; J11      ; 437        ; 3        ; sram_addr[13]                            ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; J12      ;            ; 3        ; VCCIO3                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
-; J13      ; 442        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; J14      ; 441        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; J13      ; 442        ; 3        ; sram_addr[10]                            ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; J14      ; 441        ; 3        ; SRAM_DQ[15]                              ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; J15      ;            ; 4        ; VCCIO4                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; J16      ; 385        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; J17      ; 399        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
@@ -701,7 +700,7 @@ The pin-out file can be found in D:/Dropbox/NTU Modules/ECE2031 Digital Design L
 ; J21      ; 352        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; J22      ; 357        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; J23      ; 339        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; J24      ; 338        ; 5        ; sram_ce_n                                ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; J24      ; 338        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; J25      ; 327        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; J26      ; 326        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; K1       ; 42         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
@@ -732,10 +731,10 @@ The pin-out file can be found in D:/Dropbox/NTU Modules/ECE2031 Digital Design L
 ; K26      ; 320        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; L1       ;            ; 2        ; VCCIO2                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; L2       ; 50         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; L3       ; 51         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; L3       ; 51         ; 2        ; sram_addr[5]                             ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; L4       ; 44         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; L5       ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
-; L6       ; 48         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; L6       ; 48         ; 2        ; SRAM_DQ[12]                              ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; L7       ; 47         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; L8       ; 59         ; 2        ; #TMS                                     ; input  ;              ;         ; --         ;                 ; --       ; --           ;
 ; L9       ; 49         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
@@ -757,9 +756,9 @@ The pin-out file can be found in D:/Dropbox/NTU Modules/ECE2031 Digital Design L
 ; L25      ; 323        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; L26      ;            ; 5        ; VCCIO5                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; M1       ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
-; M2       ; 56         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; M2       ; 56         ; 2        ; sram_addr[17]                            ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; M3       ; 55         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; M4       ; 53         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; M4       ; 53         ; 2        ; sram_addr[1]                             ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; M5       ; 54         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; M6       ; 58         ; 2        ; #TCK                                     ; input  ;              ;         ; --         ;                 ; --       ; --           ;
 ; M7       ; 60         ; 2        ; #TDO                                     ; output ;              ;         ; --         ;                 ; --       ; --           ;
@@ -775,7 +774,7 @@ The pin-out file can be found in D:/Dropbox/NTU Modules/ECE2031 Digital Design L
 ; M17      ;            ;          ; VCCINT                                   ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
 ; M18      ;            ; 5        ; VCCIO5                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; M19      ; 317        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; M20      ; 316        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; M20      ; 316        ; 5        ; sram_oe_n                                ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; M21      ; 314        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; M22      ; 319        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; M23      ; 318        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
@@ -810,8 +809,8 @@ The pin-out file can be found in D:/Dropbox/NTU Modules/ECE2031 Digital Design L
 ; N26      ; 308        ; 5        ; GND+                                     ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
 ; P1       ; 68         ; 1        ; GND+                                     ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
 ; P2       ; 67         ; 1        ; GND+                                     ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
-; P3       ; 69         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; P4       ; 70         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; P3       ; 69         ; 1        ; sram_addr[15]                            ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; P4       ; 70         ; 1        ; SRAM_DQ[3]                               ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; P5       ;            ; 1        ; VCCIO1                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; P6       ; 78         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; P7       ; 77         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
@@ -830,17 +829,17 @@ The pin-out file can be found in D:/Dropbox/NTU Modules/ECE2031 Digital Design L
 ; P20      ; 301        ; 6        ; ^MSEL0                                   ;        ;              ;         ; --         ;                 ; --       ; --           ;
 ; P21      ; 300        ; 6        ; ^MSEL1                                   ;        ;              ;         ; --         ;                 ; --       ; --           ;
 ; P22      ;            ; 6        ; VCCIO6                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
-; P23      ; 305        ; 6        ; sram_addr[6]                             ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
-; P24      ; 304        ; 6        ; io_cycle                                 ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; P23      ; 305        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; P24      ; 304        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; P25      ; 307        ; 6        ; GND+                                     ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
 ; P26      ; 306        ; 6        ; GND+                                     ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
 ; R1       ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
-; R2       ; 71         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; R3       ; 72         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; R4       ; 73         ; 1        ; SRAM_DQ[6]                               ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
-; R5       ; 74         ; 1        ; SRAM_DQ[7]                               ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; R2       ; 71         ; 1        ; sram_addr[16]                            ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; R3       ; 72         ; 1        ; SRAM_DQ[6]                               ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; R4       ; 73         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; R5       ; 74         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; R6       ; 81         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; R7       ; 82         ; 1        ; SRAM_DQ[0]                               ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; R7       ; 82         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; R8       ; 110        ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; R9       ;            ; 1        ; VCCIO1                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; R10      ;            ;          ; VCCINT                                   ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
@@ -897,7 +896,7 @@ The pin-out file can be found in D:/Dropbox/NTU Modules/ECE2031 Digital Design L
 ; U9       ; 86         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; U10      ; 87         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; U11      ;            ;          ; VCCINT                                   ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
-; U12      ; 178        ; 8        ; sram_we_n                                ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; U12      ; 178        ; 8        ; sram_addr[14]                            ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; U13      ;            ;          ; VCCINT                                   ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
 ; U14      ;            ;          ; VCCINT                                   ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
 ; U15      ;            ;          ; VCCINT                                   ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
@@ -922,10 +921,10 @@ The pin-out file can be found in D:/Dropbox/NTU Modules/ECE2031 Digital Design L
 ; V8       ;            ; 1        ; VCCIO1                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; V9       ; 142        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; V10      ; 141        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; V11      ; 177        ; 8        ; sram_addr[1]                             ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; V11      ; 177        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; V12      ;            ; 8        ; VCCIO8                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
-; V13      ; 176        ; 8        ; sram_addr[0]                             ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; V14      ; 175        ; 8        ; sram_addr[4]                             ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; V13      ; 176        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; V14      ; 175        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; V15      ;            ; 7        ; VCCIO7                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; V16      ;            ;          ; VCCINT                                   ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
 ; V17      ; 218        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
@@ -975,10 +974,10 @@ The pin-out file can be found in D:/Dropbox/NTU Modules/ECE2031 Digital Design L
 ; Y9       ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; Y10      ; 146        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; Y11      ; 156        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; Y12      ; 180        ; 8        ; SRAM_DQ[11]                              ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; Y13      ; 193        ; 7        ; SRAM_DQ[2]                               ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; Y14      ; 195        ; 7        ; io_write                                 ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; Y15      ; 196        ; 7        ; sram_addr[14]                            ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; Y12      ; 180        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; Y13      ; 193        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; Y14      ; 195        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; Y15      ; 196        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; Y16      ; 210        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; Y17      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; Y18      ; 229        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
@@ -1000,23 +999,23 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 ; Name                             ; altpll0:inst1|altpll:altpll_component|pll ;
 +----------------------------------+-------------------------------------------+
 ; SDC pin name                     ; inst1|altpll_component|pll                ;
-; PLL mode                         ; Normal                                    ;
-; Compensate clock                 ; clock0                                    ;
+; PLL mode                         ; No compensation                           ;
+; Compensate clock                 ; --                                        ;
 ; Compensated input/output pins    ; --                                        ;
 ; Self reset on gated loss of lock ; Off                                       ;
 ; Gate lock counter                ; --                                        ;
 ; Input frequency 0                ; 50.0 MHz                                  ;
 ; Input frequency 1                ; --                                        ;
 ; Nominal PFD frequency            ; 50.0 MHz                                  ;
-; Nominal VCO frequency            ; 400.0 MHz                                 ;
-; VCO post scale                   ; 2                                         ;
+; Nominal VCO frequency            ; 800.0 MHz                                 ;
+; VCO post scale                   ; --                                        ;
 ; VCO multiply                     ; --                                        ;
 ; VCO divide                       ; --                                        ;
-; Freq min lock                    ; 37.5 MHz                                  ;
+; Freq min lock                    ; 31.25 MHz                                 ;
 ; Freq max lock                    ; 62.5 MHz                                  ;
 ; M VCO Tap                        ; 0                                         ;
 ; M Initial                        ; 1                                         ;
-; M value                          ; 8                                         ;
+; M value                          ; 16                                        ;
 ; N value                          ; 1                                         ;
 ; Preserve PLL counter order       ; Off                                       ;
 ; PLL location                     ; PLL_1                                     ;
@@ -1025,15 +1024,6 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 ; Inclk0 signal type               ; Dedicated Pin                             ;
 ; Inclk1 signal type               ; --                                        ;
 +----------------------------------+-------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; PLL Usage                                                                                                                                                                                                            ;
-+---------------------------------------------+--------------+------+-----+------------------+-------------+------------+---------+---------------+------------+---------+---------+-----------------------------------+
-; Name                                        ; Output Clock ; Mult ; Div ; Output Frequency ; Phase Shift ; Duty Cycle ; Counter ; Counter Value ; High / Low ; Initial ; VCO Tap ; SDC Pin Name                      ;
-+---------------------------------------------+--------------+------+-----+------------------+-------------+------------+---------+---------------+------------+---------+---------+-----------------------------------+
-; altpll0:inst1|altpll:altpll_component|_clk0 ; clock0       ; 1    ; 4   ; 12.5 MHz         ; 0 (0 ps)    ; 50/50      ; C0      ; 32            ; 16/16 Even ; 1       ; 0       ; inst1|altpll_component|pll|clk[0] ;
-+---------------------------------------------+--------------+------+-----+------------------+-------------+------------+---------+---------------+------------+---------+---------+-----------------------------------+
 
 
 +-------------------------------------------------------------------------------+
@@ -1078,18 +1068,18 @@ Note: User assignments will override these defaults. The user specified values a
 +-------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+---------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M4Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name                                                       ; Library Name ;
 +-------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+---------------------------------------------------------------------------+--------------+
-; |SCOMP_SRAM                               ; 1553 (31)   ; 247 (0)                   ; 0 (0)         ; 32768       ; 8    ; 0            ; 0       ; 0         ; 43   ; 0            ; 1306 (31)    ; 29 (0)            ; 218 (1)          ; |SCOMP_SRAM                                                               ; work         ;
-;    |CHIP_EMULATOR:inst4|                  ; 934 (934)   ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 918 (918)    ; 0 (0)             ; 16 (16)          ; |SCOMP_SRAM|CHIP_EMULATOR:inst4                                           ; work         ;
-;    |IO_DECODER:inst3|                     ; 11 (11)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 9 (9)        ; 0 (0)             ; 2 (2)            ; |SCOMP_SRAM|IO_DECODER:inst3                                              ; work         ;
-;    |SCOMP:inst|                           ; 527 (415)   ; 183 (183)                 ; 0 (0)         ; 32768       ; 8    ; 0            ; 0       ; 0         ; 0    ; 0            ; 328 (232)    ; 22 (22)           ; 177 (161)        ; |SCOMP_SRAM|SCOMP:inst                                                    ; work         ;
+; |SCOMP_SRAM                               ; 1528 (31)   ; 247 (0)                   ; 0 (0)         ; 32768       ; 8    ; 0            ; 0       ; 0         ; 43   ; 0            ; 1281 (31)    ; 20 (0)            ; 227 (1)          ; |SCOMP_SRAM                                                               ; work         ;
+;    |CHIP_EMULATOR:inst4|                  ; 932 (932)   ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 917 (917)    ; 0 (0)             ; 15 (15)          ; |SCOMP_SRAM|CHIP_EMULATOR:inst4                                           ; work         ;
+;    |IO_DECODER:inst3|                     ; 11 (11)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 8 (8)            ; |SCOMP_SRAM|IO_DECODER:inst3                                              ; work         ;
+;    |SCOMP:inst|                           ; 511 (414)   ; 183 (183)                 ; 0 (0)         ; 32768       ; 8    ; 0            ; 0       ; 0         ; 0    ; 0            ; 312 (231)    ; 13 (13)           ; 186 (168)        ; |SCOMP_SRAM|SCOMP:inst                                                    ; work         ;
 ;       |altsyncram:MEMORY|                 ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 32768       ; 8    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |SCOMP_SRAM|SCOMP:inst|altsyncram:MEMORY                                  ; work         ;
 ;          |altsyncram_hit3:auto_generated| ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 32768       ; 8    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |SCOMP_SRAM|SCOMP:inst|altsyncram:MEMORY|altsyncram_hit3:auto_generated   ; work         ;
-;       |lpm_bustri:IO_BUS|                 ; 25 (25)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 9 (9)        ; 0 (0)             ; 16 (16)          ; |SCOMP_SRAM|SCOMP:inst|lpm_bustri:IO_BUS                                  ;              ;
-;       |lpm_clshift:SHIFTER|               ; 87 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 87 (0)       ; 0 (0)             ; 0 (0)            ; |SCOMP_SRAM|SCOMP:inst|lpm_clshift:SHIFTER                                ; work         ;
-;          |lpm_clshift_fuc:auto_generated| ; 87 (87)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 87 (87)      ; 0 (0)             ; 0 (0)            ; |SCOMP_SRAM|SCOMP:inst|lpm_clshift:SHIFTER|lpm_clshift_fuc:auto_generated ; work         ;
-;    |SRAM_CONTROLLER:inst7|                ; 84 (79)     ; 64 (64)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 20 (15)      ; 7 (7)             ; 57 (46)          ; |SCOMP_SRAM|SRAM_CONTROLLER:inst7                                         ;              ;
-;       |lpm_bustri:IO_BUS_WRITE|           ; 16 (16)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 5 (5)        ; 0 (0)             ; 11 (11)          ; |SCOMP_SRAM|SRAM_CONTROLLER:inst7|lpm_bustri:IO_BUS_WRITE                 ;              ;
-;    |altpll0:inst1|                        ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |SCOMP_SRAM|altpll0:inst1                                                 ;              ;
+;       |lpm_bustri:IO_BUS|                 ; 16 (16)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 16 (16)          ; |SCOMP_SRAM|SCOMP:inst|lpm_bustri:IO_BUS                                  ;              ;
+;       |lpm_clshift:SHIFTER|               ; 83 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 81 (0)       ; 0 (0)             ; 2 (0)            ; |SCOMP_SRAM|SCOMP:inst|lpm_clshift:SHIFTER                                ; work         ;
+;          |lpm_clshift_fuc:auto_generated| ; 83 (83)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 81 (81)      ; 0 (0)             ; 2 (2)            ; |SCOMP_SRAM|SCOMP:inst|lpm_clshift:SHIFTER|lpm_clshift_fuc:auto_generated ;              ;
+;    |SRAM_CONTROLLER:inst7|                ; 82 (78)     ; 64 (64)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 18 (14)      ; 7 (7)             ; 57 (46)          ; |SCOMP_SRAM|SRAM_CONTROLLER:inst7                                         ;              ;
+;       |lpm_bustri:IO_BUS_WRITE|           ; 15 (15)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 11 (11)          ; |SCOMP_SRAM|SRAM_CONTROLLER:inst7|lpm_bustri:IO_BUS_WRITE                 ; work         ;
+;    |altpll0:inst1|                        ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |SCOMP_SRAM|altpll0:inst1                                                 ; work         ;
 ;       |altpll:altpll_component|           ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |SCOMP_SRAM|altpll0:inst1|altpll:altpll_component                         ; work         ;
 +-------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+---------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
@@ -1162,78 +1152,77 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------------------------------+--------------------+---------+----------------------------+--------+----------------------+------------------+---------------------------+
 ; Name                                          ; Location           ; Fan-Out ; Usage                      ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +-----------------------------------------------+--------------------+---------+----------------------------+--------+----------------------+------------------+---------------------------+
-; CHIP_EMULATOR:inst4|DATA[15]~28               ; LCCOMB_X30_Y20_N26 ; 41      ; Output enable              ; no     ; --                   ; --               ; --                        ;
-; SCOMP:inst|IR[15]~1                           ; LCCOMB_X41_Y15_N8  ; 5       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; SCOMP:inst|IR[7]~0                            ; LCCOMB_X40_Y18_N26 ; 11      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; SCOMP:inst|MW                                 ; LCFF_X40_Y18_N1    ; 9       ; Write enable               ; no     ; --                   ; --               ; --                        ;
-; SCOMP:inst|PC[0]~4                            ; LCCOMB_X41_Y16_N2  ; 11      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; SCOMP:inst|PC_STACK[0][0]~0                   ; LCCOMB_X42_Y18_N24 ; 99      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; SCOMP:inst|PC_STACK[9][0]~1                   ; LCCOMB_X42_Y18_N30 ; 11      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; SRAM_CONTROLLER:inst7|SRAM_ADDR~0             ; LCCOMB_X36_Y19_N6  ; 19      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; SRAM_CONTROLLER:inst7|STATE.WARM_UP           ; LCFF_X37_Y18_N1    ; 23      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; SRAM_CONTROLLER:inst7|STATE.WRITE_WAIT        ; LCFF_X37_Y19_N17   ; 22      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; altpll0:inst1|altpll:altpll_component|_clk0   ; PLL_1              ; 191     ; Clock                      ; yes    ; Global Clock         ; GCLK3            ; --                        ;
+; CHIP_EMULATOR:inst4|DATA[15]~26               ; LCCOMB_X24_Y24_N16 ; 31      ; Output enable              ; no     ; --                   ; --               ; --                        ;
+; SCOMP:inst|IR[15]~1                           ; LCCOMB_X16_Y22_N0  ; 5       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; SCOMP:inst|IR[7]~0                            ; LCCOMB_X18_Y22_N12 ; 11      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; SCOMP:inst|MW                                 ; LCFF_X19_Y22_N5    ; 9       ; Write enable               ; no     ; --                   ; --               ; --                        ;
+; SCOMP:inst|PC[0]~4                            ; LCCOMB_X17_Y22_N14 ; 11      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; SCOMP:inst|PC_STACK[0][0]~0                   ; LCCOMB_X16_Y24_N16 ; 99      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; SCOMP:inst|PC_STACK[9][0]~1                   ; LCCOMB_X16_Y22_N10 ; 11      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; SRAM_CONTROLLER:inst7|SRAM_ADDR~0             ; LCCOMB_X24_Y23_N2  ; 19      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; SRAM_CONTROLLER:inst7|STATE.WARM_UP           ; LCFF_X24_Y23_N25   ; 23      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; SRAM_CONTROLLER:inst7|STATE.WRITE_WAIT        ; LCFF_X28_Y19_N31   ; 21      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
 ; altpll0:inst1|altpll:altpll_component|_locked ; PLL_1              ; 51      ; Async. clear, Clock enable ; no     ; --                   ; --               ; --                        ;
-; clk_50                                        ; PIN_N2             ; 58      ; Clock                      ; yes    ; Global Clock         ; GCLK2            ; --                        ;
+; clk_50                                        ; PIN_N2             ; 249     ; Clock                      ; yes    ; Global Clock         ; GCLK2            ; --                        ;
 ; clk_50                                        ; PIN_N2             ; 8       ; Clock                      ; no     ; --                   ; --               ; --                        ;
-; reset_n                                       ; PIN_AE4            ; 1       ; Async. clear               ; no     ; --                   ; --               ; --                        ;
-; rtl~0                                         ; LCCOMB_X31_Y16_N22 ; 16      ; Latch enable               ; yes    ; Global Clock         ; GCLK4            ; --                        ;
-; rtl~1                                         ; LCCOMB_X31_Y16_N18 ; 16      ; Latch enable               ; yes    ; Global Clock         ; GCLK6            ; --                        ;
-; rtl~10                                        ; LCCOMB_X29_Y16_N30 ; 16      ; Latch enable               ; yes    ; Global Clock         ; GCLK1            ; --                        ;
-; rtl~11                                        ; LCCOMB_X30_Y16_N18 ; 16      ; Latch enable               ; yes    ; Global Clock         ; GCLK14           ; --                        ;
-; rtl~12                                        ; LCCOMB_X32_Y16_N18 ; 16      ; Latch enable               ; yes    ; Global Clock         ; GCLK5            ; --                        ;
-; rtl~13                                        ; LCCOMB_X31_Y16_N6  ; 16      ; Latch enable               ; yes    ; Global Clock         ; GCLK11           ; --                        ;
-; rtl~14                                        ; LCCOMB_X30_Y16_N12 ; 16      ; Latch enable               ; yes    ; Global Clock         ; GCLK0            ; --                        ;
-; rtl~15                                        ; LCCOMB_X31_Y16_N2  ; 16      ; Latch enable               ; yes    ; Global Clock         ; GCLK15           ; --                        ;
-; rtl~16                                        ; LCCOMB_X31_Y16_N8  ; 16      ; Latch enable               ; yes    ; Global Clock         ; GCLK12           ; --                        ;
-; rtl~17                                        ; LCCOMB_X31_Y16_N10 ; 16      ; Latch enable               ; yes    ; Global Clock         ; GCLK9            ; --                        ;
-; rtl~18                                        ; LCCOMB_X31_Y16_N14 ; 16      ; Latch enable               ; yes    ; Global Clock         ; GCLK10           ; --                        ;
-; rtl~19                                        ; LCCOMB_X31_Y16_N12 ; 16      ; Latch enable               ; yes    ; Global Clock         ; GCLK8            ; --                        ;
-; rtl~2                                         ; LCCOMB_X30_Y15_N10 ; 16      ; Latch enable               ; yes    ; Global Clock         ; GCLK13           ; --                        ;
-; rtl~20                                        ; LCCOMB_X31_Y16_N4  ; 16      ; Latch enable               ; yes    ; Global Clock         ; GCLK7            ; --                        ;
-; rtl~21                                        ; LCCOMB_X31_Y17_N16 ; 16      ; Latch enable               ; no     ; --                   ; --               ; --                        ;
-; rtl~22                                        ; LCCOMB_X31_Y17_N6  ; 16      ; Latch enable               ; no     ; --                   ; --               ; --                        ;
-; rtl~23                                        ; LCCOMB_X31_Y16_N28 ; 16      ; Latch enable               ; no     ; --                   ; --               ; --                        ;
-; rtl~24                                        ; LCCOMB_X31_Y18_N16 ; 16      ; Latch enable               ; no     ; --                   ; --               ; --                        ;
-; rtl~25                                        ; LCCOMB_X30_Y15_N0  ; 16      ; Latch enable               ; no     ; --                   ; --               ; --                        ;
-; rtl~26                                        ; LCCOMB_X29_Y16_N16 ; 16      ; Latch enable               ; no     ; --                   ; --               ; --                        ;
-; rtl~27                                        ; LCCOMB_X29_Y14_N0  ; 16      ; Latch enable               ; no     ; --                   ; --               ; --                        ;
-; rtl~28                                        ; LCCOMB_X31_Y16_N26 ; 16      ; Latch enable               ; no     ; --                   ; --               ; --                        ;
-; rtl~29                                        ; LCCOMB_X30_Y14_N16 ; 16      ; Latch enable               ; no     ; --                   ; --               ; --                        ;
-; rtl~3                                         ; LCCOMB_X31_Y16_N24 ; 16      ; Latch enable               ; no     ; --                   ; --               ; --                        ;
-; rtl~30                                        ; LCCOMB_X30_Y16_N8  ; 16      ; Latch enable               ; no     ; --                   ; --               ; --                        ;
-; rtl~31                                        ; LCCOMB_X31_Y13_N18 ; 16      ; Latch enable               ; no     ; --                   ; --               ; --                        ;
-; rtl~4                                         ; LCCOMB_X31_Y16_N30 ; 16      ; Latch enable               ; no     ; --                   ; --               ; --                        ;
-; rtl~5                                         ; LCCOMB_X31_Y16_N20 ; 16      ; Latch enable               ; no     ; --                   ; --               ; --                        ;
-; rtl~6                                         ; LCCOMB_X32_Y17_N16 ; 16      ; Latch enable               ; no     ; --                   ; --               ; --                        ;
-; rtl~7                                         ; LCCOMB_X31_Y13_N12 ; 16      ; Latch enable               ; no     ; --                   ; --               ; --                        ;
-; rtl~8                                         ; LCCOMB_X31_Y16_N16 ; 16      ; Latch enable               ; no     ; --                   ; --               ; --                        ;
-; rtl~9                                         ; LCCOMB_X31_Y17_N0  ; 16      ; Latch enable               ; no     ; --                   ; --               ; --                        ;
+; reset_n                                       ; PIN_AC5            ; 1       ; Async. clear               ; no     ; --                   ; --               ; --                        ;
+; rtl~0                                         ; LCCOMB_X28_Y19_N10 ; 16      ; Latch enable               ; yes    ; Global Clock         ; GCLK4            ; --                        ;
+; rtl~1                                         ; LCCOMB_X28_Y19_N12 ; 16      ; Latch enable               ; yes    ; Global Clock         ; GCLK3            ; --                        ;
+; rtl~10                                        ; LCCOMB_X32_Y22_N22 ; 16      ; Latch enable               ; yes    ; Global Clock         ; GCLK10           ; --                        ;
+; rtl~11                                        ; LCCOMB_X29_Y23_N0  ; 16      ; Latch enable               ; yes    ; Global Clock         ; GCLK11           ; --                        ;
+; rtl~12                                        ; LCCOMB_X33_Y22_N22 ; 16      ; Latch enable               ; yes    ; Global Clock         ; GCLK6            ; --                        ;
+; rtl~13                                        ; LCCOMB_X28_Y19_N16 ; 16      ; Latch enable               ; yes    ; Global Clock         ; GCLK13           ; --                        ;
+; rtl~14                                        ; LCCOMB_X31_Y22_N12 ; 16      ; Latch enable               ; yes    ; Global Clock         ; GCLK8            ; --                        ;
+; rtl~15                                        ; LCCOMB_X28_Y19_N0  ; 16      ; Latch enable               ; yes    ; Global Clock         ; GCLK0            ; --                        ;
+; rtl~16                                        ; LCCOMB_X29_Y22_N28 ; 16      ; Latch enable               ; yes    ; Global Clock         ; GCLK1            ; --                        ;
+; rtl~17                                        ; LCCOMB_X29_Y22_N10 ; 16      ; Latch enable               ; yes    ; Global Clock         ; GCLK5            ; --                        ;
+; rtl~18                                        ; LCCOMB_X29_Y18_N12 ; 16      ; Latch enable               ; yes    ; Global Clock         ; GCLK12           ; --                        ;
+; rtl~19                                        ; LCCOMB_X28_Y19_N28 ; 16      ; Latch enable               ; yes    ; Global Clock         ; GCLK14           ; --                        ;
+; rtl~2                                         ; LCCOMB_X28_Y19_N26 ; 16      ; Latch enable               ; yes    ; Global Clock         ; GCLK15           ; --                        ;
+; rtl~20                                        ; LCCOMB_X28_Y19_N24 ; 16      ; Latch enable               ; yes    ; Global Clock         ; GCLK7            ; --                        ;
+; rtl~21                                        ; LCCOMB_X28_Y25_N4  ; 16      ; Latch enable               ; yes    ; Global Clock         ; GCLK9            ; --                        ;
+; rtl~22                                        ; LCCOMB_X30_Y22_N0  ; 16      ; Latch enable               ; no     ; --                   ; --               ; --                        ;
+; rtl~23                                        ; LCCOMB_X33_Y22_N0  ; 16      ; Latch enable               ; no     ; --                   ; --               ; --                        ;
+; rtl~24                                        ; LCCOMB_X28_Y22_N16 ; 16      ; Latch enable               ; no     ; --                   ; --               ; --                        ;
+; rtl~25                                        ; LCCOMB_X31_Y22_N22 ; 16      ; Latch enable               ; no     ; --                   ; --               ; --                        ;
+; rtl~26                                        ; LCCOMB_X32_Y22_N16 ; 16      ; Latch enable               ; no     ; --                   ; --               ; --                        ;
+; rtl~27                                        ; LCCOMB_X31_Y22_N16 ; 16      ; Latch enable               ; no     ; --                   ; --               ; --                        ;
+; rtl~28                                        ; LCCOMB_X30_Y19_N0  ; 16      ; Latch enable               ; no     ; --                   ; --               ; --                        ;
+; rtl~29                                        ; LCCOMB_X29_Y21_N16 ; 16      ; Latch enable               ; no     ; --                   ; --               ; --                        ;
+; rtl~3                                         ; LCCOMB_X30_Y19_N18 ; 16      ; Latch enable               ; no     ; --                   ; --               ; --                        ;
+; rtl~30                                        ; LCCOMB_X29_Y23_N4  ; 16      ; Latch enable               ; no     ; --                   ; --               ; --                        ;
+; rtl~31                                        ; LCCOMB_X30_Y23_N8  ; 16      ; Latch enable               ; no     ; --                   ; --               ; --                        ;
+; rtl~4                                         ; LCCOMB_X28_Y25_N20 ; 16      ; Latch enable               ; no     ; --                   ; --               ; --                        ;
+; rtl~5                                         ; LCCOMB_X29_Y22_N2  ; 16      ; Latch enable               ; no     ; --                   ; --               ; --                        ;
+; rtl~6                                         ; LCCOMB_X28_Y22_N14 ; 16      ; Latch enable               ; no     ; --                   ; --               ; --                        ;
+; rtl~7                                         ; LCCOMB_X29_Y21_N30 ; 16      ; Latch enable               ; no     ; --                   ; --               ; --                        ;
+; rtl~8                                         ; LCCOMB_X29_Y18_N16 ; 16      ; Latch enable               ; no     ; --                   ; --               ; --                        ;
+; rtl~9                                         ; LCCOMB_X29_Y18_N4  ; 16      ; Latch enable               ; no     ; --                   ; --               ; --                        ;
 +-----------------------------------------------+--------------------+---------+----------------------------+--------+----------------------+------------------+---------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------+
-; Global & Other Fast Signals                                                                                                                      ;
-+---------------------------------------------+--------------------+---------+----------------------+------------------+---------------------------+
-; Name                                        ; Location           ; Fan-Out ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
-+---------------------------------------------+--------------------+---------+----------------------+------------------+---------------------------+
-; altpll0:inst1|altpll:altpll_component|_clk0 ; PLL_1              ; 191     ; Global Clock         ; GCLK3            ; --                        ;
-; clk_50                                      ; PIN_N2             ; 58      ; Global Clock         ; GCLK2            ; --                        ;
-; rtl~0                                       ; LCCOMB_X31_Y16_N22 ; 16      ; Global Clock         ; GCLK4            ; --                        ;
-; rtl~1                                       ; LCCOMB_X31_Y16_N18 ; 16      ; Global Clock         ; GCLK6            ; --                        ;
-; rtl~10                                      ; LCCOMB_X29_Y16_N30 ; 16      ; Global Clock         ; GCLK1            ; --                        ;
-; rtl~11                                      ; LCCOMB_X30_Y16_N18 ; 16      ; Global Clock         ; GCLK14           ; --                        ;
-; rtl~12                                      ; LCCOMB_X32_Y16_N18 ; 16      ; Global Clock         ; GCLK5            ; --                        ;
-; rtl~13                                      ; LCCOMB_X31_Y16_N6  ; 16      ; Global Clock         ; GCLK11           ; --                        ;
-; rtl~14                                      ; LCCOMB_X30_Y16_N12 ; 16      ; Global Clock         ; GCLK0            ; --                        ;
-; rtl~15                                      ; LCCOMB_X31_Y16_N2  ; 16      ; Global Clock         ; GCLK15           ; --                        ;
-; rtl~16                                      ; LCCOMB_X31_Y16_N8  ; 16      ; Global Clock         ; GCLK12           ; --                        ;
-; rtl~17                                      ; LCCOMB_X31_Y16_N10 ; 16      ; Global Clock         ; GCLK9            ; --                        ;
-; rtl~18                                      ; LCCOMB_X31_Y16_N14 ; 16      ; Global Clock         ; GCLK10           ; --                        ;
-; rtl~19                                      ; LCCOMB_X31_Y16_N12 ; 16      ; Global Clock         ; GCLK8            ; --                        ;
-; rtl~2                                       ; LCCOMB_X30_Y15_N10 ; 16      ; Global Clock         ; GCLK13           ; --                        ;
-; rtl~20                                      ; LCCOMB_X31_Y16_N4  ; 16      ; Global Clock         ; GCLK7            ; --                        ;
-+---------------------------------------------+--------------------+---------+----------------------+------------------+---------------------------+
++-------------------------------------------------------------------------------------------------------------+
+; Global & Other Fast Signals                                                                                 ;
++--------+--------------------+---------+----------------------+------------------+---------------------------+
+; Name   ; Location           ; Fan-Out ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
++--------+--------------------+---------+----------------------+------------------+---------------------------+
+; clk_50 ; PIN_N2             ; 249     ; Global Clock         ; GCLK2            ; --                        ;
+; rtl~0  ; LCCOMB_X28_Y19_N10 ; 16      ; Global Clock         ; GCLK4            ; --                        ;
+; rtl~1  ; LCCOMB_X28_Y19_N12 ; 16      ; Global Clock         ; GCLK3            ; --                        ;
+; rtl~10 ; LCCOMB_X32_Y22_N22 ; 16      ; Global Clock         ; GCLK10           ; --                        ;
+; rtl~11 ; LCCOMB_X29_Y23_N0  ; 16      ; Global Clock         ; GCLK11           ; --                        ;
+; rtl~12 ; LCCOMB_X33_Y22_N22 ; 16      ; Global Clock         ; GCLK6            ; --                        ;
+; rtl~13 ; LCCOMB_X28_Y19_N16 ; 16      ; Global Clock         ; GCLK13           ; --                        ;
+; rtl~14 ; LCCOMB_X31_Y22_N12 ; 16      ; Global Clock         ; GCLK8            ; --                        ;
+; rtl~15 ; LCCOMB_X28_Y19_N0  ; 16      ; Global Clock         ; GCLK0            ; --                        ;
+; rtl~16 ; LCCOMB_X29_Y22_N28 ; 16      ; Global Clock         ; GCLK1            ; --                        ;
+; rtl~17 ; LCCOMB_X29_Y22_N10 ; 16      ; Global Clock         ; GCLK5            ; --                        ;
+; rtl~18 ; LCCOMB_X29_Y18_N12 ; 16      ; Global Clock         ; GCLK12           ; --                        ;
+; rtl~19 ; LCCOMB_X28_Y19_N28 ; 16      ; Global Clock         ; GCLK14           ; --                        ;
+; rtl~2  ; LCCOMB_X28_Y19_N26 ; 16      ; Global Clock         ; GCLK15           ; --                        ;
+; rtl~20 ; LCCOMB_X28_Y19_N24 ; 16      ; Global Clock         ; GCLK7            ; --                        ;
+; rtl~21 ; LCCOMB_X28_Y25_N4  ; 16      ; Global Clock         ; GCLK9            ; --                        ;
++--------+--------------------+---------+----------------------+------------------+---------------------------+
 
 
 +---------------------------------------------------------+
@@ -1247,50 +1236,50 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; SRAM_CONTROLLER:inst7|SRAM_ADDR[3]            ; 138     ;
 ; SCOMP:inst|STATE.EX_RETURN                    ; 123     ;
 ; SCOMP:inst|PC_STACK[0][0]~0                   ; 99      ;
-; SCOMP:inst|IR[4]                              ; 76      ;
-; SRAM_CONTROLLER:inst7|SRAM_ADDR[4]            ; 65      ;
+; SCOMP:inst|IR[4]                              ; 75      ;
+; SRAM_CONTROLLER:inst7|SRAM_ADDR[4]            ; 64      ;
 ; altpll0:inst1|altpll:altpll_component|_locked ; 51      ;
-; CHIP_EMULATOR:inst4|Equal0~3                  ; 47      ;
-; CHIP_EMULATOR:inst4|DATA[15]~28               ; 41      ;
-; SCOMP:inst|IR[0]                              ; 40      ;
-; SCOMP:inst|IR[1]                              ; 40      ;
-; SCOMP:inst|IR[2]                              ; 38      ;
+; CHIP_EMULATOR:inst4|Equal0~3                  ; 46      ;
+; SCOMP:inst|IR[0]                              ; 39      ;
+; SCOMP:inst|IR[2]                              ; 39      ;
 ; SRAM_CONTROLLER:inst7|SRAM_WE_N               ; 37      ;
+; SCOMP:inst|IR[1]                              ; 36      ;
 ; SCOMP:inst|STATE.EX_SUB                       ; 35      ;
-; SCOMP:inst|STATE.EX_ADDI                      ; 34      ;
 ; SCOMP:inst|STATE.EX_ADD                       ; 34      ;
-; CHIP_EMULATOR:inst4|DATA[1]~94                ; 33      ;
-; CHIP_EMULATOR:inst4|DATA[2]~93                ; 33      ;
-; CHIP_EMULATOR:inst4|DATA[4]~92                ; 33      ;
-; CHIP_EMULATOR:inst4|DATA[5]~91                ; 33      ;
-; CHIP_EMULATOR:inst4|DATA[7]~90                ; 33      ;
-; CHIP_EMULATOR:inst4|DATA[8]~89                ; 33      ;
-; CHIP_EMULATOR:inst4|DATA[9]~88                ; 33      ;
-; CHIP_EMULATOR:inst4|DATA[0]~103               ; 32      ;
-; CHIP_EMULATOR:inst4|DATA[3]~102               ; 32      ;
-; CHIP_EMULATOR:inst4|DATA[6]~101               ; 32      ;
-; CHIP_EMULATOR:inst4|DATA[10]~100              ; 32      ;
-; CHIP_EMULATOR:inst4|DATA[11]~99               ; 32      ;
-; CHIP_EMULATOR:inst4|DATA[12]~98               ; 32      ;
-; CHIP_EMULATOR:inst4|DATA[13]~97               ; 32      ;
-; CHIP_EMULATOR:inst4|DATA[14]~96               ; 32      ;
-; CHIP_EMULATOR:inst4|DATA[15]~95               ; 32      ;
+; SCOMP:inst|STATE.EX_ADDI                      ; 34      ;
+; CHIP_EMULATOR:inst4|DATA[4]~100               ; 33      ;
+; CHIP_EMULATOR:inst4|DATA[0]~98                ; 33      ;
+; CHIP_EMULATOR:inst4|DATA[1]~97                ; 33      ;
+; CHIP_EMULATOR:inst4|DATA[2]~96                ; 33      ;
+; CHIP_EMULATOR:inst4|DATA[3]~95                ; 33      ;
+; CHIP_EMULATOR:inst4|DATA[5]~94                ; 33      ;
+; CHIP_EMULATOR:inst4|DATA[6]~93                ; 33      ;
+; CHIP_EMULATOR:inst4|DATA[7]~92                ; 33      ;
+; CHIP_EMULATOR:inst4|DATA[8]~91                ; 33      ;
+; CHIP_EMULATOR:inst4|DATA[9]~90                ; 33      ;
+; CHIP_EMULATOR:inst4|DATA[10]~89               ; 33      ;
+; CHIP_EMULATOR:inst4|DATA[11]~88               ; 33      ;
+; CHIP_EMULATOR:inst4|DATA[12]~87               ; 33      ;
+; CHIP_EMULATOR:inst4|DATA[13]~86               ; 33      ;
+; CHIP_EMULATOR:inst4|DATA[14]~85               ; 33      ;
+; CHIP_EMULATOR:inst4|DATA[15]~84               ; 33      ;
+; CHIP_EMULATOR:inst4|DATA[15]~26               ; 31      ;
 ; SCOMP:inst|IR[3]                              ; 30      ;
 ; SCOMP:inst|STATE.FETCH                        ; 28      ;
-; SCOMP:inst|IO_WRITE_INT                       ; 25      ;
+; SCOMP:inst|IO_WRITE_INT                       ; 24      ;
+; SCOMP:inst|STATE.EX_SHIFT                     ; 23      ;
 ; SRAM_CONTROLLER:inst7|STATE.WARM_UP           ; 23      ;
-; SRAM_CONTROLLER:inst7|STATE.WRITE_WAIT        ; 22      ;
 ; SCOMP:inst|IR[13]                             ; 21      ;
+; SRAM_CONTROLLER:inst7|STATE.WRITE_WAIT        ; 21      ;
 ; SCOMP:inst|STATE.EX_IN                        ; 20      ;
-; SCOMP:inst|STATE.EX_SHIFT                     ; 19      ;
 ; SRAM_CONTROLLER:inst7|WRITE_ENABLE            ; 19      ;
 ; SRAM_CONTROLLER:inst7|SRAM_ADDR~0             ; 19      ;
 ; SCOMP:inst|STATE.EX_LOADI                     ; 18      ;
-; SCOMP:inst|WideOr3~3                          ; 17      ;
+; SCOMP:inst|AC[15]                             ; 18      ;
 ; SCOMP:inst|STATE.EX_XOR                       ; 17      ;
 ; SCOMP:inst|STATE.EX_AND                       ; 17      ;
 ; SRAM_CONTROLLER:inst7|READ_ENABLE             ; 17      ;
-; SCOMP:inst|AC[15]                             ; 17      ;
+; SCOMP:inst|IR[12]                             ; 17      ;
 +-----------------------------------------------+---------+
 
 
@@ -1299,7 +1288,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+-------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+------+-----------------+--------------------------------------------------------------------------------------------------------+
 ; Name                                                                   ; Type ; Mode        ; Clock Mode   ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Port A Input Registers ; Port A Output Registers ; Port B Input Registers ; Port B Output Registers ; Size  ; Implementation Port A Depth ; Implementation Port A Width ; Implementation Port B Depth ; Implementation Port B Width ; Implementation Bits ; M4Ks ; MIF             ; Location                                                                                               ;
 +------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+-------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+------+-----------------+--------------------------------------------------------------------------------------------------------+
-; SCOMP:inst|altsyncram:MEMORY|altsyncram_hit3:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; Single Clock ; 2048         ; 16           ; --           ; --           ; yes                    ; no                      ; --                     ; --                      ; 32768 ; 2048                        ; 16                          ; --                          ; --                          ; 32768               ; 8    ; SRAMdemo_v0.mif ; M4K_X26_Y17, M4K_X52_Y18, M4K_X26_Y19, M4K_X52_Y19, M4K_X52_Y17, M4K_X26_Y15, M4K_X52_Y16, M4K_X52_Y15 ;
+; SCOMP:inst|altsyncram:MEMORY|altsyncram_hit3:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; Single Clock ; 2048         ; 16           ; --           ; --           ; yes                    ; no                      ; --                     ; --                      ; 32768 ; 2048                        ; 16                          ; --                          ; --                          ; 32768               ; 8    ; SRAMdemo_v0.mif ; M4K_X13_Y22, M4K_X13_Y20, M4K_X26_Y20, M4K_X26_Y19, M4K_X26_Y22, M4K_X26_Y23, M4K_X26_Y21, M4K_X13_Y21 ;
 +------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+-------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+------+-----------------+--------------------------------------------------------------------------------------------------------+
 Note: Fitter may spread logical memories into multiple blocks to improve timing. The actual required RAM blocks can be found in the Fitter Resource Usage section.
 
@@ -1309,164 +1298,162 @@ Note: Fitter may spread logical memories into multiple blocks to improve timing.
 +----------------------------+------------------------+
 ; Interconnect Resource Type ; Usage                  ;
 +----------------------------+------------------------+
-; Block interconnects        ; 2,283 / 94,460 ( 2 % ) ;
-; C16 interconnects          ; 14 / 3,315 ( < 1 % )   ;
-; C4 interconnects           ; 1,085 / 60,840 ( 2 % ) ;
-; Direct links               ; 323 / 94,460 ( < 1 % ) ;
+; Block interconnects        ; 2,425 / 94,460 ( 3 % ) ;
+; C16 interconnects          ; 22 / 3,315 ( < 1 % )   ;
+; C4 interconnects           ; 1,367 / 60,840 ( 2 % ) ;
+; Direct links               ; 226 / 94,460 ( < 1 % ) ;
 ; Global clocks              ; 16 / 16 ( 100 % )      ;
-; Local interconnects        ; 1,131 / 33,216 ( 3 % ) ;
-; R24 interconnects          ; 31 / 3,091 ( 1 % )     ;
-; R4 interconnects           ; 1,155 / 81,294 ( 1 % ) ;
+; Local interconnects        ; 1,114 / 33,216 ( 3 % ) ;
+; R24 interconnects          ; 25 / 3,091 ( < 1 % )   ;
+; R4 interconnects           ; 1,556 / 81,294 ( 2 % ) ;
 +----------------------------+------------------------+
 
 
 +-----------------------------------------------------------------------------+
 ; LAB Logic Elements                                                          ;
 +---------------------------------------------+-------------------------------+
-; Number of Logic Elements  (Average = 13.87) ; Number of LABs  (Total = 112) ;
+; Number of Logic Elements  (Average = 11.94) ; Number of LABs  (Total = 128) ;
 +---------------------------------------------+-------------------------------+
-; 1                                           ; 1                             ;
-; 2                                           ; 3                             ;
-; 3                                           ; 4                             ;
-; 4                                           ; 2                             ;
-; 5                                           ; 3                             ;
-; 6                                           ; 2                             ;
-; 7                                           ; 1                             ;
-; 8                                           ; 0                             ;
-; 9                                           ; 1                             ;
-; 10                                          ; 1                             ;
+; 1                                           ; 10                            ;
+; 2                                           ; 5                             ;
+; 3                                           ; 21                            ;
+; 4                                           ; 0                             ;
+; 5                                           ; 1                             ;
+; 6                                           ; 0                             ;
+; 7                                           ; 0                             ;
+; 8                                           ; 1                             ;
+; 9                                           ; 0                             ;
+; 10                                          ; 0                             ;
 ; 11                                          ; 1                             ;
-; 12                                          ; 1                             ;
-; 13                                          ; 2                             ;
-; 14                                          ; 4                             ;
-; 15                                          ; 8                             ;
-; 16                                          ; 78                            ;
+; 12                                          ; 0                             ;
+; 13                                          ; 1                             ;
+; 14                                          ; 0                             ;
+; 15                                          ; 0                             ;
+; 16                                          ; 88                            ;
 +---------------------------------------------+-------------------------------+
 
 
 +--------------------------------------------------------------------+
 ; LAB-wide Signals                                                   ;
 +------------------------------------+-------------------------------+
-; LAB-wide Signals  (Average = 0.84) ; Number of LABs  (Total = 112) ;
+; LAB-wide Signals  (Average = 0.58) ; Number of LABs  (Total = 128) ;
 +------------------------------------+-------------------------------+
-; 1 Async. clear                     ; 4                             ;
-; 1 Clock                            ; 43                            ;
-; 1 Clock enable                     ; 21                            ;
-; 2 Clock enables                    ; 21                            ;
-; 2 Clocks                           ; 5                             ;
+; 1 Async. clear                     ; 2                             ;
+; 1 Clock                            ; 39                            ;
+; 1 Clock enable                     ; 9                             ;
+; 2 Clock enables                    ; 24                            ;
 +------------------------------------+-------------------------------+
 
 
 +------------------------------------------------------------------------------+
 ; LAB Signals Sourced                                                          ;
 +----------------------------------------------+-------------------------------+
-; Number of Signals Sourced  (Average = 15.99) ; Number of LABs  (Total = 112) ;
+; Number of Signals Sourced  (Average = 13.78) ; Number of LABs  (Total = 128) ;
 +----------------------------------------------+-------------------------------+
 ; 0                                            ; 0                             ;
-; 1                                            ; 1                             ;
-; 2                                            ; 3                             ;
-; 3                                            ; 4                             ;
-; 4                                            ; 2                             ;
-; 5                                            ; 3                             ;
-; 6                                            ; 1                             ;
-; 7                                            ; 1                             ;
-; 8                                            ; 0                             ;
+; 1                                            ; 10                            ;
+; 2                                            ; 4                             ;
+; 3                                            ; 22                            ;
+; 4                                            ; 0                             ;
+; 5                                            ; 0                             ;
+; 6                                            ; 0                             ;
+; 7                                            ; 0                             ;
+; 8                                            ; 1                             ;
 ; 9                                            ; 1                             ;
-; 10                                           ; 2                             ;
-; 11                                           ; 0                             ;
-; 12                                           ; 2                             ;
-; 13                                           ; 2                             ;
-; 14                                           ; 4                             ;
-; 15                                           ; 5                             ;
-; 16                                           ; 37                            ;
-; 17                                           ; 10                            ;
-; 18                                           ; 14                            ;
-; 19                                           ; 2                             ;
-; 20                                           ; 3                             ;
+; 10                                           ; 0                             ;
+; 11                                           ; 1                             ;
+; 12                                           ; 0                             ;
+; 13                                           ; 0                             ;
+; 14                                           ; 0                             ;
+; 15                                           ; 1                             ;
+; 16                                           ; 52                            ;
+; 17                                           ; 5                             ;
+; 18                                           ; 8                             ;
+; 19                                           ; 3                             ;
+; 20                                           ; 2                             ;
 ; 21                                           ; 1                             ;
-; 22                                           ; 0                             ;
-; 23                                           ; 1                             ;
-; 24                                           ; 1                             ;
-; 25                                           ; 1                             ;
-; 26                                           ; 1                             ;
-; 27                                           ; 1                             ;
+; 22                                           ; 3                             ;
+; 23                                           ; 3                             ;
+; 24                                           ; 0                             ;
+; 25                                           ; 0                             ;
+; 26                                           ; 2                             ;
+; 27                                           ; 0                             ;
 ; 28                                           ; 2                             ;
-; 29                                           ; 2                             ;
+; 29                                           ; 0                             ;
 ; 30                                           ; 3                             ;
-; 31                                           ; 0                             ;
-; 32                                           ; 2                             ;
+; 31                                           ; 3                             ;
+; 32                                           ; 1                             ;
 +----------------------------------------------+-------------------------------+
 
 
 +---------------------------------------------------------------------------------+
 ; LAB Signals Sourced Out                                                         ;
 +-------------------------------------------------+-------------------------------+
-; Number of Signals Sourced Out  (Average = 6.62) ; Number of LABs  (Total = 112) ;
+; Number of Signals Sourced Out  (Average = 5.76) ; Number of LABs  (Total = 128) ;
 +-------------------------------------------------+-------------------------------+
 ; 0                                               ; 0                             ;
-; 1                                               ; 5                             ;
-; 2                                               ; 8                             ;
-; 3                                               ; 7                             ;
-; 4                                               ; 15                            ;
-; 5                                               ; 17                            ;
-; 6                                               ; 14                            ;
-; 7                                               ; 10                            ;
-; 8                                               ; 7                             ;
-; 9                                               ; 8                             ;
-; 10                                              ; 6                             ;
-; 11                                              ; 2                             ;
-; 12                                              ; 5                             ;
-; 13                                              ; 3                             ;
+; 1                                               ; 11                            ;
+; 2                                               ; 11                            ;
+; 3                                               ; 28                            ;
+; 4                                               ; 14                            ;
+; 5                                               ; 15                            ;
+; 6                                               ; 9                             ;
+; 7                                               ; 5                             ;
+; 8                                               ; 6                             ;
+; 9                                               ; 9                             ;
+; 10                                              ; 4                             ;
+; 11                                              ; 4                             ;
+; 12                                              ; 2                             ;
+; 13                                              ; 4                             ;
 ; 14                                              ; 0                             ;
-; 15                                              ; 1                             ;
-; 16                                              ; 1                             ;
+; 15                                              ; 0                             ;
+; 16                                              ; 2                             ;
 ; 17                                              ; 0                             ;
 ; 18                                              ; 1                             ;
 ; 19                                              ; 1                             ;
-; 20                                              ; 0                             ;
+; 20                                              ; 1                             ;
 ; 21                                              ; 0                             ;
-; 22                                              ; 0                             ;
-; 23                                              ; 1                             ;
+; 22                                              ; 1                             ;
 +-------------------------------------------------+-------------------------------+
 
 
 +------------------------------------------------------------------------------+
 ; LAB Distinct Inputs                                                          ;
 +----------------------------------------------+-------------------------------+
-; Number of Distinct Inputs  (Average = 16.85) ; Number of LABs  (Total = 112) ;
+; Number of Distinct Inputs  (Average = 14.80) ; Number of LABs  (Total = 128) ;
 +----------------------------------------------+-------------------------------+
 ; 0                                            ; 0                             ;
 ; 1                                            ; 0                             ;
-; 2                                            ; 1                             ;
-; 3                                            ; 3                             ;
-; 4                                            ; 0                             ;
-; 5                                            ; 4                             ;
-; 6                                            ; 1                             ;
-; 7                                            ; 7                             ;
+; 2                                            ; 7                             ;
+; 3                                            ; 7                             ;
+; 4                                            ; 22                            ;
+; 5                                            ; 0                             ;
+; 6                                            ; 0                             ;
+; 7                                            ; 1                             ;
 ; 8                                            ; 2                             ;
 ; 9                                            ; 2                             ;
-; 10                                           ; 6                             ;
-; 11                                           ; 7                             ;
-; 12                                           ; 8                             ;
-; 13                                           ; 2                             ;
-; 14                                           ; 5                             ;
-; 15                                           ; 5                             ;
-; 16                                           ; 7                             ;
-; 17                                           ; 6                             ;
-; 18                                           ; 6                             ;
-; 19                                           ; 3                             ;
-; 20                                           ; 1                             ;
+; 10                                           ; 2                             ;
+; 11                                           ; 5                             ;
+; 12                                           ; 4                             ;
+; 13                                           ; 3                             ;
+; 14                                           ; 6                             ;
+; 15                                           ; 3                             ;
+; 16                                           ; 6                             ;
+; 17                                           ; 10                            ;
+; 18                                           ; 5                             ;
+; 19                                           ; 4                             ;
+; 20                                           ; 3                             ;
 ; 21                                           ; 3                             ;
-; 22                                           ; 5                             ;
+; 22                                           ; 4                             ;
 ; 23                                           ; 2                             ;
 ; 24                                           ; 3                             ;
-; 25                                           ; 1                             ;
-; 26                                           ; 0                             ;
-; 27                                           ; 4                             ;
-; 28                                           ; 3                             ;
-; 29                                           ; 3                             ;
-; 30                                           ; 4                             ;
-; 31                                           ; 7                             ;
+; 25                                           ; 3                             ;
+; 26                                           ; 3                             ;
+; 27                                           ; 3                             ;
+; 28                                           ; 4                             ;
+; 29                                           ; 4                             ;
+; 30                                           ; 2                             ;
+; 31                                           ; 4                             ;
 ; 32                                           ; 1                             ;
 +----------------------------------------------+-------------------------------+
 
@@ -1513,13 +1500,13 @@ Note: Fitter may spread logical memories into multiple blocks to improve timing.
 Info: *******************************************************************
 Info: Running Quartus II Fitter
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Fri Apr 03 14:59:34 2020
+    Info: Processing started: Sat Apr 04 19:16:33 2020
 Info: Command: quartus_fit --read_settings_files=off --write_settings_files=off SCOMP_SRAM -c SCOMP_SRAM
 Info: Selected device EP2C35F672C6 for design "SCOMP_SRAM"
 Info: Low junction temperature is 0 degrees C
 Info: High junction temperature is 85 degrees C
+Critical Warning: Changed operation mode of PLL "altpll0:inst1|altpll:altpll_component|pll" to No Compensation
 Info: Implemented PLL "altpll0:inst1|altpll:altpll_component|pll" as Cyclone II PLL type
-    Info: Implementing clock multiplication of 1, clock division of 4, and phase shift of 0 degrees (0 ps) for altpll0:inst1|altpll:altpll_component|_clk0 port
 Info: Fitter is performing an Auto Fit compilation, which may decrease Fitter effort to reduce compilation time
 Warning: Feature LogicLock is only available with a valid subscription license. Please purchase a software subscription to gain full access to this feature.
 Info: Device migration not selected. If you intend to use device migration later, you may need to change the pin assignments as they may be incompatible with other devices
@@ -1575,9 +1562,7 @@ Critical Warning: No exact pin location assignment(s) for 43 pins of 43 total pi
     Info: Pin clk_50 not assigned to an exact location on the device
     Info: Pin reset_n not assigned to an exact location on the device
 Info: Timing-driven compilation is using the Classic Timing Analyzer
-Info: Detected fmax, tsu, tco, and/or tpd requirements -- optimizing circuit to achieve only the specified requirements
-Info: Automatically promoted node altpll0:inst1|altpll:altpll_component|_clk0 (placed in counter C0 of PLL_1)
-    Info: Automatically promoted destinations to use location or clock signal Global Clock CLKCTRL_G3
+Info: Timing requirements not specified -- quality metrics such as performance and power consumption may be sacrificed to reduce compilation time.
 Info: Automatically promoted node clk_50 (placed in PIN N2 (CLK0, LVDSCLK0p, Input))
     Info: Automatically promoted destinations to use location or clock signal Global Clock CLKCTRL_G2
     Info: Following destination nodes may be non-global or may not use global or regional clocks
@@ -1615,6 +1600,8 @@ Info: Automatically promoted node rtl~2
     Info: Automatically promoted destinations to use location or clock signal Global Clock
 Info: Automatically promoted node rtl~20 
     Info: Automatically promoted destinations to use location or clock signal Global Clock
+Info: Automatically promoted node rtl~21 
+    Info: Automatically promoted destinations to use location or clock signal Global Clock
 Info: Starting register packing
 Extra Info: Performing register packing on registers with non-logic cell location assignments
 Extra Info: Completed register packing on registers with non-logic cell location assignments
@@ -1637,32 +1624,31 @@ Info: I/O bank details before I/O pin placement
         Info: I/O bank number 6 does not use VREF pins and has undetermined VCCIO pins. 1 total pin(s) used --  58 pins available
         Info: I/O bank number 7 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  58 pins available
         Info: I/O bank number 8 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  56 pins available
-Info: Fitter preparation operations ending: elapsed time is 00:00:01
+Info: Fitter preparation operations ending: elapsed time is 00:00:00
 Info: Fitter placement preparation operations beginning
-Info: Fitter placement preparation operations ending: elapsed time is 00:00:01
+Info: Fitter placement preparation operations ending: elapsed time is 00:00:00
 Info: Fitter placement operations beginning
 Info: Fitter placement was successful
-Info: Fitter placement operations ending: elapsed time is 00:00:02
-Info: Estimated most critical path is register to register delay of 6.103 ns
-    Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LAB_X31_Y18; Fanout = 1; REG Node = 'CHIP_EMULATOR:inst4|SRAM~220'
-    Info: 2: + IC(0.336 ns) + CELL(0.419 ns) = 0.755 ns; Loc. = LAB_X30_Y18; Fanout = 1; COMB Node = 'CHIP_EMULATOR:inst4|SRAM~589'
-    Info: 3: + IC(0.290 ns) + CELL(0.271 ns) = 1.316 ns; Loc. = LAB_X30_Y18; Fanout = 1; COMB Node = 'CHIP_EMULATOR:inst4|SRAM~590'
-    Info: 4: + IC(1.164 ns) + CELL(0.150 ns) = 2.630 ns; Loc. = LAB_X33_Y17; Fanout = 1; COMB Node = 'CHIP_EMULATOR:inst4|SRAM~591'
-    Info: 5: + IC(0.290 ns) + CELL(0.275 ns) = 3.195 ns; Loc. = LAB_X33_Y17; Fanout = 3; COMB Node = 'CHIP_EMULATOR:inst4|DATA[12]~38'
-    Info: 6: + IC(0.415 ns) + CELL(0.150 ns) = 3.760 ns; Loc. = LAB_X33_Y17; Fanout = 1; COMB Node = 'SCOMP:inst|lpm_bustri:IO_BUS|dout[12]~6'
-    Info: 7: + IC(0.415 ns) + CELL(0.150 ns) = 4.325 ns; Loc. = LAB_X33_Y17; Fanout = 3; COMB Node = 'SCOMP:inst|lpm_bustri:IO_BUS|dout[12]~7'
-    Info: 8: + IC(0.415 ns) + CELL(0.150 ns) = 4.890 ns; Loc. = LAB_X33_Y17; Fanout = 1; COMB Node = 'SCOMP:inst|Selector15~3'
-    Info: 9: + IC(0.415 ns) + CELL(0.149 ns) = 5.454 ns; Loc. = LAB_X33_Y17; Fanout = 1; COMB Node = 'SCOMP:inst|Selector15~4'
-    Info: 10: + IC(0.145 ns) + CELL(0.420 ns) = 6.019 ns; Loc. = LAB_X33_Y17; Fanout = 1; COMB Node = 'SCOMP:inst|Selector15~6'
-    Info: 11: + IC(0.000 ns) + CELL(0.084 ns) = 6.103 ns; Loc. = LAB_X33_Y17; Fanout = 10; REG Node = 'SCOMP:inst|AC[12]'
-    Info: Total cell delay = 2.218 ns ( 36.34 % )
-    Info: Total interconnect delay = 3.885 ns ( 63.66 % )
+Info: Fitter placement operations ending: elapsed time is 00:00:01
+Info: Estimated most critical path is register to register delay of 8.481 ns
+    Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LAB_X29_Y18; Fanout = 1; REG Node = 'CHIP_EMULATOR:inst4|SRAM~15'
+    Info: 2: + IC(0.415 ns) + CELL(0.150 ns) = 0.565 ns; Loc. = LAB_X29_Y18; Fanout = 1; COMB Node = 'CHIP_EMULATOR:inst4|SRAM~526'
+    Info: 3: + IC(0.290 ns) + CELL(0.271 ns) = 1.126 ns; Loc. = LAB_X29_Y18; Fanout = 1; COMB Node = 'CHIP_EMULATOR:inst4|SRAM~527'
+    Info: 4: + IC(0.902 ns) + CELL(0.150 ns) = 2.178 ns; Loc. = LAB_X30_Y16; Fanout = 1; COMB Node = 'CHIP_EMULATOR:inst4|SRAM~528'
+    Info: 5: + IC(0.290 ns) + CELL(0.271 ns) = 2.739 ns; Loc. = LAB_X30_Y16; Fanout = 1; COMB Node = 'CHIP_EMULATOR:inst4|SRAM~531'
+    Info: 6: + IC(1.377 ns) + CELL(0.275 ns) = 4.391 ns; Loc. = LAB_X29_Y25; Fanout = 2; COMB Node = 'CHIP_EMULATOR:inst4|DATA[15]~23'
+    Info: 7: + IC(0.145 ns) + CELL(0.420 ns) = 4.956 ns; Loc. = LAB_X29_Y25; Fanout = 33; COMB Node = 'CHIP_EMULATOR:inst4|DATA[15]~84'
+    Info: 8: + IC(1.453 ns) + CELL(0.438 ns) = 6.847 ns; Loc. = LAB_X22_Y20; Fanout = 3; COMB Node = 'SCOMP:inst|lpm_bustri:IO_BUS|dout[15]~0'
+    Info: 9: + IC(1.550 ns) + CELL(0.084 ns) = 8.481 ns; Loc. = LAB_X29_Y19; Fanout = 1; REG Node = 'SRAM_CONTROLLER:inst7|DATA[15]'
+    Info: Total cell delay = 2.059 ns ( 24.28 % )
+    Info: Total interconnect delay = 6.422 ns ( 75.72 % )
 Info: Fitter routing operations beginning
 Info: Average interconnect usage is 1% of the available device resources
-    Info: Peak interconnect usage is 9% of the available device resources in the region that extends from location X33_Y12 to location X43_Y23
-Info: Fitter routing operations ending: elapsed time is 00:00:02
+    Info: Peak interconnect usage is 16% of the available device resources in the region that extends from location X22_Y12 to location X32_Y23
+Info: Fitter routing operations ending: elapsed time is 00:00:01
 Info: The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info: Optimizations that may affect the design's routability were skipped
+    Info: Optimizations that may affect the design's timing were skipped
 Info: Started post-fitting delay annotation
 Warning: Found 41 output pins without output pin load capacitance assignment
     Info: Pin "SRAM_DQ[15]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
@@ -1709,10 +1695,10 @@ Warning: Found 41 output pins without output pin load capacitance assignment
 Info: Delay annotation completed successfully
 Info: Design uses memory blocks. Violating setup or hold times of memory block address registers for either read or write operations could cause memory contents to be corrupted. Make sure that all memory block address registers meet the setup and hold time requirements.
 Warning: The Reserve All Unused Pins setting has not been specified, and will default to 'As output driving ground'.
-Info: Quartus II Fitter was successful. 0 errors, 4 warnings
-    Info: Peak virtual memory: 315 megabytes
-    Info: Processing ended: Fri Apr 03 14:59:45 2020
-    Info: Elapsed time: 00:00:11
-    Info: Total CPU time (on all processors): 00:00:12
+Info: Quartus II Fitter was successful. 0 errors, 5 warnings
+    Info: Peak virtual memory: 314 megabytes
+    Info: Processing ended: Sat Apr 04 19:16:41 2020
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:08
 
 

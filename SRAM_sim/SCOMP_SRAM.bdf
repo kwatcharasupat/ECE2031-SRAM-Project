@@ -828,11 +828,6 @@ applicable agreement for further details.
 	(pt 608 80)
 )
 (connector
-	(text "clk_scomp" (rect 178 248 231 260)(font "Arial" ))
-	(pt 168 264)
-	(pt 280 264)
-)
-(connector
 	(text "reset_n_int" (rect 506 112 560 124)(font "Arial" ))
 	(pt 496 128)
 	(pt 608 128)
@@ -1056,6 +1051,11 @@ applicable agreement for further details.
 	(text "clk_50" (rect 320 472 351 484)(font "Arial" ))
 	(pt 312 488)
 	(pt 376 488)
+)
+(connector
+	(text "clk_50" (rect 178 248 209 260)(font "Arial" ))
+	(pt 168 264)
+	(pt 280 264)
 )
 (junction (pt 800 472))
 (junction (pt 768 456))

@@ -1,6 +1,7 @@
 |SCOMP_SRAM
 sram_oe_n <= SRAM_CONTROLLER:inst7.SRAM_OE_N
 io_write <= SCOMP:inst.IO_WRITE
+clk_50 => SCOMP:inst.CLOCK
 clk_50 => altpll0:inst1.inclk0
 clk_50 => inst8.IN0
 reset_n => inst13.IN0
