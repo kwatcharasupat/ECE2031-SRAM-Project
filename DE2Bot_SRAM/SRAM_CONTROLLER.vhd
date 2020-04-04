@@ -17,14 +17,17 @@ ENTITY SRAM_CONTROLLER IS
 		CLOCK			:	IN STD_LOGIC;				-- from external (could be SCOMP)
 		
 		SRAM_CE_N		:	OUT STD_LOGIC;
-		SRAM_WE_N		:	OUT STD_LOGIC; 						--WE USE THIS
-		SRAM_OE_N		:	OUT STD_LOGIC; 						-- WE USE THIS
+		SRAM_WE_N		:	OUT STD_LOGIC; 						
+		SRAM_OE_N		:	OUT STD_LOGIC; 						-
 		SRAM_UB_N		:	OUT STD_LOGIC;
 		SRAM_LB_N		:	OUT STD_LOGIC;
-		SRAM_ADLO		:	OUT STD_LOGIC_VECTOR(15 DOWNTO 0); 	-- WE USE THIS
-		SRAM_ADHI		:	OUT STD_LOGIC_VECTOR(1 DOWNTO 0); 	-- WE USE THIS
 		
-		SRAM_DQ			:	INOUT STD_LOGIC_VECTOR(15 DOWNTO 0);-- to/from SRAM hardware
+		-- ##Karn's comment##
+		-- in the new project SRAM_ADLO and SRAM_ADHI are combined into SRAM_ADDR
+		SRAM_ADLO		:	OUT STD_LOGIC_VECTOR(15 DOWNTO 0); 	
+		SRAM_ADHI		:	OUT STD_LOGIC_VECTOR(1 DOWNTO 0); 	
+		
+		SRAM_DQ			:	INOUT STD_LOGIC_VECTOR(15 DOWNTO 0);	-- to/from SRAM hardware
 		IO_DATA			:	INOUT STD_LOGIC_VECTOR(15 DOWNTO 0)	-- to/from SCOMP
 	);
 END SRAM_CONTROLLER;
@@ -36,12 +39,14 @@ ARCHITECTURE v0 OF SRAM_CONTROLLER IS
 		WARM_UP,
 		READ_PREP,	
 		READ_DONE,
-		WRITE_PREP, 	-- placeholder for write states
-		WRITE_DONE
+		WRITE_ADDR_PREP, 	-- placeholder for write states
+		WRITE_WE_ASSERT,
+		WRITE_WAIT,	        -- Wait for signal  
+		WRITE_LOCK          -- Clean Up!
 	);
 	
 	-- Declare internal signals
-	SIGNAL STATE 	:	STATE_TYPE;						-- SRAM states
+	SIGNAL STATE 		:	STATE_TYPE;						-- SRAM states
 	SIGNAL ADDR		:	STD_LOGIC_VECTOR(17 DOWNTO 0);	-- Address
 	SIGNAL DATA		:	STD_LOGIC_VECTOR(15 DOWNTO 0);	-- Data
 	SIGNAL WE		:	STD_LOGIC;
@@ -49,7 +54,6 @@ ARCHITECTURE v0 OF SRAM_CONTROLLER IS
 	SIGNAL CE		:	STD_LOGIC;
 	SIGNAL UB		:	STD_LOGIC;
 	SIGNAL LB		:	STD_LOGIC;
-    	SIGNAL READ_SIG :   STD_LOGIC_VECTOR(2 DOWNTO 0);  -- READ SIGNAL FOR SRAM 
 	SIGNAL DT_ENABLE	:	STD_LOGIC;
 	SIGNAL TR_ENABLE	:	STD_LOGIC;
 	
@@ -75,14 +79,16 @@ BEGIN
 		result => DATA
 	);
 	
-    --Concatenated Signals for Read Operation of SRAM
-    READ_SIG	<=	CTRL_OE & ADHI; 
-        
 	PROCESS (CLOCK)
 	BEGIN
 		IF (RISING_EDGE(CLOCK)) THEN
 			CASE STATE IS
 				WHEN IDLE =>
+					-- ## Karn's edit ##
+					SRAM_OE_N <= '1';
+					SRAM_WE_N <= '1';
+					-- disable everything to be safe
+					-- ##
 				
 					DT_ENABLE <= '0';
 					TR_ENABLE <= '0';
@@ -98,11 +104,21 @@ BEGIN
 					-- ADLO is contained in IO_DATA
 					-- concat ADHI and IO_DATA to get 18-bit address.
 				        
+					-- ## Karn's comment ##
+					-- I think this is redundant since WARM_UP is only reachable via IDLE
+					--	and IDLE alr has these two lines
 					DT_ENABLE <= '0';
-					TR_ENABLE <= '0';			
+					TR_ENABLE <= '0';		
+					-- ##
 		
 					IF (CTRL_WE = '1')	THEN
-						STATE <= WRITE_PREP;
+						WE <= '1';
+						-- ## Karn's edit ##
+						OE <= '0';
+						SRAM_OE_N <= NOT(OE);
+						-- help make sure that we don't need to worry about additional timing requirement
+						-- ##
+						STATE <= WRITE_ADDR_PREP;
 					ELSIF (CTRL_OE = '1' AND CTRL_WE = '0') THEN
 						STATE <= READ_PREP;
 					ELSE
@@ -110,90 +126,72 @@ BEGIN
 					END IF;
 				
 				WHEN READ_PREP =>
-					--Current State Handling...
 					SRAM_ADHI	<=	ADDR(17 DOWNTO 16);
 					SRAM_ADLO	<=	ADDR(15 DOWNTO 0); -- Keep the Address Fired!
-					SRAM_OE_N         <=      '0';
-					SRAM_WE_N         <=      '1';
-
+					SRAM_OE_N       <=      '0';
+					SRAM_WE_N	<=      '1';
 					
 					DT_ENABLE <= '1';
-					-- IO_DATA         <=      SRAM_DQ;  
+					-- equiv: IO_DATA         <=      SRAM_DQ;  
 					
-					----------- [[ RESOLVED! ]] ----------
-					----------- [[ KARN'S COMMENT STARTS]] ----------
-					-- * If we were not using LPM_BUSTRI (see below)
-					--	this should be IO_DATA <= SRAM_DQ since we are reading from SRAM into FPGA
-					-- **BUT**
-					-- * Both SRAM_DQ and IO_DATA are tristate bus which are handled by LPM_BUSTRI
-					--	when OE is set to high, the LPM_BUSTRI automatically let SRAM_DQ flows INTO IO_DATA
-					-- * Point for discussion:
-					--	** should we define a new signal to enable the direction of data flow in the tristate bus
-					--		instead of the current OE (SRAM_DQ -> IO_DATA) and WE (IO_DATA -> SRAM_DQ)?
-					--	** OE and WE are internal signals that we have been a little loose with wrt to timing
-					--		It might be better to define a new signal 
-					--		to control LPM_BUSTRI's enabledtr and enableddt to make things more precise
-					--	** For reference, see http://www.pldworld.com/_altera/html/_sw/q2help/source/mega/mega_file_lpm_bustri.htm
-					------------ [[ KARN'S COMMENT ENDS]] -----------
-
-					--Next State Logic Set Up!
+					--Next State Logic Setup
 					IF (CTRL_OE = '0') THEN
 						STATE <= READ_DONE;
 					ELSE 
 						STATE <= READ_PREP;
 					END IF;
-					
-				WHEN WRITE_PREP =>
-					--Current State Handling...
-					SRAM_ADHI	<=	ADDR(17 DOWNTO 16);
-					SRAM_ADLO	<=	ADDR(15 DOWNTO 0); -- Keep the Address Fired
-
-					----------- [[ KARN'S COMMENT STARTS]] ----------
-					-- * (minor) SRAM_OE and SRAM_WE don't exist
-					-- 	the two output signals defined are SRAM_OE_N and SRAM_WE_N
-					--	(see PORT declaration above)
-					------------ [[ KARN'S COMMENT ENDS]] -----------
-					SRAM_OE_N         <=      '1';
-					SRAM_WE_N         <=      '0';
-					----------- [[ KARN'S COMMENT STARTS]] ----------
-					-- * Write cycle timing is also a little different. 
-					--	SRAM_WE_N should not be written LOW before address stabilizes.
-					--	After SRAM_OE_N is forced HIGH and the address is driven,
-					--	we should wait 10 ns (a clock cycle) before setting SRAM_WE_N to LOW
-					--	in order to avoid data corruption.
-					-- * Anyway, we will have to discuss this in the next meeting so don't worry about this for now
-					------------ [[ KARN'S COMMENT ENDS]] -----------
-					
-					----------- [[ KARN'S COMMENT STARTS]] ----------
-					SRAM_DQ         <=      IO_DATA;  --That's for the SCOMP To get connected to the GPIO that goes to the SRAM.
-	                                -- * Both SRAM_DQ and IO_DATA are tristate bus which are handled by LPM_BUSTRI
-					--	when WE is set to high, the LPM_BUSTRI automatically let IO_DATA flows INTO SRAM_DQ
-					-- * Will have to fix this enabling later coz it breaks timing requirement.
-					-- * Point for discussion:
-					--	** should we define a new signal to enable the direction of data flow in the tristate bus
-					--		instead of the current OE (SRAM_DQ -> IO_DATA) and WE (IO_DATA -> SRAM_DQ)?
-					--	** OE and WE are internal signals that we have been a little loose with wrt to timing
-					--		It might be better to define a new signal 
-					--		to control LPM_BUSTRI's enabledtr and enableddt to make things more precise
-					--	** For reference, see http://www.pldworld.com/_altera/html/_sw/q2help/source/mega/mega_file_lpm_bustri.htm
-					------------ [[ KARN'S COMMENT ENDS]] -----------
-
-
-					--Next State Logic Set Up!
-					IF (CTRL_WE = '0') THEN
-						STATE <= WRITE_DONE;
-					ELSE 
-						STATE <= WRITE_PREP;
-					END IF;
-
+						
 				WHEN READ_DONE =>
 					SRAM_OE_N <= '1';
-				    STATE <= IDLE;
-
-				WHEN WRITE_DONE =>
-					SRAM_WE_N <= '1';
-					STATE <= IDLE;
+				    	STATE <= IDLE;
 					
+				WHEN WRITE_ADDR_PREP =>
+					-- output address to hardware
+					SRAM_ADHI	<=	ADDR(17 DOWNTO 16);
+					SRAM_ADLO	<=	ADDR(15 DOWNTO 0); 
+
+					-- ## Karn's edit ##
+					-- Removed these two
+					-- If SRAM addresses are not stable yet this will cause memory corruption
+					--
+					-- SRAM_OE_N         <=      '1';
+					-- SRAM_WE_N         <=      '0';
+					-- ##
+
+					-- then wait a cycle
+                   			STATE <= WRITE_WE_ASSERT;
+			    
+				WHEN WRITE_WE_ASSERT =>
+				    -- enable write on the hardware
+				    SRAM_WE_N <= NOT(WE);
+				    -- and wait for SRAM to not drive the data line
+				    STATE <= WRITE_WAIT;
+				
+				WHEN WRITE_WAIT =>
+					TR_ENABLE <= '1';
+					-- equiv: DATA <= IO_DATA
+					-- let the data from SCOMP flow into the DATA latch
+
+					SRAM_DQ <= DATA;
+					-- then write that data to the hardware
+
+					IF (CTRL_OE = '1') THEN
+						STATE <= WRITE_LOCK;
+				    	ELSE
+						STATE <= WRITE_WAIT;
+				    	END IF;
+						
+				WHEN WRITE_LOCK =>
+					-- ## Karn's edit
+					TR_ENABLE <= '0';
+					-- just for safety (doesn't actually matter)
+					-- ##
+
+					-- disable any data flow
+					WE <= '0';
+					SRAM_WE_N <= NOT(WE);
+					STATE <= IDLE;
+				
 				WHEN OTHERS =>
 					STATE <= IDLE;
 					
@@ -202,4 +200,3 @@ BEGIN
 	END PROCESS;
 
 END v0;
-	
