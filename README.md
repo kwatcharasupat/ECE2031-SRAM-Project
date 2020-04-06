@@ -9,7 +9,7 @@ Spring 2020
 - [x] Meeting 3: 17 Mar 2020, 1800 to 2030 EDT
   - [x] Consensus Form [Karn]
 - [x] Meeting 4: 1 Apr 2020, 2200 to 2330 EDT
-  - [ ] Consensus Form [Segev]
+  - [x] Consensus Form [Segev]
 - [ ] Meeting 5: 
   - [ ] Consensus Form
 - [ ] Meeting 6: 
@@ -49,9 +49,17 @@ To-do Format: [x] [task] [in-charge]
         - Future work (Gaant Chart?)
         - Contingency plan 
 - [ ] Minor fix to UML [Felicia]
-- [ ] Assembly code for verification of read cycle [?]
+- [x] Assembly code for verification of read/write cycle [x]
 
 # Week 3 (06 Apr to 12 Apr)
+[ ] User error case management 
+    [ ] (R) calls IN R?? before OUT R??
+    [ ] (R) calls two OUT R?? consecutively
+    [ ] (R) calls OUT WA?? instead of OUT R?? then calls IN R??
+    [ ] (W) calls IN WD?? before OUT WA??
+    [ ] (W) calls two OUT WA?? consecutively
+    [ ] (W) calls OUT R?? instead of OUT WA?? then calls IN WD??
+    [ ] (W) calls IN WA?? instead of IN WD??
 
 # Week 4 (13 Apr to 19 Apr)
 
