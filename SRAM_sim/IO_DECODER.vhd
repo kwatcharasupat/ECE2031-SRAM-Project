@@ -40,12 +40,11 @@ ENTITY IO_DECODER IS
     POS_RSTN      : OUT STD_LOGIC;
     RIN_EN        : OUT STD_LOGIC;
     LIN_EN        : OUT STD_LOGIC;
-    IRHI_EN		  : OUT STD_LOGIC;
+    IRHI_EN       : OUT STD_LOGIC;
     IRLO_EN       : OUT STD_LOGIC;
-    SRAM_ADHI_EN  : OUT STD_LOGIC;
-    SRAM_ADLOW_EN : OUT STD_LOGIC;
-    SRAM_DATA_EN  : OUT STD_LOGIC;
-    SRAM_CTRL_EN  : OUT STD_LOGIC
+    SRAM_CTRL_WE  : OUT STD_LOGIC;
+    SRAM_CTRL_OE  : OUT STD_LOGIC;
+    SRAM_ADHI     : OUT STD_LOGIC_VECTOR(1 downto 0)
   );
 
 END ENTITY;
@@ -54,15 +53,15 @@ ARCHITECTURE a OF IO_DECODER IS
 
   SIGNAL  IO_INT  : INTEGER RANGE 0 TO 511;
   
-begin
+BEGIN
 
   IO_INT <= TO_INTEGER(UNSIGNED(IO_CYCLE & IO_ADDR));
   -- note that this results in a three-digit hex number whose 
   --  upper digit is 1 if IO_CYCLE is asserted, and whose
   --  lower two digits are the I/O address being presented
   -- The lines below decode each valid I/O address ...
-        
-  SWITCH_EN <= '1'    WHEN IO_INT = 16#100# ELSE '0';
+    
+  SWITCH_EN <= '1'    WHEN IO_INT = 16#100# ELSE '0'; -- (IO_CYCLE = '1' && IO_ADDR = "00")
   LED_EN <= '1'       WHEN IO_INT = 16#101# ELSE '0';
   TIMER_EN <= '1'     WHEN IO_INT = 16#102# ELSE '0';
   DIG_IN_EN <= '1'    WHEN IO_INT = 16#103# ELSE '0';
@@ -92,9 +91,58 @@ begin
   LIN_EN <= '1'       WHEN IO_INT = 16#1C9# ELSE '0';
   IRHI_EN <= '1'      WHEN IO_INT = 16#1D0# ELSE '0';
   IRLO_EN <= '1'      WHEN IO_INT = 16#1D1# ELSE '0';
-  SRAM_CTRL_EN <= '1' WHEN IO_INT = 16#110# ELSE '0';
-  SRAM_DATA_EN <= '1' WHEN IO_INT = 16#111# ELSE '0';
-  SRAM_ADLOW_EN <= '1' WHEN IO_INT = 16#112# ELSE '0';
-  SRAM_ADHI_EN <= '1' WHEN IO_INT = 16#113# ELSE '0';
-      
+             
+    -- SRAM ADDRESS CONVENTION
+    --
+    -- HEX      BIN             CODE
+    --
+    -- 0x10     0b 0001 0000    R00
+    -- 0x11     0b 0001 0001    R01
+    -- 0x12     0b 0001 0010    R10
+    -- 0x13     0b 0001 0011    R11
+    --
+    -- 0x14     0b 0001 0100    WA00
+    -- 0x15     0b 0001 0101    WA01
+    -- 0x16     0b 0001 0110    WA10
+    -- 0x17     0b 0001 0111    WA11
+    --
+    -- 0x18     0b 0001 1000    WD00
+    -- 0x19     0b 0001 1001    WD01
+    -- 0x1A     0b 0001 1010    WD10
+    -- 0x1B     0b 0001 1011    WD11
+    
+    PROCESS (IO_INT)
+	BEGIN
+		IF (IO_INT > 16#109#) THEN
+			-- Address in SRAM range 0x10 thru 0x1F
+			IF (IO_INT < 16#114#) THEN
+				-- Address in READ range 0x10 thru 0x13
+				SRAM_CTRL_WE 	<= '0';
+				SRAM_CTRL_OE 	<= '1';
+				SRAM_ADHI 		<= IO_ADDR(1 DOWNTO 0);
+			ELSIF (IO_INT < 16#118#) THEN
+				-- Address in WRITE ADDRESS range 0x14 thru 0x17
+				SRAM_CTRL_WE 	<= '1';
+				SRAM_CTRL_OE 	<= '0'; -- use this a write 'lock' signal
+				SRAM_ADHI 		<= IO_ADDR(1 DOWNTO 0);
+			ELSIF (IO_INT < 16#11C#) THEN
+				-- Address in WRITE DATA range 0x14 thru 0x17
+				SRAM_CTRL_WE 	<= '1';
+				SRAM_CTRL_OE 	<= '1'; -- use this a write 'lock' signal
+				SRAM_ADHI 		<= IO_ADDR(1 DOWNTO 0);
+			ELSE
+				-- undefined address
+				-- disable everything and set ADHI = "00"
+				SRAM_CTRL_WE 	<= '0';
+				SRAM_CTRL_OE 	<= '0';
+				SRAM_ADHI 		<= "00";
+			END IF;
+		ELSE
+			   -- non-SRAM addresses
+			   SRAM_CTRL_WE 	<= '0';
+			   SRAM_CTRL_OE 	<= '0';
+			   SRAM_ADHI 		<= "00"; -- this doesn't really matter. SRAM_CONTROLLER should never read inputs during such states
+		END IF;
+	END PROCESS;
+    
 END a;

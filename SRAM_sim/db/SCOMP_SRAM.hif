@@ -20,26 +20,6 @@ VHSM_ON
 -- Start VHDL Libraries --
 -- End VHDL Libraries --
 # entity
-SCOMP_SRAM
-# storage
-db|SCOMP_SRAM.(0).cnf
-db|SCOMP_SRAM.(0).cnf
-# case_insensitive
-# source_file
-scomp_sram.bdf
-7cf0de3d4498bce85d32693d873d3
-26
-# internal_option {
-BLOCK_DESIGN_NAMING
-AUTO
-}
-# hierarchies {
-|
-}
-# macro_sequence
-
-# end
-# entity
 SLOW_SRAM
 # storage
 db|SCOMP_SRAM.(1).cnf
@@ -52,9 +32,6 @@ slow_sram.bdf
 # internal_option {
 BLOCK_DESIGN_NAMING
 AUTO
-}
-# hierarchies {
-SLOW_SRAM:inst2
 }
 # macro_sequence
 
@@ -82,10 +59,6 @@ AUTO_RAM_RECOGNITION
 ON
 AUTO_ROM_RECOGNITION
 ON
-}
-# hierarchies {
-SLOW_SRAM:inst2|lpm_ff1:inst82
-SLOW_SRAM:inst2|lpm_ff1:inst81
 }
 # lmf
 c:|altera|91sp2|quartus|lmf|maxplus2.lmf
@@ -168,10 +141,6 @@ clock
 -1
 3
 }
-# hierarchies {
-SLOW_SRAM:inst2|lpm_ff1:inst82|lpm_ff:lpm_ff_component
-SLOW_SRAM:inst2|lpm_ff1:inst81|lpm_ff:lpm_ff_component
-}
 # macro_sequence
 
 # end
@@ -198,10 +167,6 @@ AUTO_RAM_RECOGNITION
 ON
 AUTO_ROM_RECOGNITION
 ON
-}
-# hierarchies {
-SLOW_SRAM:inst2|lpm_bustri_oe0:inst65
-SLOW_SRAM:inst2|lpm_bustri_oe0:inst61
 }
 # lmf
 c:|altera|91sp2|quartus|lmf|maxplus2.lmf
@@ -326,10 +291,6 @@ data0
 -1
 3
 }
-# hierarchies {
-SLOW_SRAM:inst2|lpm_bustri_oe0:inst65|lpm_bustri:lpm_bustri_component
-SLOW_SRAM:inst2|lpm_bustri_oe0:inst61|lpm_bustri:lpm_bustri_component
-}
 # macro_sequence
 
 # end
@@ -356,10 +317,6 @@ AUTO_RAM_RECOGNITION
 ON
 AUTO_ROM_RECOGNITION
 ON
-}
-# hierarchies {
-SLOW_SRAM:inst2|lpm_ff0:inst79
-SLOW_SRAM:inst2|lpm_ff0:inst80
 }
 # lmf
 c:|altera|91sp2|quartus|lmf|maxplus2.lmf
@@ -520,43 +477,6 @@ clock
 -1
 3
 }
-# hierarchies {
-SLOW_SRAM:inst2|lpm_ff0:inst79|lpm_ff:lpm_ff_component
-SLOW_SRAM:inst2|lpm_ff0:inst80|lpm_ff:lpm_ff_component
-}
-# macro_sequence
-
-# end
-# entity
-SCOMP
-# storage
-db|SCOMP_SRAM.(8).cnf
-db|SCOMP_SRAM.(8).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-scomp.vhd
-19442a984cac593f8bf98621b844f91c
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# hierarchies {
-SCOMP:inst
-}
-# lmf
-c:|altera|91sp2|quartus|lmf|maxplus2.lmf
-a36c8ec425c8a2589af98b2d4daabc3
 # macro_sequence
 
 # end
@@ -908,166 +828,6 @@ address_a1
 address_a0
 -1
 3
-}
-# hierarchies {
-SCOMP:inst|altsyncram:MEMORY
-}
-# macro_sequence
-
-# end
-# entity
-altsyncram_mut3
-# storage
-db|SCOMP_SRAM.(10).cnf
-db|SCOMP_SRAM.(10).cnf
-# case_insensitive
-# source_file
-db|altsyncram_mut3.tdf
-526aeff48de994c7cde118c732c125a
-7
-# used_port {
-wren_a
--1
-3
-q_a9
--1
-3
-q_a8
--1
-3
-q_a7
--1
-3
-q_a6
--1
-3
-q_a5
--1
-3
-q_a4
--1
-3
-q_a3
--1
-3
-q_a2
--1
-3
-q_a15
--1
-3
-q_a14
--1
-3
-q_a13
--1
-3
-q_a12
--1
-3
-q_a11
--1
-3
-q_a10
--1
-3
-q_a1
--1
-3
-q_a0
--1
-3
-data_a9
--1
-3
-data_a8
--1
-3
-data_a7
--1
-3
-data_a6
--1
-3
-data_a5
--1
-3
-data_a4
--1
-3
-data_a3
--1
-3
-data_a2
--1
-3
-data_a15
--1
-3
-data_a14
--1
-3
-data_a13
--1
-3
-data_a12
--1
-3
-data_a11
--1
-3
-data_a10
--1
-3
-data_a1
--1
-3
-data_a0
--1
-3
-clock0
--1
-3
-address_a9
--1
-3
-address_a8
--1
-3
-address_a7
--1
-3
-address_a6
--1
-3
-address_a5
--1
-3
-address_a4
--1
-3
-address_a3
--1
-3
-address_a2
--1
-3
-address_a10
--1
-3
-address_a1
--1
-3
-address_a0
--1
-3
-}
-# memory_file {
-simplesramdemo.mif
-1c526654aad764d3d7cb74c633b35581
-}
-# hierarchies {
-SCOMP:inst|altsyncram:MEMORY|altsyncram_mut3:auto_generated
 }
 # macro_sequence
 
@@ -1470,6 +1230,8 @@ DATA0
 3
 }
 # hierarchies {
+SRAM_CONTROLLER:inst7|lpm_bustri:IO_BUS_READ
+SRAM_CONTROLLER:inst7|lpm_bustri:IO_BUS_WRITE
 SCOMP:inst|lpm_bustri:IO_BUS
 }
 # macro_sequence
@@ -3006,39 +2768,6 @@ altpll0:inst1|altpll:altpll_component
 
 # end
 # entity
-IO_DECODER
-# storage
-db|SCOMP_SRAM.(16).cnf
-db|SCOMP_SRAM.(16).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-io_decoder.vhd
-48f89c9d93df2f34ed363cb73ca5
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# hierarchies {
-IO_DECODER:inst3
-}
-# lmf
-c:|altera|91sp2|quartus|lmf|maxplus2.lmf
-a36c8ec425c8a2589af98b2d4daabc3
-# macro_sequence
-
-# end
-# entity
 CHIP_EMULATOR
 # storage
 db|SCOMP_SRAM.(17).cnf
@@ -3068,6 +2797,808 @@ CHIP_EMULATOR:inst4
 # lmf
 c:|altera|91sp2|quartus|lmf|maxplus2.lmf
 a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+IO_DECODER
+# storage
+db|SCOMP_SRAM.(16).cnf
+db|SCOMP_SRAM.(16).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+io_decoder.vhd
+3d556a826e33fa3ace3b7f737d90ad
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# hierarchies {
+IO_DECODER:inst3
+}
+# lmf
+c:|altera|91sp2|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+LPM_BUSTRI
+# storage
+db|SCOMP_SRAM.(19).cnf
+db|SCOMP_SRAM.(19).cnf
+# case_insensitive
+# source_file
+c:|altera|91sp2|quartus|libraries|megafunctions|lpm_bustri.tdf
+8143c11353809b678e4994d13be28a
+7
+# user_parameter {
+LPM_WIDTH
+16
+PARAMETER_SIGNED_DEC
+USR
+}
+# used_port {
+TRIDATA9
+-1
+3
+TRIDATA8
+-1
+3
+TRIDATA7
+-1
+3
+TRIDATA6
+-1
+3
+TRIDATA5
+-1
+3
+TRIDATA4
+-1
+3
+TRIDATA3
+-1
+3
+TRIDATA2
+-1
+3
+TRIDATA15
+-1
+3
+TRIDATA14
+-1
+3
+TRIDATA13
+-1
+3
+TRIDATA12
+-1
+3
+TRIDATA11
+-1
+3
+TRIDATA10
+-1
+3
+TRIDATA1
+-1
+3
+TRIDATA0
+-1
+3
+RESULT9
+-1
+3
+RESULT8
+-1
+3
+RESULT7
+-1
+3
+RESULT6
+-1
+3
+RESULT5
+-1
+3
+RESULT4
+-1
+3
+RESULT3
+-1
+3
+RESULT2
+-1
+3
+RESULT15
+-1
+3
+RESULT14
+-1
+3
+RESULT13
+-1
+3
+RESULT12
+-1
+3
+RESULT11
+-1
+3
+RESULT10
+-1
+3
+RESULT1
+-1
+3
+RESULT0
+-1
+3
+ENABLETR
+-1
+3
+ENABLEDT
+-1
+3
+DATA9
+-1
+3
+DATA8
+-1
+3
+DATA7
+-1
+3
+DATA6
+-1
+3
+DATA5
+-1
+3
+DATA4
+-1
+3
+DATA3
+-1
+3
+DATA2
+-1
+3
+DATA15
+-1
+3
+DATA14
+-1
+3
+DATA13
+-1
+3
+DATA12
+-1
+3
+DATA11
+-1
+3
+DATA10
+-1
+3
+DATA1
+-1
+3
+DATA0
+-1
+3
+}
+# macro_sequence
+
+# end
+# entity
+SCOMP
+# storage
+db|SCOMP_SRAM.(8).cnf
+db|SCOMP_SRAM.(8).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+scomp.vhd
+cccb5244e1b13f7760bc6e4f168ab13
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# hierarchies {
+SCOMP:inst
+}
+# lmf
+c:|altera|91sp2|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+altsyncram
+# storage
+db|SCOMP_SRAM.(10).cnf
+db|SCOMP_SRAM.(10).cnf
+# case_insensitive
+# source_file
+c:|altera|91sp2|quartus|libraries|megafunctions|altsyncram.tdf
+67d9a3902c8a461c1d5750189e124f2
+7
+# user_parameter {
+BYTE_SIZE_BLOCK
+8
+PARAMETER_UNKNOWN
+DEF
+AUTO_CARRY_CHAINS
+ON
+AUTO_CARRY
+USR
+IGNORE_CARRY_BUFFERS
+OFF
+IGNORE_CARRY
+USR
+AUTO_CASCADE_CHAINS
+ON
+AUTO_CASCADE
+USR
+IGNORE_CASCADE_BUFFERS
+OFF
+IGNORE_CASCADE
+USR
+WIDTH_BYTEENA
+1
+PARAMETER_UNKNOWN
+DEF
+OPERATION_MODE
+SINGLE_PORT
+PARAMETER_UNKNOWN
+USR
+WIDTH_A
+16
+PARAMETER_SIGNED_DEC
+USR
+WIDTHAD_A
+11
+PARAMETER_SIGNED_DEC
+USR
+NUMWORDS_A
+2048
+PARAMETER_SIGNED_DEC
+USR
+OUTDATA_REG_A
+UNREGISTERED
+PARAMETER_UNKNOWN
+USR
+ADDRESS_ACLR_A
+NONE
+PARAMETER_UNKNOWN
+USR
+OUTDATA_ACLR_A
+NONE
+PARAMETER_UNKNOWN
+USR
+WRCONTROL_ACLR_A
+NONE
+PARAMETER_UNKNOWN
+USR
+INDATA_ACLR_A
+NONE
+PARAMETER_UNKNOWN
+USR
+BYTEENA_ACLR_A
+NONE
+PARAMETER_UNKNOWN
+DEF
+WIDTH_B
+1
+PARAMETER_SIGNED_DEC
+USR
+WIDTHAD_B
+1
+PARAMETER_SIGNED_DEC
+USR
+NUMWORDS_B
+0
+PARAMETER_SIGNED_DEC
+USR
+INDATA_REG_B
+CLOCK1
+PARAMETER_UNKNOWN
+USR
+WRCONTROL_WRADDRESS_REG_B
+CLOCK1
+PARAMETER_UNKNOWN
+USR
+RDCONTROL_REG_B
+CLOCK1
+PARAMETER_UNKNOWN
+USR
+ADDRESS_REG_B
+CLOCK1
+PARAMETER_UNKNOWN
+USR
+OUTDATA_REG_B
+UNREGISTERED
+PARAMETER_UNKNOWN
+USR
+BYTEENA_REG_B
+CLOCK1
+PARAMETER_UNKNOWN
+USR
+INDATA_ACLR_B
+NONE
+PARAMETER_UNKNOWN
+USR
+WRCONTROL_ACLR_B
+NONE
+PARAMETER_UNKNOWN
+USR
+ADDRESS_ACLR_B
+NONE
+PARAMETER_UNKNOWN
+USR
+OUTDATA_ACLR_B
+NONE
+PARAMETER_UNKNOWN
+USR
+RDCONTROL_ACLR_B
+NONE
+PARAMETER_UNKNOWN
+USR
+BYTEENA_ACLR_B
+NONE
+PARAMETER_UNKNOWN
+USR
+WIDTH_BYTEENA_A
+1
+PARAMETER_SIGNED_DEC
+USR
+WIDTH_BYTEENA_B
+1
+PARAMETER_SIGNED_DEC
+USR
+RAM_BLOCK_TYPE
+AUTO
+PARAMETER_UNKNOWN
+USR
+BYTE_SIZE
+8
+PARAMETER_SIGNED_DEC
+USR
+READ_DURING_WRITE_MODE_MIXED_PORTS
+DONT_CARE
+PARAMETER_UNKNOWN
+USR
+READ_DURING_WRITE_MODE_PORT_A
+NEW_DATA_NO_NBE_READ
+PARAMETER_UNKNOWN
+USR
+READ_DURING_WRITE_MODE_PORT_B
+NEW_DATA_NO_NBE_READ
+PARAMETER_UNKNOWN
+USR
+INIT_FILE
+SRAMdemo_v0.mif
+PARAMETER_UNKNOWN
+USR
+INIT_FILE_LAYOUT
+PORT_A
+PARAMETER_UNKNOWN
+USR
+MAXIMUM_DEPTH
+0
+PARAMETER_SIGNED_DEC
+USR
+CLOCK_ENABLE_INPUT_A
+NORMAL
+PARAMETER_UNKNOWN
+USR
+CLOCK_ENABLE_INPUT_B
+NORMAL
+PARAMETER_UNKNOWN
+USR
+CLOCK_ENABLE_OUTPUT_A
+NORMAL
+PARAMETER_UNKNOWN
+USR
+CLOCK_ENABLE_OUTPUT_B
+NORMAL
+PARAMETER_UNKNOWN
+USR
+CLOCK_ENABLE_CORE_A
+USE_INPUT_CLKEN
+PARAMETER_UNKNOWN
+USR
+CLOCK_ENABLE_CORE_B
+USE_INPUT_CLKEN
+PARAMETER_UNKNOWN
+USR
+ENABLE_ECC
+FALSE
+PARAMETER_UNKNOWN
+USR
+DEVICE_FAMILY
+Cyclone II
+PARAMETER_UNKNOWN
+USR
+CBXI_PARAMETER
+altsyncram_hit3
+PARAMETER_UNKNOWN
+USR
+}
+# used_port {
+wren_a
+-1
+3
+q_a9
+-1
+3
+q_a8
+-1
+3
+q_a7
+-1
+3
+q_a6
+-1
+3
+q_a5
+-1
+3
+q_a4
+-1
+3
+q_a3
+-1
+3
+q_a2
+-1
+3
+q_a15
+-1
+3
+q_a14
+-1
+3
+q_a13
+-1
+3
+q_a12
+-1
+3
+q_a11
+-1
+3
+q_a10
+-1
+3
+q_a1
+-1
+3
+q_a0
+-1
+3
+data_a9
+-1
+3
+data_a8
+-1
+3
+data_a7
+-1
+3
+data_a6
+-1
+3
+data_a5
+-1
+3
+data_a4
+-1
+3
+data_a3
+-1
+3
+data_a2
+-1
+3
+data_a15
+-1
+3
+data_a14
+-1
+3
+data_a13
+-1
+3
+data_a12
+-1
+3
+data_a11
+-1
+3
+data_a10
+-1
+3
+data_a1
+-1
+3
+data_a0
+-1
+3
+clock0
+-1
+3
+address_a9
+-1
+3
+address_a8
+-1
+3
+address_a7
+-1
+3
+address_a6
+-1
+3
+address_a5
+-1
+3
+address_a4
+-1
+3
+address_a3
+-1
+3
+address_a2
+-1
+3
+address_a10
+-1
+3
+address_a1
+-1
+3
+address_a0
+-1
+3
+}
+# hierarchies {
+SCOMP:inst|altsyncram:MEMORY
+}
+# macro_sequence
+
+# end
+# entity
+SRAM_CONTROLLER
+# storage
+db|SCOMP_SRAM.(18).cnf
+db|SCOMP_SRAM.(18).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+sram_controller.vhd
+b1db6c752720e72d8548e7e7307e9e71
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# hierarchies {
+SRAM_CONTROLLER:inst7
+}
+# lmf
+c:|altera|91sp2|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+SCOMP_SRAM
+# storage
+db|SCOMP_SRAM.(0).cnf
+db|SCOMP_SRAM.(0).cnf
+# case_insensitive
+# source_file
+scomp_sram.bdf
+c9127eee4c4eb1eb407ebbd172bf76d7
+26
+# internal_option {
+BLOCK_DESIGN_NAMING
+AUTO
+}
+# hierarchies {
+|
+}
+# macro_sequence
+
+# end
+# entity
+altsyncram_hit3
+# storage
+db|SCOMP_SRAM.(20).cnf
+db|SCOMP_SRAM.(20).cnf
+# case_insensitive
+# source_file
+db|altsyncram_hit3.tdf
+9335e1e8a44ea4b12c4b5a6a48fbeb
+7
+# used_port {
+wren_a
+-1
+3
+q_a9
+-1
+3
+q_a8
+-1
+3
+q_a7
+-1
+3
+q_a6
+-1
+3
+q_a5
+-1
+3
+q_a4
+-1
+3
+q_a3
+-1
+3
+q_a2
+-1
+3
+q_a15
+-1
+3
+q_a14
+-1
+3
+q_a13
+-1
+3
+q_a12
+-1
+3
+q_a11
+-1
+3
+q_a10
+-1
+3
+q_a1
+-1
+3
+q_a0
+-1
+3
+data_a9
+-1
+3
+data_a8
+-1
+3
+data_a7
+-1
+3
+data_a6
+-1
+3
+data_a5
+-1
+3
+data_a4
+-1
+3
+data_a3
+-1
+3
+data_a2
+-1
+3
+data_a15
+-1
+3
+data_a14
+-1
+3
+data_a13
+-1
+3
+data_a12
+-1
+3
+data_a11
+-1
+3
+data_a10
+-1
+3
+data_a1
+-1
+3
+data_a0
+-1
+3
+clock0
+-1
+3
+address_a9
+-1
+3
+address_a8
+-1
+3
+address_a7
+-1
+3
+address_a6
+-1
+3
+address_a5
+-1
+3
+address_a4
+-1
+3
+address_a3
+-1
+3
+address_a2
+-1
+3
+address_a10
+-1
+3
+address_a1
+-1
+3
+address_a0
+-1
+3
+}
+# memory_file {
+sramdemo_v0.mif
+dd90e747473e2e8c8467d8405149bd
+}
+# hierarchies {
+SCOMP:inst|altsyncram:MEMORY|altsyncram_hit3:auto_generated
+}
 # macro_sequence
 
 # end

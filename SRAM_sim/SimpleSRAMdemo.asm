@@ -24,86 +24,33 @@ ORG 0
 ;* Main code
 ;***************************************************************
 Main:
-	LOADI   &B011
-	OUT		SRAM_CTRL   ; 011 = no drive, no write, no read
-	
-	; Set the address to 5
-	LOADI   0
-	OUT		SRAM_ADHI
-	LOADI   5
-	OUT		SRAM_ADLOW
-	
-	; Write a value
-	LOADI   10
-	OUT		SRAM_DATA
-	LOADI   &B101
-	OUT		SRAM_CTRL   ; 101 = drive, write, no OE(no read)
-	LOADI   &B111
-	OUT		SRAM_CTRL   ; 111 = drive, no write, no OE(no read)
-	LOADI	&B011
-	OUT     SRAM_CTRL   ; 011 = no drive, no write, no read
-	
-	; Write a value incorrectly
-	LOADI   6
-	OUT		SRAM_ADLOW
-	LOADI   11
-	OUT		SRAM_DATA
-	LOADI   &B101
-	OUT		SRAM_CTRL   ; 101 = drive, write, no OE(no read)
-	
-	; NOTE: Changing the address mid-write is NOT SAFE, because it
-	; might overwrite data in addresses other than the two you're
-	; changing between.  It's done here just to confirm that the
-	; emulated SRAM chip behaves similarly to real SRAM.
-	LOADI   7
-	OUT		SRAM_ADLOW  ; Change the address mid-write
-	LOADI   8
-	OUT		SRAM_ADLOW  ; Change the address mid-write
+	LOADI	0		; Load 0 into AC
+	STORE	Temp	; Store this value in Temp
 
-	; NOTE: Changing the data mid-write IS safe, because it
-	; will simply overwrite the previous data.  The data in
-	; the SRAM remains fluid until WE_N is deasserted, at which
-	; point the data is fixed.
-	LOADI   12
-	OUT		SRAM_DATA   ; Change the data mid-write
-	
-	LOADI   &B111
-	OUT		SRAM_CTRL   ; 111 = drive, no write, no OE(no read)
-	LOADI	&B011
-	OUT     SRAM_CTRL   ; 011 = no drive, no write, no read
-	
-	; Read a value from address 0x105
-	LOADI   &H105
-	OUT		SRAM_ADLOW
-	LOADI   &B10
-	OUT     SRAM_CTRL
-	IN      SRAM_DATA   ; Data will be in AC after this
-	LOADI   &B11
-	OUT     SRAM_CTRL
-	
-	; Read the previously-written values from addresses 5-8
-	LOADI   5
-	OUT		SRAM_ADLOW
-	LOADI   &B10
-	OUT     SRAM_CTRL
-	IN      SRAM_DATA   ; Data will be in AC after this
-	LOADI   6
-	OUT		SRAM_ADLOW
-	IN      SRAM_DATA   ; Data will be in AC after this
-	LOADI   7
-	OUT		SRAM_ADLOW
-	IN      SRAM_DATA   ; Data will be in AC after this
-	LOADI   8
-	OUT		SRAM_ADLOW
-	IN      SRAM_DATA   ; Data will be in AC after this
-	LOADI   &B11
-	OUT     SRAM_CTRL
+WriteLoop:	
+	LOAD	Temp
+	OUT		SRAM_WA00	; Set address 0b00 0000 0000
+	LOAD	Temp	; Load back the value
+	OUT		SRAM_WD00	;
+	LOAD	Temp
+	ADDI	1
+	STORE	Temp
+	ADDI	-32
+	JNEG	WriteLoop
 
+ReadLoop:
+	LOADI	0		; Load 0 into AC
+	STORE	Temp	; Store this value in Temp
+	OUT		SRAM_R00
+	IN		SRAM_R00
+	STORE	ReadVal
+	ADDI	1
+	STORE	Temp
+	ADDI	-32
+	JNEG	ReadLoop
 	
 Done:
-
 	JUMP	Done
-
 
 
 ;*******************************************************************************
@@ -482,6 +429,8 @@ Wloop:
 ;* Variables
 ;***************************************************************
 Temp:     DW 0 ; "Temp" is not a great name, but can be useful
+MAX_ADDR: DW 32 ; "Temp" is not a great name, but can be useful
+ReadVal:  DW 0;
 
 ;***************************************************************
 ;* Constants
@@ -581,7 +530,17 @@ RIN:      EQU &HC8
 LIN:      EQU &HC9
 IR_HI:    EQU &HD0  ; read the high word of the IR receiver (OUT will clear both words)
 IR_LO:    EQU &HD1  ; read the low word of the IR receiver (OUT will clear both words)
-SRAM_CTRL: EQU &H10 ; write the two bits controlling SRAM function (bit 1 is write, bit 0 is output enable)
-SRAM_DATA: EQU &H11 ; write the data to go to SRAM (before setting control bits) or read the data from SRAM (after setting bits)
-SRAM_ADLOW: EQU &H12 ; write the lower 16 bits of the SRAM address (before setting control bits)
-SRAM_ADHI: EQU &H13  ; write the upper 2 bits of the SRAM address (before setting control bits)
+
+
+SRAM_R00:	EQU &H10
+SRAM_R01:	EQU &H11
+SRAM_R10:	EQU &H12
+SRAM_R11:	EQU &H13
+SRAM_WA00:	EQU &H14
+SRAM_WA01:	EQU &H15
+SRAM_WA10:	EQU &H16
+SRAM_WA11:	EQU &H17
+SRAM_WD00:	EQU &H18
+SRAM_WD01:	EQU &H19
+SRAM_WD10:	EQU &H1A
+SRAM_WD11:	EQU &H1B
