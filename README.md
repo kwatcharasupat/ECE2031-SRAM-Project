@@ -53,8 +53,10 @@ To-do Format: [x] [task] [in-charge]
 
 # Week 3 (06 Apr to 12 Apr)
 - [ ] User error case management 
-    - [x] (R) calls IN R?? before OUT R?? : SRAM interface remains in IDLE
-    - [x] (R) calls two OUT R?? consecutively : SRAM interface remains in READ_PREP until IN is called. SRAM will ignore all OUT R?? after the first one.
+    - [x] (R) calls IN R?? before OUT R??
+        - SRAM interface remains in IDLE
+    - [x] (R) calls two OUT R?? consecutively
+        - SRAM interface remains in READ_PREP until IN is called. SRAM will ignore all OUT R?? after the first one.
     - [ ] (R) calls OUT Rxy then IN Rzw : 
     - [ ] (R) calls OUT WA?? instead of OUT R?? then calls IN R??
     - [ ] (W) calls IN WD?? before OUT WA??
