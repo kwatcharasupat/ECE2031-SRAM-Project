@@ -65,9 +65,10 @@ To-do Format: [x] [task] [in-charge]
     - [x] (W) calls OUT WD?? before OUT WA??
         - SRAM treats WD as if it is a WA
         - SRAM data will take the value of ADLO during OUT WA but will be stuck in WRITE_WAIT until WD is called again
-    - [ ] (W) calls two OUT WA?? consecutively
-    - [ ] (W) calls OUT R?? instead of OUT WA?? then calls IN WD??
-    - [ ] (W) calls IN WA?? instead of IN WD??
+    - [x] (W) calls two OUT WA?? consecutively
+        - The second OUT WA?? is ignored. SRAM stays in WRITE_WAIT until WD is called
+    - [ ] (W) calls OUT R?? instead of OUT WA?? then calls OUT WD??
+    - [ ] (W) calls IN WD?? instead of OUT WD??
 
 # Week 4 (13 Apr to 19 Apr)
 
