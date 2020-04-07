@@ -62,7 +62,9 @@ To-do Format: [x] [task] [in-charge]
     - [x] (R) calls OUT WA?? instead of OUT R?? then calls IN R??
         - SRAM write -1 to IO_DATA then returns to IDLE
         - The memory at that addresss is also corrupted to -1
-    - [ ] (W) calls OUT WD?? before OUT WA??
+    - [x] (W) calls OUT WD?? before OUT WA??
+        - SRAM treats WD as if it is a WA
+        - SRAM data will take the value of ADLO during OUT WA but will be stuck in WRITE_WAIT until WD is called again
     - [ ] (W) calls two OUT WA?? consecutively
     - [ ] (W) calls OUT R?? instead of OUT WA?? then calls IN WD??
     - [ ] (W) calls IN WA?? instead of IN WD??
