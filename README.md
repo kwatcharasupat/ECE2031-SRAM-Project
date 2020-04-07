@@ -52,7 +52,7 @@ To-do Format: [x] [task] [in-charge]
 - [x] Assembly code for verification of read/write cycle [x]
 
 # Week 3 (06 Apr to 12 Apr)
-- [ ] User error case management 
+- [x] User error case management 
     - [x] (R) calls IN R?? before OUT R??
         - SRAM interface remains in IDLE
     - [x] (R) calls two OUT R?? consecutively
