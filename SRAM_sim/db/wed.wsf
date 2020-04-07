@@ -23,10 +23,10 @@ applicable agreement for further details.
 VECTOR("D:/Dropbox/NTU Modules/ECE2031 Digital Design Laboratory/Project/ECE2031-SRAM-Project/SRAM_sim/SCOMP_SRAM_sim.vwf")
 {
 	ZOOM{
-		ZBEGIN = 6430872;
-		ZEND = 22508056;
-		NUMERATOR = 1140;
-		DENOMINATOR = 16077184;
+		ZBEGIN = 0;
+		ZEND = 1500000;
+		NUMERATOR = 1311;
+		DENOMINATOR = 1500000;
 		TOP_INDEX = 0;
 	}
 	CLOCK{
@@ -358,304 +358,8 @@ VECTOR("D:/Dropbox/NTU Modules/ECE2031 Digital Design Laboratory/Project/ECE2031
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "SRAM_CONTROLLER:inst7|ADDR";
+		SIGNAL = "sram_we_n";
 		INDEX = 40;
-		FORMAT = T;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "SRAM_CONTROLLER:inst7|ADDR[17]";
-		INDEX = 41;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "SRAM_CONTROLLER:inst7|ADDR[16]";
-		INDEX = 42;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "SRAM_CONTROLLER:inst7|ADDR[15]";
-		INDEX = 43;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "SRAM_CONTROLLER:inst7|ADDR[14]";
-		INDEX = 44;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "SRAM_CONTROLLER:inst7|ADDR[13]";
-		INDEX = 45;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "SRAM_CONTROLLER:inst7|ADDR[12]";
-		INDEX = 46;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "SRAM_CONTROLLER:inst7|ADDR[11]";
-		INDEX = 47;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "SRAM_CONTROLLER:inst7|ADDR[10]";
-		INDEX = 48;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "SRAM_CONTROLLER:inst7|ADDR[9]";
-		INDEX = 49;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "SRAM_CONTROLLER:inst7|ADDR[8]";
-		INDEX = 50;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "SRAM_CONTROLLER:inst7|ADDR[7]";
-		INDEX = 51;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "SRAM_CONTROLLER:inst7|ADDR[6]";
-		INDEX = 52;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "SRAM_CONTROLLER:inst7|ADDR[5]";
-		INDEX = 53;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "SRAM_CONTROLLER:inst7|ADDR[4]";
-		INDEX = 54;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "SRAM_CONTROLLER:inst7|ADDR[3]";
-		INDEX = 55;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "SRAM_CONTROLLER:inst7|ADDR[2]";
-		INDEX = 56;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "SRAM_CONTROLLER:inst7|ADDR[1]";
-		INDEX = 57;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "SRAM_CONTROLLER:inst7|ADDR[0]";
-		INDEX = 58;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "SRAM_CONTROLLER:inst7|SRAM_ADDR";
-		INDEX = 59;
-		FORMAT = T;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "SRAM_CONTROLLER:inst7|SRAM_ADDR[17]";
-		INDEX = 60;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "SRAM_CONTROLLER:inst7|SRAM_ADDR[16]";
-		INDEX = 61;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "SRAM_CONTROLLER:inst7|SRAM_ADDR[15]";
-		INDEX = 62;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "SRAM_CONTROLLER:inst7|SRAM_ADDR[14]";
-		INDEX = 63;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "SRAM_CONTROLLER:inst7|SRAM_ADDR[13]";
-		INDEX = 64;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "SRAM_CONTROLLER:inst7|SRAM_ADDR[12]";
-		INDEX = 65;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "SRAM_CONTROLLER:inst7|SRAM_ADDR[11]";
-		INDEX = 66;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "SRAM_CONTROLLER:inst7|SRAM_ADDR[10]";
-		INDEX = 67;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "SRAM_CONTROLLER:inst7|SRAM_ADDR[9]";
-		INDEX = 68;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "SRAM_CONTROLLER:inst7|SRAM_ADDR[8]";
-		INDEX = 69;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "SRAM_CONTROLLER:inst7|SRAM_ADDR[7]";
-		INDEX = 70;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "SRAM_CONTROLLER:inst7|SRAM_ADDR[6]";
-		INDEX = 71;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "SRAM_CONTROLLER:inst7|SRAM_ADDR[5]";
-		INDEX = 72;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "SRAM_CONTROLLER:inst7|SRAM_ADDR[4]";
-		INDEX = 73;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "SRAM_CONTROLLER:inst7|SRAM_ADDR[3]";
-		INDEX = 74;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "SRAM_CONTROLLER:inst7|SRAM_ADDR[2]";
-		INDEX = 75;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "SRAM_CONTROLLER:inst7|SRAM_ADDR[1]";
-		INDEX = 76;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "SRAM_CONTROLLER:inst7|SRAM_ADDR[0]";
-		INDEX = 77;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -663,15 +367,7 @@ VECTOR("D:/Dropbox/NTU Modules/ECE2031 Digital Design Laboratory/Project/ECE2031
 	}
 	LINE{
 		SIGNAL = "SRAM_CONTROLLER:inst7|STATE";
-		INDEX = 78;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "sram_we_n";
-		INDEX = 79;
+		INDEX = 41;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -679,7 +375,7 @@ VECTOR("D:/Dropbox/NTU Modules/ECE2031 Digital Design Laboratory/Project/ECE2031
 	}
 	LINE{
 		SIGNAL = "divider 1743";
-		INDEX = 80;
+		INDEX = 42;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -687,7 +383,7 @@ VECTOR("D:/Dropbox/NTU Modules/ECE2031 Digital Design Laboratory/Project/ECE2031
 	}
 	LINE{
 		SIGNAL = "SCOMP:inst|AC";
-		INDEX = 81;
+		INDEX = 43;
 		FORMAT = T;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -695,7 +391,7 @@ VECTOR("D:/Dropbox/NTU Modules/ECE2031 Digital Design Laboratory/Project/ECE2031
 	}
 	LINE{
 		SIGNAL = "SCOMP:inst|AC[15]";
-		INDEX = 82;
+		INDEX = 44;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -703,7 +399,7 @@ VECTOR("D:/Dropbox/NTU Modules/ECE2031 Digital Design Laboratory/Project/ECE2031
 	}
 	LINE{
 		SIGNAL = "SCOMP:inst|AC[14]";
-		INDEX = 83;
+		INDEX = 45;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -711,7 +407,7 @@ VECTOR("D:/Dropbox/NTU Modules/ECE2031 Digital Design Laboratory/Project/ECE2031
 	}
 	LINE{
 		SIGNAL = "SCOMP:inst|AC[13]";
-		INDEX = 84;
+		INDEX = 46;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -719,7 +415,7 @@ VECTOR("D:/Dropbox/NTU Modules/ECE2031 Digital Design Laboratory/Project/ECE2031
 	}
 	LINE{
 		SIGNAL = "SCOMP:inst|AC[12]";
-		INDEX = 85;
+		INDEX = 47;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -727,7 +423,7 @@ VECTOR("D:/Dropbox/NTU Modules/ECE2031 Digital Design Laboratory/Project/ECE2031
 	}
 	LINE{
 		SIGNAL = "SCOMP:inst|AC[11]";
-		INDEX = 86;
+		INDEX = 48;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -735,7 +431,7 @@ VECTOR("D:/Dropbox/NTU Modules/ECE2031 Digital Design Laboratory/Project/ECE2031
 	}
 	LINE{
 		SIGNAL = "SCOMP:inst|AC[10]";
-		INDEX = 87;
+		INDEX = 49;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -743,7 +439,7 @@ VECTOR("D:/Dropbox/NTU Modules/ECE2031 Digital Design Laboratory/Project/ECE2031
 	}
 	LINE{
 		SIGNAL = "SCOMP:inst|AC[9]";
-		INDEX = 88;
+		INDEX = 50;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -751,7 +447,7 @@ VECTOR("D:/Dropbox/NTU Modules/ECE2031 Digital Design Laboratory/Project/ECE2031
 	}
 	LINE{
 		SIGNAL = "SCOMP:inst|AC[8]";
-		INDEX = 89;
+		INDEX = 51;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -759,7 +455,7 @@ VECTOR("D:/Dropbox/NTU Modules/ECE2031 Digital Design Laboratory/Project/ECE2031
 	}
 	LINE{
 		SIGNAL = "SCOMP:inst|AC[7]";
-		INDEX = 90;
+		INDEX = 52;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -767,7 +463,7 @@ VECTOR("D:/Dropbox/NTU Modules/ECE2031 Digital Design Laboratory/Project/ECE2031
 	}
 	LINE{
 		SIGNAL = "SCOMP:inst|AC[6]";
-		INDEX = 91;
+		INDEX = 53;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -775,7 +471,7 @@ VECTOR("D:/Dropbox/NTU Modules/ECE2031 Digital Design Laboratory/Project/ECE2031
 	}
 	LINE{
 		SIGNAL = "SCOMP:inst|AC[5]";
-		INDEX = 92;
+		INDEX = 54;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -783,7 +479,7 @@ VECTOR("D:/Dropbox/NTU Modules/ECE2031 Digital Design Laboratory/Project/ECE2031
 	}
 	LINE{
 		SIGNAL = "SCOMP:inst|AC[4]";
-		INDEX = 93;
+		INDEX = 55;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -791,7 +487,7 @@ VECTOR("D:/Dropbox/NTU Modules/ECE2031 Digital Design Laboratory/Project/ECE2031
 	}
 	LINE{
 		SIGNAL = "SCOMP:inst|AC[3]";
-		INDEX = 94;
+		INDEX = 56;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -799,7 +495,7 @@ VECTOR("D:/Dropbox/NTU Modules/ECE2031 Digital Design Laboratory/Project/ECE2031
 	}
 	LINE{
 		SIGNAL = "SCOMP:inst|AC[2]";
-		INDEX = 95;
+		INDEX = 57;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -807,7 +503,7 @@ VECTOR("D:/Dropbox/NTU Modules/ECE2031 Digital Design Laboratory/Project/ECE2031
 	}
 	LINE{
 		SIGNAL = "SCOMP:inst|AC[1]";
-		INDEX = 96;
+		INDEX = 58;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -815,7 +511,7 @@ VECTOR("D:/Dropbox/NTU Modules/ECE2031 Digital Design Laboratory/Project/ECE2031
 	}
 	LINE{
 		SIGNAL = "SCOMP:inst|AC[0]";
-		INDEX = 97;
+		INDEX = 59;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -823,7 +519,7 @@ VECTOR("D:/Dropbox/NTU Modules/ECE2031 Digital Design Laboratory/Project/ECE2031
 	}
 	LINE{
 		SIGNAL = "SCOMP:inst|STATE";
-		INDEX = 98;
+		INDEX = 60;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -831,7 +527,7 @@ VECTOR("D:/Dropbox/NTU Modules/ECE2031 Digital Design Laboratory/Project/ECE2031
 	}
 	LINE{
 		SIGNAL = "io_cycle";
-		INDEX = 99;
+		INDEX = 61;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -839,47 +535,7 @@ VECTOR("D:/Dropbox/NTU Modules/ECE2031 Digital Design Laboratory/Project/ECE2031
 	}
 	LINE{
 		SIGNAL = "io_write";
-		INDEX = 100;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "divider 925";
-		INDEX = 101;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "sram_ub_n";
-		INDEX = 102;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "sram_lb_n";
-		INDEX = 103;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "sram_ce_n";
-		INDEX = 104;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "divider 815";
-		INDEX = 105;
+		INDEX = 62;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
