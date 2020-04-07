@@ -61,6 +61,7 @@ To-do Format: [x] [task] [in-charge]
         - SRAM takes data from xy & ADLO. ADHI code does not matter for IN
     - [x] (R) calls OUT WA?? instead of OUT R?? then calls IN R??
         - SRAM write -1 to IO_DATA then returns to IDLE
+        - The memory at that addresss is also corrupted to -1
     - [ ] (W) calls IN WD?? before OUT WA??
     - [ ] (W) calls two OUT WA?? consecutively
     - [ ] (W) calls OUT R?? instead of OUT WA?? then calls IN WD??
