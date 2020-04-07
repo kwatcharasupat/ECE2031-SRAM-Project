@@ -57,7 +57,8 @@ To-do Format: [x] [task] [in-charge]
         - SRAM interface remains in IDLE
     - [x] (R) calls two OUT R?? consecutively
         - SRAM interface remains in READ_PREP until IN is called. SRAM will ignore all OUT R?? after the first one.
-    - [ ] (R) calls OUT Rxy then IN Rzw : 
+    - [x] (R) calls OUT Rxy then IN Rzw : 
+        - SRAM takes data from xy & ADLO. ADHI code does not matter for IN
     - [ ] (R) calls OUT WA?? instead of OUT R?? then calls IN R??
     - [ ] (W) calls IN WD?? before OUT WA??
     - [ ] (W) calls two OUT WA?? consecutively
