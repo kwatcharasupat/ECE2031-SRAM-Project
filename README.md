@@ -69,7 +69,8 @@ To-do Format: [x] [task] [in-charge]
         - The second OUT WA?? is ignored. SRAM stays in WRITE_WAIT until WD is called
     - [x] (W) calls OUT R?? instead of OUT WA?? then calls OUT WD??
         - SRAM stuck in READ_PREP until IN R is called
-    - [ ] (W) calls IN WD?? instead of OUT WD??
+    - [x] (W) calls IN WD?? instead of OUT WD??
+        - FATAL! SCOMP will reset. SRAM stuck in WRITE_WAIT until the next OUT WD
 
 # Week 4 (13 Apr to 19 Apr)
 
