@@ -10,10 +10,10 @@ Spring 2020
   - [x] Consensus Form [Karn]
 - [x] Meeting 4: 1 Apr 2020, 2200 to 2330 EDT
   - [x] Consensus Form [Segev]
-- [ ] Meeting 5: 
-  - [ ] Consensus Form
-- [ ] Meeting 6: 
-  - [ ] Consensus Form
+- [x] Meeting 5: 7 Apr 2020, 2200 to 8 Apr 0000 EDT
+  - [ ] Consensus Form [ ]
+- [ ] Meeting 6: 9 Apr 0030 EDT
+  - [ ] Consensus Form [ ]
 - [ ] Meeting 7:
   - [ ] Consensus Form
 - [ ] Meeting 8: 
