@@ -12,7 +12,7 @@ Spring 2020
   - [x] Consensus Form [Segev]
 - [x] Meeting 5: 7 Apr 2020, 2200 to 8 Apr 0000 EDT
   - [ ] Consensus Form [ ]
-- [ ] Meeting 6: 9 Apr 0030 EDT
+- [ ] Meeting 6: 9 Apr 0030 to 0300 EDT
   - [ ] Consensus Form [ ]
 - [ ] Meeting 7:
   - [ ] Consensus Form
