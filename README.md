@@ -3,7 +3,7 @@ Georgia Institute of Technology
 
 Spring 2020
 
-## The team:
+## The Team:
   - Felicia E
   - Jacques M Crawford
   - Karn Watcharasupat
