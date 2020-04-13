@@ -1,6 +1,14 @@
 # ECE2031 SRAM Project
 Georgia Institute of Technology
+
 Spring 2020
+
+## The team:
+  - Felicia E
+  - Jacques M Crawford
+  - Karn Watcharasupat
+  - Segev Apter
+  - Siddhanta Panda
 
 # Upcoming Meeting
 - [x] Meeting 1: 10 Mar 2020, 1815 to 1945 EDT 
