@@ -77,3 +77,4 @@ To-do Format: [x] [task] [in-charge]
   - [ ] Demo preparation
   
 # Demo (21 Apr)
+  - [ ] Pray to George P Burdell and hope Buzz still loves us remotely
