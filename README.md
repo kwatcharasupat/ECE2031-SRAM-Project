@@ -1,4 +1,5 @@
 # ECE2031 SRAM Project
+Georgia Institute of Technology
 Spring 2020
 
 # Upcoming Meeting
@@ -11,9 +12,9 @@ Spring 2020
 - [x] Meeting 4: 1 Apr 2020, 2200 to 2330 EDT
   - [x] Consensus Form [Segev]
 - [x] Meeting 5: 7 Apr 2020, 2200 to 8 Apr 0000 EDT
-  - [ ] Consensus Form [ ]
-- [ ] Meeting 6: 9 Apr 0030 to 0300 EDT
-  - [ ] Consensus Form [ ]
+  - [x] Consensus Form [Felicia]
+- [x] Meeting 6: 9 Apr 0030 to 0300 EDT
+  - [x] Consensus Form [Felicia]
 - [ ] Meeting 7:
   - [ ] Consensus Form
 - [ ] Meeting 8: 
@@ -36,7 +37,7 @@ To-do Format: [x] [task] [in-charge]
 # Spring 'Break' Week 2 (23 Mar 29 Mar)
 
 # Week 2 (30 Mar to 05 Apr)
-- [ ] Proposal slides [Everyone]
+- [x] Proposal slides [Everyone]
     - Introduction (2 min/2 min)
         - Problem statement [Felicia]
         - Requirements [Felicia]
@@ -48,7 +49,7 @@ To-do Format: [x] [task] [in-charge]
         - Current progress
         - Future work (Gaant Chart?)
         - Contingency plan 
-- [ ] Minor fix to UML [Felicia]
+- [x] Minor fix to UML [Felicia]
 - [x] Assembly code for verification of read/write cycle [x]
 
 # Week 3 (06 Apr to 12 Apr)
@@ -73,5 +74,6 @@ To-do Format: [x] [task] [in-charge]
         - FATAL! SCOMP will reset. SRAM stuck in WRITE_WAIT until the next OUT WD
 
 # Week 4 (13 Apr to 19 Apr)
-
-# Demo
+  - [ ] Demo preparation
+  
+# Demo (21 Apr)
