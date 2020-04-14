@@ -79,7 +79,8 @@ To-do Format: [x] [task] [in-charge]
     - [x] (W) calls OUT R?? instead of OUT WA?? then calls OUT WD??
         - SRAM stuck in READ_PREP until IN R is called
     - [x] (W) calls IN WD?? instead of OUT WD??
-        - FATAL! SCOMP will reset. SRAM stuck in WRITE_WAIT until the next OUT WD
+        - SRAM continues to WRITE_LOCK without actually writing the data
+        - The memory at that addresss is also corrupted to -1
 
 # Week 4 (13 Apr to 19 Apr)
   - [ ] Demo preparation
