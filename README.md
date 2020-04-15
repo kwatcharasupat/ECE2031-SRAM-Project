@@ -83,7 +83,7 @@ To-do Format: [x] [task] [in-charge]
         - The memory at that addresss is also corrupted to -1
 
 # Week 4 (13 Apr to 19 Apr)
-  - [ ] Demo preparation
+  - [ ] Demo slides
   
   - SLOW_SRAM (unclocked), SCOMP 50 MHz
     - WRITE: 28 SCOMP clock cycles.
