@@ -1,5 +1,5 @@
 Analysis & Synthesis report for SCOMP_SRAM
-Sat Apr 04 19:16:32 2020
+Wed Apr 15 12:44:55 2020
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -21,7 +21,7 @@ Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
  13. Removed Registers Triggering Further Register Optimizations
  14. General Register Statistics
  15. Multiplexer Restructuring Statistics (Restructuring Performed)
- 16. Source assignments for SCOMP:inst|altsyncram:MEMORY|altsyncram_hit3:auto_generated
+ 16. Source assignments for SCOMP:inst|altsyncram:MEMORY|altsyncram_f4u3:auto_generated
  17. Parameter Settings for User Entity Instance: SRAM_CONTROLLER:inst7|LPM_BUSTRI:IO_BUS_READ
  18. Parameter Settings for User Entity Instance: SRAM_CONTROLLER:inst7|LPM_BUSTRI:IO_BUS_WRITE
  19. Parameter Settings for User Entity Instance: SCOMP:inst|altsyncram:MEMORY
@@ -56,7 +56,7 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                      ;
 +------------------------------------+----------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Apr 04 19:16:31 2020        ;
+; Analysis & Synthesis Status        ; Successful - Wed Apr 15 12:44:55 2020        ;
 ; Quartus II Version                 ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name                      ; SCOMP_SRAM                                   ;
 ; Top-level Entity Name              ; SCOMP_SRAM                                   ;
@@ -176,8 +176,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; CHIP_EMULATOR.vhd                ; yes             ; User VHDL File                         ; D:/Dropbox/NTU Modules/ECE2031 Digital Design Laboratory/Project/ECE2031-SRAM-Project/SRAM_sim/CHIP_EMULATOR.vhd      ;
 ; lpm_bustri.tdf                   ; yes             ; Megafunction                           ; c:/altera/91sp2/quartus/libraries/megafunctions/lpm_bustri.tdf                                                        ;
 ; altsyncram.tdf                   ; yes             ; Megafunction                           ; c:/altera/91sp2/quartus/libraries/megafunctions/altsyncram.tdf                                                        ;
-; db/altsyncram_hit3.tdf           ; yes             ; Auto-Generated Megafunction            ; D:/Dropbox/NTU Modules/ECE2031 Digital Design Laboratory/Project/ECE2031-SRAM-Project/SRAM_sim/db/altsyncram_hit3.tdf ;
-; SRAMdemo_v0.mif                  ; yes             ; Auto-Found Memory Initialization File  ; D:/Dropbox/NTU Modules/ECE2031 Digital Design Laboratory/Project/ECE2031-SRAM-Project/SRAM_sim/SRAMdemo_v0.mif        ;
+; db/altsyncram_f4u3.tdf           ; yes             ; Auto-Generated Megafunction            ; D:/Dropbox/NTU Modules/ECE2031 Digital Design Laboratory/Project/ECE2031-SRAM-Project/SRAM_sim/db/altsyncram_f4u3.tdf ;
+; SRAMdemo_concise.mif             ; yes             ; Auto-Found Memory Initialization File  ; D:/Dropbox/NTU Modules/ECE2031 Digital Design Laboratory/Project/ECE2031-SRAM-Project/SRAM_sim/SRAMdemo_concise.mif   ;
 ; lpm_clshift.tdf                  ; yes             ; Megafunction                           ; c:/altera/91sp2/quartus/libraries/megafunctions/lpm_clshift.tdf                                                       ;
 ; db/lpm_clshift_fuc.tdf           ; yes             ; Auto-Generated Megafunction            ; D:/Dropbox/NTU Modules/ECE2031 Digital Design Laboratory/Project/ECE2031-SRAM-Project/SRAM_sim/db/lpm_clshift_fuc.tdf ;
 ; altpll.tdf                       ; yes             ; Megafunction                           ; c:/altera/91sp2/quartus/libraries/megafunctions/altpll.tdf                                                            ;
@@ -225,25 +225,25 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;    |IO_DECODER:inst3|                     ; 11 (11)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |SCOMP_SRAM|IO_DECODER:inst3                                              ; work         ;
 ;    |SCOMP:inst|                           ; 491 (392)         ; 183 (183)    ; 32768       ; 0            ; 0       ; 0         ; 0    ; 0            ; |SCOMP_SRAM|SCOMP:inst                                                    ; work         ;
 ;       |altsyncram:MEMORY|                 ; 0 (0)             ; 0 (0)        ; 32768       ; 0            ; 0       ; 0         ; 0    ; 0            ; |SCOMP_SRAM|SCOMP:inst|altsyncram:MEMORY                                  ; work         ;
-;          |altsyncram_hit3:auto_generated| ; 0 (0)             ; 0 (0)        ; 32768       ; 0            ; 0       ; 0         ; 0    ; 0            ; |SCOMP_SRAM|SCOMP:inst|altsyncram:MEMORY|altsyncram_hit3:auto_generated   ; work         ;
-;       |lpm_bustri:IO_BUS|                 ; 16 (16)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |SCOMP_SRAM|SCOMP:inst|lpm_bustri:IO_BUS                                  ;              ;
+;          |altsyncram_f4u3:auto_generated| ; 0 (0)             ; 0 (0)        ; 32768       ; 0            ; 0       ; 0         ; 0    ; 0            ; |SCOMP_SRAM|SCOMP:inst|altsyncram:MEMORY|altsyncram_f4u3:auto_generated   ;              ;
+;       |lpm_bustri:IO_BUS|                 ; 16 (16)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |SCOMP_SRAM|SCOMP:inst|lpm_bustri:IO_BUS                                  ; work         ;
 ;       |lpm_clshift:SHIFTER|               ; 83 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |SCOMP_SRAM|SCOMP:inst|lpm_clshift:SHIFTER                                ; work         ;
 ;          |lpm_clshift_fuc:auto_generated| ; 83 (83)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |SCOMP_SRAM|SCOMP:inst|lpm_clshift:SHIFTER|lpm_clshift_fuc:auto_generated ;              ;
 ;    |SRAM_CONTROLLER:inst7|                ; 41 (26)           ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |SCOMP_SRAM|SRAM_CONTROLLER:inst7                                         ;              ;
 ;       |lpm_bustri:IO_BUS_WRITE|           ; 15 (15)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |SCOMP_SRAM|SRAM_CONTROLLER:inst7|lpm_bustri:IO_BUS_WRITE                 ; work         ;
-;    |altpll0:inst1|                        ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |SCOMP_SRAM|altpll0:inst1                                                 ; work         ;
-;       |altpll:altpll_component|           ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |SCOMP_SRAM|altpll0:inst1|altpll:altpll_component                         ; work         ;
+;    |altpll0:inst1|                        ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |SCOMP_SRAM|altpll0:inst1                                                 ;              ;
+;       |altpll:altpll_component|           ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |SCOMP_SRAM|altpll0:inst1|altpll:altpll_component                         ;              ;
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis RAM Summary                                                                                                                                                  ;
-+------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+-------+-----------------+
-; Name                                                                   ; Type ; Mode        ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size  ; MIF             ;
-+------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+-------+-----------------+
-; SCOMP:inst|altsyncram:MEMORY|altsyncram_hit3:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; 2048         ; 16           ; --           ; --           ; 32768 ; SRAMdemo_v0.mif ;
-+------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+-------+-----------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                       ;
++------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+-------+----------------------+
+; Name                                                                   ; Type ; Mode        ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size  ; MIF                  ;
++------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+-------+----------------------+
+; SCOMP:inst|altsyncram:MEMORY|altsyncram_f4u3:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; 2048         ; 16           ; --           ; --           ; 32768 ; SRAMdemo_concise.mif ;
++------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+-------+----------------------+
 
 
 Encoding Type:  One-Hot
@@ -473,7 +473,7 @@ Table restricted to first 100 entries. Note: All latches listed above may not be
 
 
 +------------------------------------------------------------------------------------+
-; Source assignments for SCOMP:inst|altsyncram:MEMORY|altsyncram_hit3:auto_generated ;
+; Source assignments for SCOMP:inst|altsyncram:MEMORY|altsyncram_f4u3:auto_generated ;
 +---------------------------------+--------------------+------+----------------------+
 ; Assignment                      ; Value              ; From ; To                   ;
 +---------------------------------+--------------------+------+----------------------+
@@ -544,7 +544,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped        ;
 ; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped        ;
 ; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped        ;
-; INIT_FILE                          ; SRAMdemo_v0.mif      ; Untyped        ;
+; INIT_FILE                          ; SRAMdemo_concise.mif ; Untyped        ;
 ; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped        ;
 ; MAXIMUM_DEPTH                      ; 0                    ; Signed Integer ;
 ; CLOCK_ENABLE_INPUT_A               ; NORMAL               ; Untyped        ;
@@ -555,7 +555,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped        ;
 ; ENABLE_ECC                         ; FALSE                ; Untyped        ;
 ; DEVICE_FAMILY                      ; Cyclone II           ; Untyped        ;
-; CBXI_PARAMETER                     ; altsyncram_hit3      ; Untyped        ;
+; CBXI_PARAMETER                     ; altsyncram_f4u3      ; Untyped        ;
 +------------------------------------+----------------------+----------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -1000,7 +1000,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Sat Apr 04 19:16:26 2020
+    Info: Processing started: Wed Apr 15 12:44:50 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off SCOMP_SRAM -c SCOMP_SRAM
 Info: Found 2 design units, including 1 entities, in source file sram_controller.vhd
     Info: Found design unit 1: SRAM_CONTROLLER-v0
@@ -1063,7 +1063,7 @@ Info: Instantiated megafunction "SCOMP:inst|altsyncram:MEMORY" with the followin
     Info: Parameter "indata_aclr_a" = "NONE"
     Info: Parameter "indata_aclr_b" = "NONE"
     Info: Parameter "indata_reg_b" = "CLOCK1"
-    Info: Parameter "init_file" = "SRAMdemo_v0.mif"
+    Info: Parameter "init_file" = "SRAMdemo_concise.mif"
     Info: Parameter "init_file_layout" = "PORT_A"
     Info: Parameter "maximum_depth" = "0"
     Info: Parameter "numwords_a" = "2048"
@@ -1092,10 +1092,10 @@ Info: Instantiated megafunction "SCOMP:inst|altsyncram:MEMORY" with the followin
     Info: Parameter "wrcontrol_wraddress_reg_b" = "CLOCK1"
     Info: Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
     Info: Parameter "lpm_type" = "altsyncram"
-Info: Found 1 design units, including 1 entities, in source file db/altsyncram_hit3.tdf
-    Info: Found entity 1: altsyncram_hit3
-Info: Elaborating entity "altsyncram_hit3" for hierarchy "SCOMP:inst|altsyncram:MEMORY|altsyncram_hit3:auto_generated"
-Warning: 329 out of 2048 addresses are reinitialized. The latest initialized data will replace the existing data. There are 329 warnings found, and 10 warnings are reported.
+Info: Found 1 design units, including 1 entities, in source file db/altsyncram_f4u3.tdf
+    Info: Found entity 1: altsyncram_f4u3
+Info: Elaborating entity "altsyncram_f4u3" for hierarchy "SCOMP:inst|altsyncram:MEMORY|altsyncram_f4u3:auto_generated"
+Warning: 316 out of 2048 addresses are reinitialized. The latest initialized data will replace the existing data. There are 316 warnings found, and 10 warnings are reported.
     Warning: Memory Initialization File address 0 is reinitialized
     Warning: Memory Initialization File address 1 is reinitialized
     Warning: Memory Initialization File address 2 is reinitialized
@@ -2266,8 +2266,8 @@ Info: Implemented 1653 device resources after synthesis - the final resource cou
     Info: Implemented 1 PLLs
 Info: Quartus II Analysis & Synthesis was successful. 0 errors, 1078 warnings
     Info: Peak virtual memory: 268 megabytes
-    Info: Processing ended: Sat Apr 04 19:16:32 2020
-    Info: Elapsed time: 00:00:06
-    Info: Total CPU time (on all processors): 00:00:04
+    Info: Processing ended: Wed Apr 15 12:44:55 2020
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:05
 
 

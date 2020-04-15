@@ -5,9 +5,9 @@ Timing Analyzer Summary
 Type           : Worst-case tco
 Slack          : N/A
 Required Time  : None
-Actual Time    : 19.230 ns
-From           : CHIP_EMULATOR:inst4|SRAM~411
-To             : SRAM_DQ[11]
+Actual Time    : 18.988 ns
+From           : CHIP_EMULATOR:inst4|SRAM~238
+To             : SRAM_DQ[14]
 From Clock     : clk_50
 To Clock       : --
 Failed Paths   : 0
@@ -15,9 +15,9 @@ Failed Paths   : 0
 Type           : Clock Setup: 'clk_50'
 Slack          : N/A
 Required Time  : None
-Actual Time    : 39.77 MHz ( period = 25.146 ns )
-From           : CHIP_EMULATOR:inst4|SRAM~414
-To             : SCOMP:inst|AC[14]
+Actual Time    : 39.40 MHz ( period = 25.378 ns )
+From           : CHIP_EMULATOR:inst4|SRAM~494
+To             : SRAM_CONTROLLER:inst7|ADDR[14]
 From Clock     : clk_50
 To Clock       : clk_50
 Failed Paths   : 0
@@ -26,11 +26,11 @@ Type           : Clock Hold: 'clk_50'
 Slack          : Not operational: Clock Skew > Data Delay
 Required Time  : None
 Actual Time    : N/A
-From           : SRAM_CONTROLLER:inst7|SRAM_ADDR[9]
-To             : CHIP_EMULATOR:inst4|SRAM~249
+From           : SRAM_CONTROLLER:inst7|SRAM_ADDR[7]
+To             : CHIP_EMULATOR:inst4|SRAM~231
 From Clock     : clk_50
 To Clock       : clk_50
-Failed Paths   : 4419
+Failed Paths   : 7750
 
 Type           : Total number of failed paths
 Slack          : 
@@ -40,7 +40,7 @@ From           :
 To             : 
 From Clock     : 
 To Clock       : 
-Failed Paths   : 4419
+Failed Paths   : 7750
 
 --------------------------------------------------------------------------------------
 

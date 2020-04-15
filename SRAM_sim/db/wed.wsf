@@ -23,10 +23,10 @@ applicable agreement for further details.
 VECTOR("D:/Dropbox/NTU Modules/ECE2031 Digital Design Laboratory/Project/ECE2031-SRAM-Project/SRAM_sim/SCOMP_SRAM_sim.vwf")
 {
 	ZOOM{
-		ZBEGIN = 0;
-		ZEND = 1500000;
-		NUMERATOR = 1311;
-		DENOMINATOR = 1500000;
+		ZBEGIN = 911613;
+		ZEND = 1286609;
+		NUMERATOR = 907;
+		DENOMINATOR = 518874;
 		TOP_INDEX = 0;
 	}
 	CLOCK{
@@ -536,6 +536,30 @@ VECTOR("D:/Dropbox/NTU Modules/ECE2031 Digital Design Laboratory/Project/ECE2031
 	LINE{
 		SIGNAL = "io_write";
 		INDEX = 62;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "sram_ub_n";
+		INDEX = 63;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "sram_lb_n";
+		INDEX = 64;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "sram_ce_n";
+		INDEX = 65;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
