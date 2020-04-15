@@ -85,5 +85,14 @@ To-do Format: [x] [task] [in-charge]
 # Week 4 (13 Apr to 19 Apr)
   - [ ] Demo preparation
   
+  - SLOW_SRAM (unclocked), SCOMP 50 MHz
+    - WRITE: 28 SCOMP clock cycles.
+    - READ: 25 SCOMP clock cycles.
+  
+  - New SRAM 50/100 MHz, SCOMP 50 MHz
+    - WRITE: 14 SCOMP clock cycles. 8 cycles for IO instructions. [50% reduction in # of clock cycles cf. SLOW_SRAM]
+    - READ: 12 SCOMP clock cycles. 8 cycles for IO instructions. [52% reduction in # of clock cycles]
+  
+  
 # Demo (21 Apr)
   - [ ] Pray to George P Burdell and hope Buzz still loves us remotely
