@@ -1,5 +1,14 @@
 # ECE2031 SRAM Project
+Georgia Institute of Technology
+
 Spring 2020
+
+## The Team:
+  - Felicia E
+  - Jacques M Crawford
+  - Karn Watcharasupat
+  - Segev Apter
+  - Siddhanta Panda
 
 # Upcoming Meeting
 - [x] Meeting 1: 10 Mar 2020, 1815 to 1945 EDT 
@@ -10,10 +19,10 @@ Spring 2020
   - [x] Consensus Form [Karn]
 - [x] Meeting 4: 1 Apr 2020, 2200 to 2330 EDT
   - [x] Consensus Form [Segev]
-- [ ] Meeting 5: 
-  - [ ] Consensus Form
-- [ ] Meeting 6: 
-  - [ ] Consensus Form
+- [x] Meeting 5: 7 Apr 2020, 2200 to 8 Apr 0000 EDT
+  - [x] Consensus Form [Felicia]
+- [x] Meeting 6: 9 Apr 0030 to 0300 EDT
+  - [x] Consensus Form [Felicia]
 - [ ] Meeting 7:
   - [ ] Consensus Form
 - [ ] Meeting 8: 
@@ -36,7 +45,7 @@ To-do Format: [x] [task] [in-charge]
 # Spring 'Break' Week 2 (23 Mar 29 Mar)
 
 # Week 2 (30 Mar to 05 Apr)
-- [ ] Proposal slides [Everyone]
+- [x] Proposal slides [Everyone]
     - Introduction (2 min/2 min)
         - Problem statement [Felicia]
         - Requirements [Felicia]
@@ -48,19 +57,42 @@ To-do Format: [x] [task] [in-charge]
         - Current progress
         - Future work (Gaant Chart?)
         - Contingency plan 
-- [ ] Minor fix to UML [Felicia]
+- [x] Minor fix to UML [Felicia]
 - [x] Assembly code for verification of read/write cycle [x]
 
 # Week 3 (06 Apr to 12 Apr)
-[ ] User error case management 
-    [ ] (R) calls IN R?? before OUT R??
-    [ ] (R) calls two OUT R?? consecutively
-    [ ] (R) calls OUT WA?? instead of OUT R?? then calls IN R??
-    [ ] (W) calls IN WD?? before OUT WA??
-    [ ] (W) calls two OUT WA?? consecutively
-    [ ] (W) calls OUT R?? instead of OUT WA?? then calls IN WD??
-    [ ] (W) calls IN WA?? instead of IN WD??
+- [x] User error case management 
+    - [x] (R) calls IN R?? before OUT R??
+        - SRAM interface remains in IDLE
+    - [x] (R) calls two OUT R?? consecutively
+        - SRAM interface remains in READ_PREP until IN is called. SRAM will ignore all OUT R?? after the first one.
+    - [x] (R) calls OUT Rxy then IN Rzw : 
+        - SRAM takes data from xy & ADLO. ADHI code does not matter for IN
+    - [x] (R) calls OUT WA?? instead of OUT R?? then calls IN R??
+        - SRAM write -1 to IO_DATA then returns to IDLE
+        - The memory at that addresss is also corrupted to -1
+    - [x] (W) calls OUT WD?? before OUT WA??
+        - SRAM treats WD as if it is a WA
+        - SRAM data will take the value of ADLO during OUT WA but will be stuck in WRITE_WAIT until WD is called again
+    - [x] (W) calls two OUT WA?? consecutively
+        - The second OUT WA?? is ignored. SRAM stays in WRITE_WAIT until WD is called
+    - [x] (W) calls OUT R?? instead of OUT WA?? then calls OUT WD??
+        - SRAM stuck in READ_PREP until IN R is called
+    - [x] (W) calls IN WD?? instead of OUT WD??
+        - SRAM continues to WRITE_LOCK without actually writing the data
+        - The memory at that addresss is also corrupted to -1
 
 # Week 4 (13 Apr to 19 Apr)
-
-# Demo
+  - [ ] Demo slides
+  
+  - SLOW_SRAM (unclocked), SCOMP 50 MHz
+    - WRITE: 28 SCOMP clock cycles.
+    - READ: 25 SCOMP clock cycles.
+  
+  - New SRAM 50/100 MHz, SCOMP 50 MHz
+    - WRITE: 14 SCOMP clock cycles. 8 cycles for IO instructions. [50% reduction in # of clock cycles cf. SLOW_SRAM]
+    - READ: 12 SCOMP clock cycles. 8 cycles for IO instructions. [52% reduction in # of clock cycles]
+  
+  
+# Demo (21 Apr)
+  - [ ] Pray to George P Burdell and hope Buzz still loves us remotely

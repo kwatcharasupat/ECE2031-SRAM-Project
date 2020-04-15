@@ -1,5 +1,5 @@
 MIF/HEX Update report for SCOMP_SRAM
-Tue Apr 07 19:45:13 2020
+Fri Apr 03 15:00:50 2020
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -35,7 +35,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; MIF/HEX Update Summary                                        ;
 +-----------------------+---------------------------------------+
-; MIF/HEX Update Status ; Successful - Tue Apr 07 19:45:13 2020 ;
+; MIF/HEX Update Status ; Successful - Fri Apr 03 15:00:50 2020 ;
 ; Revision Name         ; SCOMP_SRAM                            ;
 ; Top-level Entity Name ; SCOMP_SRAM                            ;
 ; Family                ; Cyclone II                            ;
@@ -43,13 +43,13 @@ applicable agreement for further details.
 +-----------------------+---------------------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------+
-; MIF/HEX Update Processed Files                                                                                        ;
-+-----------------------------------------------------------------------------------------------------------------------+
-; File Name                                                                                                             ;
-+-----------------------------------------------------------------------------------------------------------------------+
-; D:/Dropbox/NTU Modules/ECE2031 Digital Design Laboratory/Project/ECE2031-SRAM-Project/SRAM_sim/SRAMdemo_errortest.mif ;
-+-----------------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------+
+; MIF/HEX Update Processed Files                                                                                 ;
++----------------------------------------------------------------------------------------------------------------+
+; File Name                                                                                                      ;
++----------------------------------------------------------------------------------------------------------------+
+; D:/Dropbox/NTU Modules/ECE2031 Digital Design Laboratory/Project/ECE2031-SRAM-Project/SRAM_sim/SRAMdemo_v0.mif ;
++----------------------------------------------------------------------------------------------------------------+
 
 
 +-------------------------+
@@ -58,9 +58,9 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II MIF/HEX Update
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Tue Apr 07 19:45:12 2020
+    Info: Processing started: Fri Apr 03 15:00:50 2020
 Info: Command: quartus_cdb SCOMP_SRAM -c SCOMP_SRAM --update_mif
-Warning: 363 out of 2048 addresses are reinitialized. The latest initialized data will replace the existing data. There are 363 warnings found, and 10 warnings are reported.
+Warning: 329 out of 2048 addresses are reinitialized. The latest initialized data will replace the existing data. There are 329 warnings found, and 10 warnings are reported.
     Warning: Memory Initialization File address 0 is reinitialized
     Warning: Memory Initialization File address 1 is reinitialized
     Warning: Memory Initialization File address 2 is reinitialized
@@ -72,11 +72,11 @@ Warning: 363 out of 2048 addresses are reinitialized. The latest initialized dat
     Warning: Memory Initialization File address 8 is reinitialized
     Warning: Memory Initialization File address 9 is reinitialized
 Info: Processed the following Memory Initialization File(s)
-    Info: Processed Memory Initialization File D:/Dropbox/NTU Modules/ECE2031 Digital Design Laboratory/Project/ECE2031-SRAM-Project/SRAM_sim/SRAMdemo_errortest.mif
+    Info: Processed Memory Initialization File D:/Dropbox/NTU Modules/ECE2031 Digital Design Laboratory/Project/ECE2031-SRAM-Project/SRAM_sim/SRAMdemo_v0.mif
 Info: Quartus II MIF/HEX Update was successful. 0 errors, 11 warnings
     Info: Peak virtual memory: 244 megabytes
-    Info: Processing ended: Tue Apr 07 19:45:13 2020
-    Info: Elapsed time: 00:00:01
+    Info: Processing ended: Fri Apr 03 15:00:50 2020
+    Info: Elapsed time: 00:00:00
     Info: Total CPU time (on all processors): 00:00:01
 
 
